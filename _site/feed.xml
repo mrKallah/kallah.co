@@ -1,91 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Awesome Title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
-    <link>https://y7kim.github.io/agency-jekyll-theme//</link>
-    <atom:link href="https://y7kim.github.io/agency-jekyll-theme//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 06 Feb 2018 15:00:10 +0000</pubDate>
-    <lastBuildDate>Tue, 06 Feb 2018 15:00:10 +0000</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
-    
-      <item>
-        <title>Dreams</title>
-        <description>
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<channel>
+<title>Kallah.co</title>
+<description>
+This is a site set up for my bachelor that I will update on what I do, things I find interesting and generally what I think about the project.
 </description>
-        <pubDate>Fri, 18 Jul 2014 00:00:00 +0100</pubDate>
-        <link>https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/18/project-1/</link>
-        <guid isPermaLink="true">https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/18/project-1/</guid>
-        
-        
-        <category>Web Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Escape</title>
-        <description>
-</description>
-        <pubDate>Thu, 17 Jul 2014 00:00:00 +0100</pubDate>
-        <link>https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/17/project-2/</link>
-        <guid isPermaLink="true">https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/17/project-2/</guid>
-        
-        
-        <category>Web Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Golden</title>
-        <description>
-</description>
-        <pubDate>Wed, 16 Jul 2014 00:00:00 +0100</pubDate>
-        <link>https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/16/project-3/</link>
-        <guid isPermaLink="true">https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/16/project-3/</guid>
-        
-        
-        <category>Web Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Treehouse</title>
-        <description>
-</description>
-        <pubDate>Tue, 15 Jul 2014 00:00:00 +0100</pubDate>
-        <link>https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/15/project-4/</link>
-        <guid isPermaLink="true">https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/15/project-4/</guid>
-        
-        
-        <category>Web Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Round Icons</title>
-        <description>
-</description>
-        <pubDate>Tue, 15 Jul 2014 00:00:00 +0100</pubDate>
-        <link>https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/15/project-6/</link>
-        <guid isPermaLink="true">https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/15/project-6/</guid>
-        
-        
-        <category>Web Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Startup Framework</title>
-        <description>
-</description>
-        <pubDate>Mon, 14 Jul 2014 00:00:00 +0100</pubDate>
-        <link>https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/14/project-5/</link>
-        <guid isPermaLink="true">https://y7kim.github.io/agency-jekyll-theme//web%20development/2014/07/14/project-5/</guid>
-        
-        
-        <category>Web Development</category>
-        
-      </item>
-    
-  </channel>
+<link>/_site//</link>
+<atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+<pubDate>Wed, 07 Feb 2018 15:00:45 +0000</pubDate>
+<lastBuildDate>Wed, 07 Feb 2018 15:00:45 +0000</lastBuildDate>
+<generator>Jekyll v3.7.2</generator>
+<item>
+<title>Week 1</title>
+<link>http://kallah.co/#posts</link>
+<guid>http://kallah.co/#posts</guid>
+<pubDate>Wed, 07 Feb 2018 15:06:41 GMT</pubDate>
+<description>[CDATA[ Week 1: What I plan to do for my project? ]]</description>
+</item>
+<item>
+<title>Week 2</title>
+<link>http://kallah.co/#posts</link>
+<guid>http://kallah.co/#posts</guid>
+<pubDate>Wed, 07 Feb 2018 15:09:23 GMT</pubDate>
+<description>[CDATA[ Week 2: What I have done this week ]]</description>
+</item>
+<item>
+<title>Week 3</title>
+<link>http://kallah.co/#posts</link>
+<guid>http://kallah.co/#posts</guid>
+<pubDate>Wed, 07 Feb 2018 15:09:23 GMT</pubDate>
+<description>[CDATA[ Week 3: Problems, and more problems ]]</description>
+</item>
+</channel>
 </rss>
