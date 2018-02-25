@@ -1,35 +1,48 @@
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-<channel>
-<title>Kallah.co</title>
-<description>
-This is a site set up for my bachelor that I will update on what I do, things I find interesting and generally what I think about the project.
-</description>
-<link>/_site//</link>
-<atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-<pubDate>Wed, 07 Feb 2018 15:00:45 +0000</pubDate>
-<lastBuildDate>Wed, 07 Feb 2018 15:00:45 +0000</lastBuildDate>
-<generator>Jekyll v3.7.2</generator>
-<item>
-<title>Week 1</title>
-<link>http://kallah.co/#posts</link>
-<guid>http://kallah.co/#posts</guid>
-<pubDate>Wed, 07 Feb 2018 15:06:41 GMT</pubDate>
-<description>[CDATA[ Week 1: What I plan to do for my project? ]]</description>
-</item>
-<item>
-<title>Week 2</title>
-<link>http://kallah.co/#posts</link>
-<guid>http://kallah.co/#posts</guid>
-<pubDate>Wed, 07 Feb 2018 15:09:23 GMT</pubDate>
-<description>[CDATA[ Week 2: What I have done this week ]]</description>
-</item>
-<item>
-<title>Week 3</title>
-<link>http://kallah.co/#posts</link>
-<guid>http://kallah.co/#posts</guid>
-<pubDate>Wed, 07 Feb 2018 15:09:23 GMT</pubDate>
-<description>[CDATA[ Week 3: Problems, and more problems ]]</description>
-</item>
-</channel>
+  <xml-stylesheet type="text/css" href="/rss.css" >
+    <channel>
+    <title>Kallah.co</title>
+    <description>
+    This is a site set up for my bachelor that I will update on what I do, things I find interesting and generally what I think about the project.
+    </description>
+    <link>http://www.kallah.co</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 07 Feb 2018 15:00:45 +0000</pubDate>
+    <lastBuildDate>Wed, 25 Feb 2018 11:20:52 +0000</lastBuildDate>
+
+    <item>
+      <title>Week 1</title>
+      <link>http://kallah.co/#posts</link>
+      <guid>http://kallah.co/#posts</guid>
+      <pubDate>Wed, 07 Feb 2018 15:06:41 GMT</pubDate>
+      <description>[CDATA[ Week 1: What I plan to do for my project? ]]</description>
+    </item>
+
+    <item>
+      <title>Week 2</title>
+      <link>http://kallah.co/#posts</link>
+      <guid>http://kallah.co/#posts</guid>
+      <pubDate>Wed, 07 Feb 2018 15:09:23 GMT</pubDate>
+      <description>[CDATA[ Week 2: Setting up shop ]]</description>
+    </item>
+
+    <item>
+      <title>Week 3</title>
+      <link>http://kallah.co/#posts</link>
+      <guid>http://kallah.co/#posts</guid>
+      <pubDate>Wed, 19 Feb 2018 09:53:12 GMT</pubDate>
+      <description>[CDATA[ Week 3: Problems, problems and more problems ]]</description>
+    </item>
+
+    <item>
+      <title>Week 4</title>
+      <link>http://kallah.co/#posts</link>
+      <guid>http://kallah.co/#posts</guid>
+      <pubDate>Wed, 25 Feb 2018 11:20:52 GMT</pubDate>
+      <description>[CDATA[ Finaly getting some actuall work done! ]]</description>
+    </item>
+
+
+    </channel>
+  </xml-stylesheet>
 </rss>

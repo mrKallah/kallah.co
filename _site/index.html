@@ -31,7 +31,7 @@
 
 
 
-    <body id="page-top" class="index">
+  <body id="page-top" class="index">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -54,11 +54,22 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Posts</a>
+                        <a class="page-scroll" href="#posts">Posts</a>
                     </li>
+
+                    <li>
+                        <a class="page-scroll" href="#code">Code</a>
+                    </li>
+
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -71,8 +82,8 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Lasse Falch Sortland</div>
-                <div class="intro-heading">something</div>
-                
+                <div class="intro-heading">Digital Analysis of Paintings using TensorFlow</div>
+
             </div>
         </div>
     </header>
@@ -84,62 +95,312 @@
         
  -->
 
-
-	<!-- About Section -->
-    <section id="about">
+    <!-- About Section -->
+    <section id="posts">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">posts</h2>
+                    <h2 class="section-heading">Posts</h2>
 
                 </div>
             </div>
         </div>
-    
-	
-	        <div class="container">
+
+
+
+    <!DOCTYPE html>
+<html>
+<style>
+#myBar_1 {
+  width: 15%;
+}
+#myBar_2 {
+  width: 0.1%;
+}
+
+#myBar_3 {
+  width: 90%;
+}
+
+#myBar_1 {
+  height: 30px;
+  background-color: #333;
+  text-align: left;
+  text-indent: 1em;
+
+}
+#myBar_2 {
+  height: 30px;
+  background-color: #fed136;
+  text-align: left;
+  text-indent: 1em;
+}
+
+#myBar_3 {
+  height: 30px;
+  background-color: #333;
+  text-align: left;
+  text-indent: 1em;
+}
+
+
+
+</style>
+<body>
+
+<div class="col-lg-12 text-center">Total project progress</div>
+<div id="myProgress">
+  <div id="myBar_1"></div>
+</div>
+<br>
+
+<div class="col-lg-12 text-center">This weeks progress</div>
+<div id="myProgress">
+  <div id="myBar_2"></div>
+</div>
+<br>
+
+<div class="col-lg-12 text-center">Last weeks progress</div>
+<div id="myProgress">
+  <div id="myBar_3"></div>
+</div>
+<br>
+
+
+</body>
+</html>
+
+
+
+
+    <div class="container">
+  <div class="col-lg-12 text-center">
+  <h1>Week 4</h1>
+    <h3 class="section-subheading text-muted">
+      <div class="section-subheading text-muted">
+
+        <h4>My plans for this week</h4>
+        <b>HTML / Web stuff</b><br>
+        <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. I also want to add a progress bar to keep up to date on a per week basis on the webpage. <br></a></div>
+        <b>Programming</b><br>
+        <div class="paragraph">This week I aim to finish the Video to PNG converter, as I have realized that it crashes sometimes, so I have to look at that. I also have to look at the PNG to Array converter as it prints the array incorrectly. I also need to do some more commenting in all my python files that I have written so far, as they are a bit sparse. <br></div>
+        <div class="paragraph">I also aim to get the outline of a CNN to work that I can build my project on. I’ll probably take a tutorial one, and add and change to it, but first I need to get one of the tutorial CNNs to work. I have also started to look into what activation functions I will use and I have set as a goal to have a plan for what to use where. <br></div>
+        <b>Documentation</b><br>
+        <div class="paragraph">I want to fill inn the ethics form and fill in the schedule, and I also aim to read the Project Report and Technical Work document. On top of that I want to finish the chapter on backgrounds. <br></div>
+        <h4>What I have done this week</h4>
+        <b>Blog/html</b><br>
+        <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. Lastly I added a progress bar to keep up to date on a per week basis on the webpage.<br></div>
+        <b>Programming</b><br>
+        <div class="paragraph">I found out that the PNG converter didn’t have an error but one of the image files I fed it was corrupt and when I removed that I had no problems with it. The problem with the array converter was that it printed the arrays like this:<br></div>
+        <br><div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+        <div class="paragraphCentred">. <br></div>
+        <div class="paragraphCentred">. <br></div>
+        <div class="paragraphCentred">. <br></div>
+        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div><br>
+        <div class="paragraph">I’ve commented all the converter files and I have also added a few more options such as an option to give all output files the same name but with an increasing index numbers eg. img_0, img_1, img_2… and not only the previous inherit the filename. <br></div>
+        <div class="paragraph">On the subject of activation functions I have decided that on the hidden layers I will use ReLU as Sigmoid and Tanh both suffer from a problem where they cause the gradient to vanish and Sigmoid is also not zero centered. I have decided on ReLU as it has a big foothold in the CNN community as it is the most popular one at the moment because of its speed and accuracy. However it has a problem where some neurons can die in the training process. This could be fixed with a Leaky ReLU but that has a much higher time complexity and therefor I will not be using that one unless I experience lots of dead neurons during training.  In Krizhevsky, Sutskever and Hinton’s paper, ImageNet Classification with Deep Convolutional Neural Networks they found it had a 6x improvement in convergence over Tanh <a href=" https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf ">Link to paper</a> <br></div>
+        <div class="paragraph">For the activation layers I will use SoftMax for the output layer as SoftMax it gives probability for different classes and from that I can determine the best by choosing the highest one. I want the probabilities so I can see the outputs and use the data I get back to tune the CNN<br></div>
+        <div class="paragraph">I got one of the CNNs to work this week on the MNIST dataset and it classify numbers with a high accuracy. I have also found the reason I have been having so many problems getting the CNN tutorials to work is because when I used sudo pip3 install matplotlib something must have gone wrong without me noticing and I didn’t do anything to fix it. When I uninstalled and reinstalled matplotlib it worked and someone online said it might have to do with the fact that I didn’t install the matplotlib before the NumPy library which somehow could give troubles for matplotlib but it was rare. But that’s from some random forum so I don’t know how true it was, but it worked. So, now I just hope I don’t get any more weird errors such as a “WhateverExeption” and what not as I have been going crazy trying to figure out why nothing worked!<br></div>
+        <b>Documentation</b><br>
+        <div class="paragraph">Ethics I have finished the ethics and handed it in on the Turn It In site. I have also read the breakdown of grades and below are a filled in form for the schedule.<br></div>
+        <img class="gyazo_image" src="https://i.gyazo.com/b23cb8d0f100eab55f6ebb84f69b9f20.png" style="visibility: visible; max-width: 465px; max-height: 100%;" <br>
+        <div class="paragraph">I have decided not to do the chapter on background as I haven’t finished reading about Neural Style Transfer, and I have been a bit low on time this week, as I spent until Friday at 3:40AM to find out that the problems I have been having are due to a matplotlib issue and not a things are outdated issue. <br></div>
+        <h4>My plans for next week</h4>
+        <b>Programming</b><br>
+        <div class="paragraph"><br>I want to get the CNN to take my dataset and give me results that are of a acceptable grade! This means I need to figure out how to prepare the dataset so I can use it in TensorFlow. So far I have the ability to change the images from RGB to Greyscale and resizing them and for now I am thinking I’ll use 100pxl by 100pxl images that are greyscale. After I get that to work the first change I probably will do is to add the colors back in as colors have a lot to say in images and paintings, but for the testing phase I’ll use greyscale and most likely 100x100, though I might go lower than that for time concerns. <br></div>
+        <b>Documentation</b><br>
+        <div class="paragraph"><br>I want to finish the first chapter on background stuff regarding the CNNs and leave the Neural Style Transfer stuff for later. I want to do it like this so it is as fresh as possible in my mind<br></div>
+      </div>
+    </h3>
+  </div>
+</div>
+
+            <div class="container">
 			<div class="col-lg-12 text-center">
 					<h1>Week 3</h1>
 					<h3 class="section-subheading text-muted">
-						After a few days of trying to install both python3.5 and python 2.7 with TensorFlow’s NVIDIA Cuda tools having been stuck with trying to get the NVIDIA-Cuda-tools installed in a way that is compatible with TensorFlow. I have found that Cuda on Ubuntu does not work as you might expect. If you have more than one GPU you can get into some serious problems getting the Cuda tools to work. As long as you have two GPUs from different brands, say a NVIDIA graphics driver, coupled with an integrated graphics card in the CPU from Intel, the Cuda will not work on your system. The Cuda is apparently unable to cope with any ubuntu based system that has such a setup even if you manually disable either the standalone or the integrated GPU. I have not looked into this on pc, but I am currently using Ubuntu, so I have decided to go for the CPU limited way, at least for now. It’s a huge relief to finally start working and not having to work on the hell that is trying to figure out why things aren’t working by some cryptic error message.
+            <b>Problems, problems and more problems</b><br>
+						<div class="paragraph">After a few days of trying to install both python3.5 and python 2.7 with TensorFlow’s NVIDIA Cuda tools having been stuck with trying to get the NVIDIA-Cuda-tools installed in a way that is compatible with TensorFlow. I have found that Cuda on Ubuntu does not work as you might expect. If you have more than one GPU you can get into some serious problems getting the Cuda tools to work. As long as you have two GPUs from different brands, say a NVIDIA graphics driver, coupled with an integrated graphics card in the CPU from Intel, the Cuda will not work on your system. The Cuda is apparently unable to cope with any ubuntu based system that has such a setup even if you manually disable either the standalone or the integrated GPU. I have not looked into this on pc, but I am currently using Ubuntu, so I have decided to go for the CPU limited way, at least for now. It’s a huge relief to finally start working and not having to work on the hell that is trying to figure out why things aren’t working by some cryptic error message.
 						<br><br>I have also started to note down things needed to be in the installer as I go, and I am still not 100% sure if I will end up using python 3 or python 2.7 but as of now I am thinking that unless I find any good reason not to use python 3 I will continue to use it.
 						<br><br>I have also started to do some work on implementing some stuff into code and I have been writing a classifier for the MNIST dataset to learn a bit more about how to do the actual implementation of the work into code. This has been an ok process where I have followed tutorials and I have learned a lot from this. One problem I keep jumping into is redundant processes where someone has done something a year or two ago and when I implement their code it gives me error where it’s been made redundant but it has no pointers to what it has been replaced by so I have had to restart a few times, and that makes me a bit weary to how TensorFlow updates and makes your code redundant.
-						<br><br>I have also written two smaller scripts, one to resize a batch of images from one size to another and one that takes an image as input and prints it as an array. My aim with them, is to use those to resize the images in the datasets to a uniform size and then process them and then create a file that contains all the images as an array of images, but I haven’t gotten around to the point of making the script write the files yet as I haven’t decided on a file format. 
-						<br><br>Anyways here’s a gif of the program running on windows, just because I had one:<br>
+						<br><br>I have also written two smaller scripts, one to resize a batch of images from one size to another and one that takes an image as input and prints it as an array. My aim with them, is to use those to resize the images in the datasets to a uniform size and then process them and then create a file that contains all the images as an array of images, but I haven’t gotten around to the point of making the script write the files yet as I haven’t decided on a file format.
+						<br><br>Anyways here’s a gif of the program running on windows, just because I had one:<br></div>
 						<br><video class="image-viewer vertical" poster="https://thumb.gyazo.com/thumb/542_w/_979036a647a35051dd788b26f89ba0d3-gif.jpg" autoplay="" playsinline="" loop="" style="max-width: 542px; max-height: 100%;"><source src="https://i.gyazo.com/018ecd69a5c66f1142820efbaea08dfd.mp4" type="video/mp4"></video>
 					</h3>
                 </div>
         </div>
-	        <div class="container">
+
+            <div class="container">
 			<div class="col-lg-12 text-center">
 					<h1>Week 2</h1>
 					<h3 class="section-subheading text-muted">
-						This week I have mostly looked at the TensorFlow library and numpy, matplotlib and pylab to get a better understanding of the libraries I will be using over the next few weeks. I have started working on a schedule of what I want to get done per week and I want to be able to follow a structured plan, so I have a goal for each week that I should be able to do. In my first post I set 7 steps of what I wanted to do, and I will aim to get to step 5 and then if I manage to work past my own schedule I will start working on 6 and 7 when I can. In the meeting today, I said I had contacted Bob Rosses copyright holders and asked for permission to use his painting in my work, you mentioned to contact the copyright holders for Hockney to see if they wanted to give me permissions to use his paintings too. Last week you also gave me the set of pictures for the same artist the student before me used to do his project. 
-						<br><br>This week I have also worked a bit on getting the blog up and going as that has been giving me a bit of grief. However, the account on my site has finally been fixed and I can now start posting here, rather than using a word document locally on my pc. 
-					</h3>
+
+
+              <b>Setting up shop</b><br>
+            <div class="paragraph">
+              This week I have mostly looked at the TensorFlow library and numpy, matplotlib and pylab to get a better understanding of the libraries I will be using over the next few weeks. I have started working on a schedule of what I want to get done per week and I want to be able to follow a structured plan, so I have a goal for each week that I should be able to do. In my first post I set 7 steps of what I wanted to do, and I will aim to get to step 5 and then if I manage to work past my own schedule I will start working on 6 and 7 when I can. In the meeting today, I said I had contacted Bob Rosses copyright holders and asked for permission to use his painting in my work, you mentioned to contact the copyright holders for Hockney to see if they wanted to give me permissions to use his paintings too. Last week you also gave me the set of pictures for the same artist the student before me used to do his project.
+						<br><br>This week I have also worked a bit on getting the blog up and going as that has been giving me a bit of grief. However, the account on my site has finally been fixed and I can now start posting here, rather than using a word document locally on my pc.
+          </div>
+          </h3>
                 </div>
         </div>
-	        <div class="container">
+
+            <div class="container">
 			<div class="col-lg-12 text-center">
 					<h1>Week 1</h1>
 					<h3 class="section-subheading text-muted">
-						What I plan to do for my project? 
+						<b>What I plan to do for my project?</b>
+            <div class="paragraph">
 						<br>For my project I aim to make a program that can take an input image of a painting and use a CNN to determine weather or not it was made by a specific artist. I aim to use multiple artists and have a “Bob Ross classifier” and a “Picasso classifier” etc. At the later stages of the project, if time allows I then wish to be able to add two more functionalities: One is Neural Style Transfer so I can put an image of anything into the Bob Ross (or any of the others) classifier and then get a Bob Ross painting out of it that still is an image of the hand but in the style of Bob Ross. The second functionality I then wish to add is to make the CNN then be able to take one image as a input from one artist and then detect if a second image is by that same artist using a Boolean classifier. I aim for the project to have some dependencies, mainly TensorFlow, which means I will write it in Python and so I have to spend some time brushing up on python these first weeks, to learn everything Python and TensorFlow related. For the project I hope to be able to have an installer which installs the appropriate packages and an interface to run it without using command line. For my priorities I have
-						<br><br>1. Create the classifiers. 
-						<br>2. Create the installer. 
-						<br>3. Create the interface. 
-						<br>4. Add the neural style transfer functionality. 
-						<br>5. Add the neural style transfer to the interface. 
-						<br>6. Add the any painting detector functionality. 
-						<br>7. Add the any painting to the interface. 
-						<br>I don’t think I will be able to complete all these tasks but I want to aim as high as possible, so I can continue to work, even when I finish one part so I don’t get stuck the last weeks of the project trying to polish the classifiers to get 3-4% better classification out of them. 
-						<br><br>This was written in the first week and edited later to give it more sense. 
+						<br><br>1. Create the classifiers.
+						<br>2. Create the installer.
+						<br>3. Create the interface.
+						<br>4. Add the neural style transfer functionality.
+						<br>5. Add the neural style transfer to the interface.
+						<br>6. Add the any painting detector functionality.
+						<br>7. Add the any painting to the interface.<br>
+						<br>I don’t think I will be able to complete all these tasks but I want to aim as high as possible, so I can continue to work, even when I finish one part so I don’t get stuck the last weeks of the project trying to polish the classifiers to get 3-4% better classification out of them.
+						<br><br><i>This was written in the first week and edited later to give it more sense.</i>
+          </div>
 					</h3>
                 </div>
         </div>
-	
-	
-	</section>
+
+
+    </section>
+<hr />
+    <!-- code Section -->
+    <section id="code">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Code</h2>
+                    <h3 class="section-subheading text-muted">
+                      <div class="paragraph">
+                        A python script to resize images in ./img to a size of x by y into the folder /resized 
+                        <link rel="stylesheet" href="/code.css">
+
+                        <div class="hlcode">
+                        <div class="syntax"><pre>
+                        <span class="kn">import</span> <span class="nn">cv2</span>
+                        <span class="kn">import</span> <span class="nn">os</span>
+                        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+                        <span class="c1"># size of output images</span>
+                        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span>
+                        <span class="n">use_file_name</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="n">name_convension</span> <span class="o">=</span> <span class="s2">"rand_"</span>
+
+                        <span class="c1"># Gets the current working directory</span>
+                        <span class="n">dir_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+
+                        <span class="c1"># Gets the folder the images are in</span>
+                        <span class="n">input_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"img"</span><span class="p">)</span>
+
+                        <span class="c1"># gets the output path</span>
+                        <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">)</span>
+                        <span class="n">output_path_arr</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"text_array"</span><span class="p">)</span>
+
+                        <span class="c1"># creates the output path if it doesn't exist</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
+                            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">):</span>
+                            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">)</span>
+
+                        <span class="c1"># resizes the input image to X by Y size</span>
+                        <span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+                        	<span class="nb">print</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span> <span class="c1">#prints filenames as it's processing it</span>
+                        	<span class="c1"># reads the input image from the relative path</span>
+                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">infile</span><span class="p">))</span>
+                        	<span class="c1"># resizes the image</span>
+                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+                        	<span class="c1"># writes the image to the relative new path</span>
+                        	<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">,</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">.png"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">infilename</span><span class="p">)),</span> <span class="n">image</span><span class="p">)</span>
+                        	<span class="c1">#prints the image as a textfile in ./text_array</span>
+                        	<span class="n">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+
+
+                        <span class="c1"># resizes the input image to X by Y size and make them grayscale</span>
+                        <span class="k">def</span> <span class="nf">resize_grayscale</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+                        	<span class="nb">print</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span> <span class="c1">#prints filenames as it's processing it</span>
+                        	<span class="c1"># reads the input image from the relative path</span>
+                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">infile</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+                        	<span class="c1"># resizes the image</span>
+                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+                        	<span class="c1"># writes the image to the relative new path</span>
+                        	<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">,</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">.png"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">infilename</span><span class="p">)),</span> <span class="n">image</span><span class="p">)</span>
+                        	<span class="c1">#prints the image as a textfile in ./text_array</span>
+                        	<span class="n">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+
+                        <span class="c1"># Prints the image as a text array</span>
+                        <span class="k">def</span> <span class="nf">print_image_array_seperate_files</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+                        	<span class="c1"># converts the file from image to a numpy array</span>
+                        	<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"int32"</span> <span class="p">)</span>
+
+                        	<span class="c1"># gets the current file name</span>
+                        	<span class="n">filename</span><span class="o">=</span><span class="p">(</span><span class="n">infilename</span> <span class="o">+</span> <span class="s2">".txt"</span><span class="p">)</span>
+                        	<span class="c1"># open the file</span>
+                        	<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span><span class="s1">'w'</span><span class="p">)</span> <span class="c1">#</span>
+                        	<span class="c1"># write data to file</span>
+                        	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+                        	<span class="c1"># close the file</span>
+                        	<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
+
+
+                        <span class="c1"># Prints the image as a text array</span>
+                        <span class="k">def</span> <span class="nf">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+                        	<span class="c1"># converts the file from image to a numpy array</span>
+                        	<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"int32"</span> <span class="p">)</span>
+
+                        	<span class="c1"># write data to file</span>
+                        	<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">global_f</span><span class="p">,</span><span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">),</span><span class="n">fmt</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f</span><span class="s1">'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+
+
+                        <span class="c1"># Gets the files in the directory into an array</span>
+                        <span class="n">files_in_input_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span>
+
+                        <span class="c1"># makes sure infile and infilename are global variables.</span>
+                        <span class="n">infile</span> <span class="o">=</span> <span class="s2">"a"</span>
+                        <span class="n">infilename</span> <span class="o">=</span> <span class="s2">"a"</span>
+
+                        <span class="c1"># gets the current file path and opens it as a global file</span>
+                        <span class="n">filename</span><span class="o">=</span><span class="p">(</span><span class="s2">"image_arrays"</span> <span class="o">+</span> <span class="s2">".txt"</span><span class="p">)</span>
+                        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+                        <span class="n">global_f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
+
+
+                        <span class="c1"># goes through all the input images and resizes and saves them</span>
+                        <span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">files_in_input_dir</span><span class="p">:</span>
+                        	<span class="c1"># gets the name of the current file with extension, eg. "test.png"</span>
+                        	<span class="n">infile</span> <span class="o">=</span> <span class="n">i</span>
+
+                        	<span class="c1"># removes the extension, eg. "test.png" =&gt; "test"</span>
+                        	<span class="k">if</span> <span class="n">use_file_name</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+                        		<span class="n">infilename</span> <span class="o">=</span> <span class="n">infile</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+                        	<span class="k">else</span><span class="p">:</span>
+                        		<span class="n">infilename</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{0}{1}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name_convension</span><span class="p">,</span> <span class="n">iteration</span><span class="p">)</span>
+
+                        	<span class="c1"># calls the resize function to resize the file. Resize_grayscale for grayscale output and resize for RGB output</span>
+                        	<span class="n">resize_grayscale</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+                        	<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span> <span class="o">+</span> <span class="mi">1</span>
+                        <span class="n">global_f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                        </pre></div>
+
+                        </div>
+                    <div>
+                  </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </section>
 <hr />
     <!-- About Section -->
     <section id="about">
@@ -147,20 +408,27 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">This is a site set up for my bachelor that I will update on what I do, things I find interesting and generally what I think about the project.</h3>
+                    <h3 class="section-subheading text-muted">
+                      <div class="paragraph">
+                        This is a site set up for my bachelor that I will update on what
+                        I do, things I find interesting and generally what I think about the project.
+                    <div>
+                  </h3>
                 </div>
             </div>
         </div>
-		<hr />
     </section>
+
+    </section>
+<hr />
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact me</h2>
-					<div href="mailto:test@kallah.co">
+					<div href="mailto:lasse_sortland@hotmail.com">
 						<center>
-							<a href="mailto:test@kallah.co" class="btn btn-xl" style="color:black;">Mail</a>
+							<a href="mailto:lasse_sortland@hotmail.com" class="btn btn-xl" style="color:black;">Mail</a>
 						</center>
 					</div>
                 </div>
@@ -221,5 +489,5 @@
     <script src="/js/agency.js"></script>
 
 
-    </body>
+  </body>
 </html>

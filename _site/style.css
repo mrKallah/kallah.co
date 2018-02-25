@@ -21,12 +21,28 @@ hr {
     padding: 0;
 }
 
+#myProgress {
+  width: 50%;
+  background-color: rgba(0,0,0,.25);
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
 
 
-body {
+html, body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #333;
+	  width: 100%;
+    background-color: lightgray;
 }
 
 .text-muted {
@@ -55,14 +71,14 @@ a.active {
 }
 
 a {
-    color: #fed136;
+    color: black;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #fec503;
+    color: black;
 }
 
 h1,
@@ -71,7 +87,7 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
+
     font-family: Montserrat, "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -294,7 +310,7 @@ header {
     color: #fff;
     background-attachment: scroll;
     background-image: url('/img/header-bg.jpg');
-    background-position: center center;
+    background-position: center bottom;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -317,7 +333,6 @@ header .intro-text .intro-lead-in {
 
 header .intro-text .intro-heading {
     margin-bottom: 25px;
-    text-transform: uppercase;
     font-family: Montserrat, "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 50px;
     font-weight: 700;
@@ -340,7 +355,6 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-heading {
         margin-bottom: 50px;
-        text-transform: uppercase;
         font-family: Montserrat, "Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 75px;
         font-weight: 700;
@@ -358,13 +372,35 @@ section h2.section-heading {
     font-size: 40px;
 }
 
-section h3.section-subheading {
+.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica,Arial,sans-serif;
+    //font-family: "Droid Serif", "Helvetica Neue", Helvetica,Arial,sans-serif;
     font-size: 16px;
-    font-style: italic;
+    //font-style: italic;
     font-weight: 400;
+}
+
+.paragraph{
+  color: black;
+  text-align: left;
+}
+
+.paragraphCentred{
+  color: black;
+  text-align: centered;
+}
+
+.gyazo_image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+b{
+  color: rgb(255, 140, 0);
+
 }
 
 @media(min-width:768px) {
