@@ -108,18 +108,17 @@
 
 
 
-    <!DOCTYPE html>
-<html>
+    
 <style>
 #myBar_1 {
-  width: 15%;
+  width: 20%;
 }
 #myBar_2 {
   width: 0.1%;
 }
 
 #myBar_3 {
-  width: 90%;
+  width: 40%;
 }
 
 #myBar_1 {
@@ -146,7 +145,6 @@
 
 
 </style>
-<body>
 
 <div class="col-lg-12 text-center">Total project progress</div>
 <div id="myProgress">
@@ -167,23 +165,48 @@
 <br>
 
 
-</body>
-</html>
+<div class="section-subheading text-muted">
 
+    
 
+    <div class="container">
+  <div class="col-lg-12 text-center">
+  <h1>Week 5</h1>
+    <h3 class="section-subheading text-muted">
 
+      <h4>What I have done this week (and a half)</h4>
+      <b>Programming</b>
+      <div class="paragraph">
+        Last week I worked on trying to implement my dataset as a tfrecord. This is mostly a undocumented thing that is a hell of not enough documentation coupled with ambiguous error messages which is then topped with a file structure that is unreadable to nothing but TF. This makes it so the only way you can make sure your tfrecord is structured correctly is to feed it into a CNN and pray. The problem however occurs if you cannot get the tfrecord to be read by your CNN as this makes it so you have to change your structure, however after about a week of research I have found no way to get the structure of the tfrecord file if you don’t know it beforehand. And as none of the TF objects have a tostring function it you have to guess what the appropriate structure is.
+
+        <br /><br />This week I have been working on spoofing a object that is in the tensorflow.contrib.learn.python.learn.datasets.mnist.dataset which is what most the tutorials use. This is a object that would do the same thing as the tfrecord based one, but I have given up on the whole idea of trying to figure them out, as I am starting to feel that will be impossible. This data object is trying to structure the dataset in the same manner as the MNIST dataset as the documentation for this object is rather good as a lot of third party tutorials use MNIST with the TF MNIST object. I have found that quite a bit of the documentation on TF is just a “tensorflow.some_object” that says “this is an object for ‘what_the_name_of_the_object_implies’, more information is found on this link: ‘A collection of objects quite similar to tensorflow.some_object’” and on link 2 it just says “this is an object for ‘doing what the filename implies but worded just slightly differently than on the other page’, which is documented here: “some object”.
+        <br /><br />I have also found a object that was marked as deprecated on the TF GitHub repo that wasn’t actually deprecated, and I have found object references to objects that doesn’t exist in TF and if that’s not enough I also found a reference to a object that I have been using for a while documenting it in a different way to what I use it, and when I tried it, it gave me errors about things not being the way they told me. All this on the official TensorFlow documentation webpage. A total utter disgrace!
+        <br /><br />I also met with someone else who does a project quite similar to mine and he said that he had been having the same problems with TF documentation in general and I gave him what I had on tfrecords as most of the tfrecord stuff I have is somewhat usable however from what I can tell impossible to structure correctly.
+        <br /><br />
+      </div>
+      <b>Documentation</b>
+      <div class="paragraph">I did my poster but that’s not this subject but here’s a link: <a href='/poster.pdf'><img src="https://i.gyazo.com/8b41df02272fa856d4cf366fc4cfd494.png" alt="Poster" width="100%" height="auto"></a></div>
+      <br /><br /><h4>My plans for this coming week</h4>
+      <b>Programming</b>
+      <div class="paragraph">
+        Get the CNN working by editing my dataset object, so it works with the TensorFlow Functions. Hopefully, when I bring some of my code to the meeting on Friday the ninth of march I will be able to have one of my errors explained and maybe I will be able to get it working over the weekend. This will be my only goal for this week, however, if I do get it real fast I will start working on optimaizing it with different techniques such as TF settings, image processing and different sizes and colors of the
+        <br /><br />I have also given up on using scrum and might try to use XP instead, but I have not decided fully yet, as I have been too busy trying to fix the dataset object which is my main holdback at the moment. Scrum is just too team based and I don’t feel like I am getting anything out of using it. However, I’m starting to feel like there is no methodology that is fit for working on a project where you are delving into a undocumented beast and trying to figure out what curse the spell maker cast upon my program by aligning sticks towards north and throwing pebbles in the water. Because right now it feels like it’s more like I am hacking something together than programming. And the problem is, I can’t do anything else as programming requires you to understand what you are doing, and understanding requires someone to tell you how it is done, which usually comes from some documentation which in this case is complete and utter rubbish.
+        <br /><br />Oh yeah, and maybe getting some documentation done too would be nice, but the main goal is to fix my dataset object.
+      </div>
+    </h3>
+  </div>
+</div>
 
     <div class="container">
   <div class="col-lg-12 text-center">
   <h1>Week 4</h1>
     <h3 class="section-subheading text-muted">
-      <div class="section-subheading text-muted">
-
-        <h4>My plans for this week</h4>
-        <b>HTML / Web stuff</b><br>
+      
+        <h4>My plans for this coming week</h4>
+        <b>Blog/html</b>
         <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. I also want to add a progress bar to keep up to date on a per week basis on the webpage. <br></a></div>
         <b>Programming</b><br>
-        <div class="paragraph">This week I aim to finish the Video to PNG converter, as I have realized that it crashes sometimes, so I have to look at that. I also have to look at the PNG to Array converter as it prints the array incorrectly. I also need to do some more commenting in all my python files that I have written so far, as they are a bit sparse. <br></div>
+        <div class="paragraph">This week I aim to finish the resize multiple images script, as I have realized that it crashes sometimes, so I have to look at that. I also have to look at the PNG to Array converter as it prints the array incorrectly. I also need to do some more commenting in all my python files that I have written so far, as they are a bit sparse. <br></div>
         <div class="paragraph">I also aim to get the outline of a CNN to work that I can build my project on. I’ll probably take a tutorial one, and add and change to it, but first I need to get one of the tutorial CNNs to work. I have also started to look into what activation functions I will use and I have set as a goal to have a plan for what to use where. <br></div>
         <b>Documentation</b><br>
         <div class="paragraph">I want to fill inn the ethics form and fill in the schedule, and I also aim to read the Project Report and Technical Work document. On top of that I want to finish the chapter on backgrounds. <br></div>
@@ -214,7 +237,6 @@
         <div class="paragraph"><br>I want to get the CNN to take my dataset and give me results that are of a acceptable grade! This means I need to figure out how to prepare the dataset so I can use it in TensorFlow. So far I have the ability to change the images from RGB to Greyscale and resizing them and for now I am thinking I’ll use 100pxl by 100pxl images that are greyscale. After I get that to work the first change I probably will do is to add the colors back in as colors have a lot to say in images and paintings, but for the testing phase I’ll use greyscale and most likely 100x100, though I might go lower than that for time concerns. <br></div>
         <b>Documentation</b><br>
         <div class="paragraph"><br>I want to finish the first chapter on background stuff regarding the CNNs and leave the Neural Style Transfer stuff for later. I want to do it like this so it is as fresh as possible in my mind<br></div>
-      </div>
     </h3>
   </div>
 </div>
@@ -281,117 +303,8 @@
                     <h2 class="section-heading">Code</h2>
                     <h3 class="section-subheading text-muted">
                       <div class="paragraph">
-                        A python script to resize images in ./img to a size of x by y into the folder /resized 
-                        <link rel="stylesheet" href="/code.css">
-
-                        <div class="hlcode">
-                        <div class="syntax"><pre>
-                        <span class="kn">import</span> <span class="nn">cv2</span>
-                        <span class="kn">import</span> <span class="nn">os</span>
-                        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-                        <span class="c1"># size of output images</span>
-                        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span>
-                        <span class="n">use_file_name</span> <span class="o">=</span> <span class="kc">False</span>
-                        <span class="n">name_convension</span> <span class="o">=</span> <span class="s2">"rand_"</span>
-
-                        <span class="c1"># Gets the current working directory</span>
-                        <span class="n">dir_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
-
-                        <span class="c1"># Gets the folder the images are in</span>
-                        <span class="n">input_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"img"</span><span class="p">)</span>
-
-                        <span class="c1"># gets the output path</span>
-                        <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">)</span>
-                        <span class="n">output_path_arr</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"text_array"</span><span class="p">)</span>
-
-                        <span class="c1"># creates the output path if it doesn't exist</span>
-                        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
-                            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
-                        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">):</span>
-                            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">)</span>
-
-                        <span class="c1"># resizes the input image to X by Y size</span>
-                        <span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-                        	<span class="nb">print</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span> <span class="c1">#prints filenames as it's processing it</span>
-                        	<span class="c1"># reads the input image from the relative path</span>
-                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">infile</span><span class="p">))</span>
-                        	<span class="c1"># resizes the image</span>
-                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
-                        	<span class="c1"># writes the image to the relative new path</span>
-                        	<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">,</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">.png"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">infilename</span><span class="p">)),</span> <span class="n">image</span><span class="p">)</span>
-                        	<span class="c1">#prints the image as a textfile in ./text_array</span>
-                        	<span class="n">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
-
-
-                        <span class="c1"># resizes the input image to X by Y size and make them grayscale</span>
-                        <span class="k">def</span> <span class="nf">resize_grayscale</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-                        	<span class="nb">print</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span> <span class="c1">#prints filenames as it's processing it</span>
-                        	<span class="c1"># reads the input image from the relative path</span>
-                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">infile</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
-                        	<span class="c1"># resizes the image</span>
-                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
-                        	<span class="c1"># writes the image to the relative new path</span>
-                        	<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">,</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">.png"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">infilename</span><span class="p">)),</span> <span class="n">image</span><span class="p">)</span>
-                        	<span class="c1">#prints the image as a textfile in ./text_array</span>
-                        	<span class="n">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
-
-                        <span class="c1"># Prints the image as a text array</span>
-                        <span class="k">def</span> <span class="nf">print_image_array_seperate_files</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
-                        	<span class="c1"># converts the file from image to a numpy array</span>
-                        	<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"int32"</span> <span class="p">)</span>
-
-                        	<span class="c1"># gets the current file name</span>
-                        	<span class="n">filename</span><span class="o">=</span><span class="p">(</span><span class="n">infilename</span> <span class="o">+</span> <span class="s2">".txt"</span><span class="p">)</span>
-                        	<span class="c1"># open the file</span>
-                        	<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span><span class="s1">'w'</span><span class="p">)</span> <span class="c1">#</span>
-                        	<span class="c1"># write data to file</span>
-                        	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-                        	<span class="c1"># close the file</span>
-                        	<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
-
-
-                        <span class="c1"># Prints the image as a text array</span>
-                        <span class="k">def</span> <span class="nf">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
-                        	<span class="c1"># converts the file from image to a numpy array</span>
-                        	<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"int32"</span> <span class="p">)</span>
-
-                        	<span class="c1"># write data to file</span>
-                        	<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">global_f</span><span class="p">,</span><span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">),</span><span class="n">fmt</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f</span><span class="s1">'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
-
-
-                        <span class="c1"># Gets the files in the directory into an array</span>
-                        <span class="n">files_in_input_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span>
-
-                        <span class="c1"># makes sure infile and infilename are global variables.</span>
-                        <span class="n">infile</span> <span class="o">=</span> <span class="s2">"a"</span>
-                        <span class="n">infilename</span> <span class="o">=</span> <span class="s2">"a"</span>
-
-                        <span class="c1"># gets the current file path and opens it as a global file</span>
-                        <span class="n">filename</span><span class="o">=</span><span class="p">(</span><span class="s2">"image_arrays"</span> <span class="o">+</span> <span class="s2">".txt"</span><span class="p">)</span>
-                        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-                        <span class="n">global_f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
-
-
-                        <span class="c1"># goes through all the input images and resizes and saves them</span>
-                        <span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
-                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">files_in_input_dir</span><span class="p">:</span>
-                        	<span class="c1"># gets the name of the current file with extension, eg. "test.png"</span>
-                        	<span class="n">infile</span> <span class="o">=</span> <span class="n">i</span>
-
-                        	<span class="c1"># removes the extension, eg. "test.png" =&gt; "test"</span>
-                        	<span class="k">if</span> <span class="n">use_file_name</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-                        		<span class="n">infilename</span> <span class="o">=</span> <span class="n">infile</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
-                        	<span class="k">else</span><span class="p">:</span>
-                        		<span class="n">infilename</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{0}{1}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name_convension</span><span class="p">,</span> <span class="n">iteration</span><span class="p">)</span>
-
-                        	<span class="c1"># calls the resize function to resize the file. Resize_grayscale for grayscale output and resize for RGB output</span>
-                        	<span class="n">resize_grayscale</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-                        	<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span> <span class="o">+</span> <span class="mi">1</span>
-                        <span class="n">global_f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-                        </pre></div>
-
-                        </div>
+                            A python script for resizing images and pringting them as arrays: <a href="/code/python/do_resize.html">link</a>
+                      </div>
                     <div>
                   </h3>
                 </div>

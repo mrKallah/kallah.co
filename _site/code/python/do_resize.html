@@ -1,0 +1,123 @@
+<!-- code Section -->
+    <section id="code">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="section-subheading text-muted">
+                      <div class="paragraph">
+                        <link rel="stylesheet" href="/code.css">
+
+                        <div class="hlcode">
+                        <div class="syntax"><pre>
+                        <span class="kn">import</span> <span class="nn">cv2</span>
+                        <span class="kn">import</span> <span class="nn">os</span>
+                        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+                        <span class="c1"># size of output images</span>
+                        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span><span class="mi">100</span>
+                        <span class="n">use_file_name</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="n">name_convension</span> <span class="o">=</span> <span class="s2">"rand_"</span>
+
+                        <span class="c1"># Gets the current working directory</span>
+                        <span class="n">dir_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+
+                        <span class="c1"># Gets the folder the images are in</span>
+                        <span class="n">input_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"img"</span><span class="p">)</span>
+
+                        <span class="c1"># gets the output path</span>
+                        <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">)</span>
+                        <span class="n">output_path_arr</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"text_array"</span><span class="p">)</span>
+
+                        <span class="c1"># creates the output path if it doesn't exist</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
+                            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">):</span>
+                            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">)</span>
+
+                        <span class="c1"># resizes the input image to X by Y size</span>
+                        <span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+                        	<span class="nb">print</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span> <span class="c1">#prints filenames as it's processing it</span>
+                        	<span class="c1"># reads the input image from the relative path</span>
+                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">infile</span><span class="p">))</span>
+                        	<span class="c1"># resizes the image</span>
+                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+                        	<span class="c1"># writes the image to the relative new path</span>
+                        	<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">,</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">.png"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">infilename</span><span class="p">)),</span> <span class="n">image</span><span class="p">)</span>
+                        	<span class="c1">#prints the image as a textfile in ./text_array</span>
+                        	<span class="n">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+
+
+                        <span class="c1"># resizes the input image to X by Y size and make them grayscale</span>
+                        <span class="k">def</span> <span class="nf">resize_grayscale</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+                        	<span class="nb">print</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span> <span class="c1">#prints filenames as it's processing it</span>
+                        	<span class="c1"># reads the input image from the relative path</span>
+                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">infile</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+                        	<span class="c1"># resizes the image</span>
+                        	<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+                        	<span class="c1"># writes the image to the relative new path</span>
+                        	<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s2">"resized"</span><span class="p">,</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">.png"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">infilename</span><span class="p">)),</span> <span class="n">image</span><span class="p">)</span>
+                        	<span class="c1">#prints the image as a textfile in ./text_array</span>
+                        	<span class="n">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+
+                        <span class="c1"># Prints the image as a text array</span>
+                        <span class="k">def</span> <span class="nf">print_image_array_seperate_files</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+                        	<span class="c1"># converts the file from image to a numpy array</span>
+                        	<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"int32"</span> <span class="p">)</span>
+
+                        	<span class="c1"># gets the current file name</span>
+                        	<span class="n">filename</span><span class="o">=</span><span class="p">(</span><span class="n">infilename</span> <span class="o">+</span> <span class="s2">".txt"</span><span class="p">)</span>
+                        	<span class="c1"># open the file</span>
+                        	<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span><span class="s1">'w'</span><span class="p">)</span> <span class="c1">#</span>
+                        	<span class="c1"># write data to file</span>
+                        	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+                        	<span class="c1"># close the file</span>
+                        	<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
+
+
+                        <span class="c1"># Prints the image as a text array</span>
+                        <span class="k">def</span> <span class="nf">print_image_array</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+                        	<span class="c1"># converts the file from image to a numpy array</span>
+                        	<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"int32"</span> <span class="p">)</span>
+
+                        	<span class="c1"># write data to file</span>
+                        	<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">global_f</span><span class="p">,</span><span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">),</span><span class="n">fmt</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f</span><span class="s1">'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+
+
+                        <span class="c1"># Gets the files in the directory into an array</span>
+                        <span class="n">files_in_input_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span>
+
+                        <span class="c1"># makes sure infile and infilename are global variables.</span>
+                        <span class="n">infile</span> <span class="o">=</span> <span class="s2">"a"</span>
+                        <span class="n">infilename</span> <span class="o">=</span> <span class="s2">"a"</span>
+
+                        <span class="c1"># gets the current file path and opens it as a global file</span>
+                        <span class="n">filename</span><span class="o">=</span><span class="p">(</span><span class="s2">"image_arrays"</span> <span class="o">+</span> <span class="s2">".txt"</span><span class="p">)</span>
+                        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path_arr</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+                        <span class="n">global_f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
+
+
+                        <span class="c1"># goes through all the input images and resizes and saves them</span>
+                        <span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">files_in_input_dir</span><span class="p">:</span>
+                        	<span class="c1"># gets the name of the current file with extension, eg. "test.png"</span>
+                        	<span class="n">infile</span> <span class="o">=</span> <span class="n">i</span>
+
+                        	<span class="c1"># removes the extension, eg. "test.png" =&gt; "test"</span>
+                        	<span class="k">if</span> <span class="n">use_file_name</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+                        		<span class="n">infilename</span> <span class="o">=</span> <span class="n">infile</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+                        	<span class="k">else</span><span class="p">:</span>
+                        		<span class="n">infilename</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{0}{1}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name_convension</span><span class="p">,</span> <span class="n">iteration</span><span class="p">)</span>
+
+                        	<span class="c1"># calls the resize function to resize the file. Resize_grayscale for grayscale output and resize for RGB output</span>
+                        	<span class="n">resize_grayscale</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+                        	<span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span> <span class="o">+</span> <span class="mi">1</span>
+                        <span class="n">global_f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                        </pre></div>
+
+                        </div>
+                    <div>
+                  </h3>
+                </div>
+            </div>
+        </div>
+    </section>
