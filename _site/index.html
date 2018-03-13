@@ -69,7 +69,6 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
 
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -111,10 +110,10 @@
     
 <style>
 #myBar_1 {
-  width: 20%;
+  width: 35%;
 }
 #myBar_2 {
-  width: 0.1%;
+  width: 90%;
 }
 
 #myBar_3 {
@@ -167,130 +166,177 @@
 
 <div class="section-subheading text-muted">
 
-    
 
-    <div class="container">
-  <div class="col-lg-12 text-center">
-  <h1>Week 5</h1>
-    <h3 class="section-subheading text-muted">
+    <section id="week6.1">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+    <h1>Week 6, Part 1</h1>
+      <h3 class="section-subheading text-muted">
 
-      <h4>What I have done this week (and a half)</h4>
-      <b>Programming</b>
-      <div class="paragraph">
-        Last week I worked on trying to implement my dataset as a tfrecord. This is mostly a undocumented thing that is a hell of not enough documentation coupled with ambiguous error messages which is then topped with a file structure that is unreadable to nothing but TF. This makes it so the only way you can make sure your tfrecord is structured correctly is to feed it into a CNN and pray. The problem however occurs if you cannot get the tfrecord to be read by your CNN as this makes it so you have to change your structure, however after about a week of research I have found no way to get the structure of the tfrecord file if you don’t know it beforehand. And as none of the TF objects have a tostring function it you have to guess what the appropriate structure is.
+        <h4>I did it! Finally, something is working! </h4>
 
-        <br /><br />This week I have been working on spoofing a object that is in the tensorflow.contrib.learn.python.learn.datasets.mnist.dataset which is what most the tutorials use. This is a object that would do the same thing as the tfrecord based one, but I have given up on the whole idea of trying to figure them out, as I am starting to feel that will be impossible. This data object is trying to structure the dataset in the same manner as the MNIST dataset as the documentation for this object is rather good as a lot of third party tutorials use MNIST with the TF MNIST object. I have found that quite a bit of the documentation on TF is just a “tensorflow.some_object” that says “this is an object for ‘what_the_name_of_the_object_implies’, more information is found on this link: ‘A collection of objects quite similar to tensorflow.some_object’” and on link 2 it just says “this is an object for ‘doing what the filename implies but worded just slightly differently than on the other page’, which is documented here: “some object”.
-        <br /><br />I have also found a object that was marked as deprecated on the TF GitHub repo that wasn’t actually deprecated, and I have found object references to objects that doesn’t exist in TF and if that’s not enough I also found a reference to a object that I have been using for a while documenting it in a different way to what I use it, and when I tried it, it gave me errors about things not being the way they told me. All this on the official TensorFlow documentation webpage. A total utter disgrace!
-        <br /><br />I also met with someone else who does a project quite similar to mine and he said that he had been having the same problems with TF documentation in general and I gave him what I had on tfrecords as most of the tfrecord stuff I have is somewhat usable however from what I can tell impossible to structure correctly.
-        <br /><br />
-      </div>
-      <b>Documentation</b>
-      <div class="paragraph">I did my poster but that’s not this subject but here’s a link: <a href='/poster.pdf'><img src="https://i.gyazo.com/7a7a554f7fecb40e94604c8b9f0d5fa2.png" alt="Poster" width="100%" height="auto"></a></div>
-      <br /><br /><h4>My plans for this coming week</h4>
-      <b>Programming</b>
-      <div class="paragraph">
-        Get the CNN working by editing my dataset object, so it works with the TensorFlow Functions. Hopefully, when I bring some of my code to the meeting on Friday the ninth of march I will be able to have one of my errors explained and maybe I will be able to get it working over the weekend. This will be my only goal for this week, however, if I do get it real fast I will start working on optimaizing it with different techniques such as TF settings, image processing and different sizes and colors of the
-        <br /><br />I have also given up on using scrum and might try to use XP instead, but I have not decided fully yet, as I have been too busy trying to fix the dataset object which is my main holdback at the moment. Scrum is just too team based and I don’t feel like I am getting anything out of using it. However, I’m starting to feel like there is no methodology that is fit for working on a project where you are delving into a undocumented beast and trying to figure out what curse the spell maker cast upon my program by aligning sticks towards north and throwing pebbles in the water. Because right now it feels like it’s more like I am hacking something together than programming. And the problem is, I can’t do anything else as programming requires you to understand what you are doing, and understanding requires someone to tell you how it is done, which usually comes from some documentation which in this case is complete and utter rubbish.
-        <br /><br />Oh yeah, and maybe getting some documentation done too would be nice, but the main goal is to fix my dataset object.
-      </div>
-    </h3>
+        <b>Blog/html</b> <br />
+        <div class="paragraph">I changed the about tab to have a bit more meat on what my project is all about and how it all works. I’ve also made it so that if you go to Kallah.co/#week3 you get moved to week3 and updated the feed.xml to also use this. I’ve also added last week’s post to the RSS feed as for some reason it was missing.  <br /><br />
+        </div>
+
+        <b>Programming</b> <br />
+        <div class="paragraph">I finally managed to get TensorFlow to accept my dataset object and thus run the entire program without any crashes. For the first time I ran the network with my own dataset of Kyffin Williams images vs my pictures. I had about 349 where 172 were Kyffin Williams and 175 were my random photographs. The images were divided into 70 test images, 208 training images and 71 validation images. The images were all 100x100 pixels and had no modifications to them. Some time, hopefully this week, I will input the same images again, however I will turn them 90, 180 and 270 degrees so I get all the images in different orientations. This should make the image set larger, and too the computer an image tilted 90 degrees is a vastly different image. <br /><br />
+        The first results gave me an accuracy of 72.9% on the Test-Set with 1000 iterations. I am not too happy about this accuracy, however that gives me some margin to improve! From the image bellow you can see that the accuracy spikes very quickly on the training set when I print each 100 iterations, and I will probably go more in detail on what happens within each optimization iteration later. However, for now, all I know is that I most likely, with 1000 iterations on only 350 images I am overtraining the network. This can be solved by adding more images to my dataset, which I’d love to, but I’ve been having some trouble getting the rights to publishing the images in my dataset. <br /><br />
+        <img src="https://i.gyazo.com/a1c31ece68d56c48b74c5575a41dd015.png" alt="https://i.gyazo.com/a1c31ece68d56c48b74c5575a41dd015.png" class="transparent"><br /><br />
+        The next image is a picture I took of my mum and dad in Macao last year, I have resized it to 100x100 and made it greyscale. The next two images will use this as a baseline. <br /><br />
+        <img src="https://i.gyazo.com/36c10f1c57f9ac1c6d821d4dbcdbd188.png" alt="https://i.gyazo.com/36c10f1c57f9ac1c6d821d4dbcdbd188.png" class="transparent"><br /><br />
+        On this image below, the filter, or neuron, from the first convolution layer of the CNN has been applied to the image. This makes for some pretty psychedelic effects but that’s not the point. What this highlight is what the different filters in this stage are doing too the image to make it more recognizable for the network. If you look at the bottom right image, you can see it’s a pretty good edge detector for humans, and two above that one there’s an all-around detector. What I am guessing is that the bottom right has ended up as a vertical line detector (if you don’t know what that is it’s pretty well explaned here: <a href=”https://homepages.inf.ed.ac.uk/rbf/HIPR2/linedet.htm”>link</a>) and that the one above is an any line detector. <br /><br />
+        <img src="https://i.gyazo.com/809c94e0ac2697def46ee0fc4ff56d73.png" alt="https://i.gyazo.com/809c94e0ac2697def46ee0fc4ff56d73.png" class="transparent"><br /><br />
+        On the next image, the neuron from the second convolutional layer has been applied to the images and you can see they are becoming less like the image that we recognize and more like a negative or something like that. <br /><br />
+        <img src="https://i.gyazo.com/1c70685069927494728458abf6b347ba.png" alt="https://i.gyazo.com/1c70685069927494728458abf6b347ba.png" class="transparent"><br /><br />
+        Unfortunately, I was unable to screengrab any of the images of the convolutional layers however they look pretty similar to the one below, but the one bellow is from Hvass-Labs (<a href=””>link</a>) where he has trained the network to detect numbers and this is the second convolutional layer from that. In that image the pixels have been assigned to being blue if they have a negative reaction to black pixels and red if they have a positive reaction to black pixels. <br /><br />
+        <img style="-webkit-user-select: none;background-position: 0px 0px, 10px 10px;background-size: 20px 20px;background-image:linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);" src="https://i.gyazo.com/c42b956a6bd8fdea368af92f83d2be36.png"><br /><br />
+        In that image we can see some things such as left side 3 down is pretty much a diagonal line detector and same with the bottom second to the left. This, however, doesn’t tell us anything about the data in my network however I will have a more in-depth post about this later. First, I have a demonstration this week to prepare and I also have to make a post about my data object so other people might use it as well<br /><br />
+        </div>
+
+        <b>Honorable mentions </b><br />
+        <div class="paragraph">I have also remade my github repo and deleted my old one as it was turning into a disorganized mess of conflicting copies and bad file names. I think starting from scratch might have saved me some headache in the future! <br /><br />
+        I have also moved my data class out of my main program and made it separate file with all the functions related to the data in said file. This has made my program quite a bit more readable and so I have had a lot easier time debugging and hacking away on the TensorFlow stuff<br /><br />
+        I have also been removing a lot of old print functions, comments and variables that aren’t in use anymore but have still been left in the code. Like a hundred variables called test_something which I’ve been using for testing purposes. <br /><br />
+        I’ve also been looking at a lot of the TensorFlow source code as I’ve come to the idea that there is no way to understand anything from the official documentation so reading the source code is the best way.
+        Lastly I think I’ve discontinued Windows 10 support as I am using the scikit-learn package which is apparently really hard to get working with Windows 10, and I’m not about to spend time figuring that out for no real good reason! <br /><br />
+        </div>
+
+      </h3>
+    </div>
   </div>
-</div>
+</section>
 
-    <div class="container">
-  <div class="col-lg-12 text-center">
-  <h1>Week 4</h1>
-    <h3 class="section-subheading text-muted">
-      
-        <h4>My plans for this coming week</h4>
-        <b>Blog/html</b>
-        <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. I also want to add a progress bar to keep up to date on a per week basis on the webpage. <br></a></div>
-        <b>Programming</b><br>
-        <div class="paragraph">This week I aim to finish the resize multiple images script, as I have realized that it crashes sometimes, so I have to look at that. I also have to look at the PNG to Array converter as it prints the array incorrectly. I also need to do some more commenting in all my python files that I have written so far, as they are a bit sparse. <br></div>
-        <div class="paragraph">I also aim to get the outline of a CNN to work that I can build my project on. I’ll probably take a tutorial one, and add and change to it, but first I need to get one of the tutorial CNNs to work. I have also started to look into what activation functions I will use and I have set as a goal to have a plan for what to use where. <br></div>
-        <b>Documentation</b><br>
-        <div class="paragraph">I want to fill inn the ethics form and fill in the schedule, and I also aim to read the Project Report and Technical Work document. On top of that I want to finish the chapter on backgrounds. <br></div>
-        <h4>What I have done this week</h4>
-        <b>Blog/html</b><br>
-        <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. Lastly I added a progress bar to keep up to date on a per week basis on the webpage.<br></div>
-        <b>Programming</b><br>
-        <div class="paragraph">I found out that the PNG converter didn’t have an error but one of the image files I fed it was corrupt and when I removed that I had no problems with it. The problem with the array converter was that it printed the arrays like this:<br></div>
-        <br><div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-        <div class="paragraphCentred">. <br></div>
-        <div class="paragraphCentred">. <br></div>
-        <div class="paragraphCentred">. <br></div>
-        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-        <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div><br>
-        <div class="paragraph">I’ve commented all the converter files and I have also added a few more options such as an option to give all output files the same name but with an increasing index numbers eg. img_0, img_1, img_2… and not only the previous inherit the filename. <br></div>
-        <div class="paragraph">On the subject of activation functions I have decided that on the hidden layers I will use ReLU as Sigmoid and Tanh both suffer from a problem where they cause the gradient to vanish and Sigmoid is also not zero centered. I have decided on ReLU as it has a big foothold in the CNN community as it is the most popular one at the moment because of its speed and accuracy. However it has a problem where some neurons can die in the training process. This could be fixed with a Leaky ReLU but that has a much higher time complexity and therefor I will not be using that one unless I experience lots of dead neurons during training.  In Krizhevsky, Sutskever and Hinton’s paper, ImageNet Classification with Deep Convolutional Neural Networks they found it had a 6x improvement in convergence over Tanh <a href=" https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf ">Link to paper</a> <br></div>
-        <div class="paragraph">For the activation layers I will use SoftMax for the output layer as SoftMax it gives probability for different classes and from that I can determine the best by choosing the highest one. I want the probabilities so I can see the outputs and use the data I get back to tune the CNN<br></div>
-        <div class="paragraph">I got one of the CNNs to work this week on the MNIST dataset and it classify numbers with a high accuracy. I have also found the reason I have been having so many problems getting the CNN tutorials to work is because when I used sudo pip3 install matplotlib something must have gone wrong without me noticing and I didn’t do anything to fix it. When I uninstalled and reinstalled matplotlib it worked and someone online said it might have to do with the fact that I didn’t install the matplotlib before the NumPy library which somehow could give troubles for matplotlib but it was rare. But that’s from some random forum so I don’t know how true it was, but it worked. So, now I just hope I don’t get any more weird errors such as a “WhateverExeption” and what not as I have been going crazy trying to figure out why nothing worked!<br></div>
-        <b>Documentation</b><br>
-        <div class="paragraph">Ethics I have finished the ethics and handed it in on the Turn It In site. I have also read the breakdown of grades and below are a filled in form for the schedule.<br></div>
-        <img class="gyazo_image" src="https://i.gyazo.com/b23cb8d0f100eab55f6ebb84f69b9f20.png" style="visibility: visible; max-width: 465px; max-height: 100%;" <br>
-        <div class="paragraph">I have decided not to do the chapter on background as I haven’t finished reading about Neural Style Transfer, and I have been a bit low on time this week, as I spent until Friday at 3:40AM to find out that the problems I have been having are due to a matplotlib issue and not a things are outdated issue. <br></div>
-        <h4>My plans for next week</h4>
-        <b>Programming</b><br>
-        <div class="paragraph"><br>I want to get the CNN to take my dataset and give me results that are of a acceptable grade! This means I need to figure out how to prepare the dataset so I can use it in TensorFlow. So far I have the ability to change the images from RGB to Greyscale and resizing them and for now I am thinking I’ll use 100pxl by 100pxl images that are greyscale. After I get that to work the first change I probably will do is to add the colors back in as colors have a lot to say in images and paintings, but for the testing phase I’ll use greyscale and most likely 100x100, though I might go lower than that for time concerns. <br></div>
-        <b>Documentation</b><br>
-        <div class="paragraph"><br>I want to finish the first chapter on background stuff regarding the CNNs and leave the Neural Style Transfer stuff for later. I want to do it like this so it is as fresh as possible in my mind<br></div>
-    </h3>
+    <section id="week5">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+    <h1>Week 5</h1>
+      <h3 class="section-subheading text-muted">
+
+        <h4>What I have done this week (and a half)</h4>
+        <b>Programming</b>
+        <div class="paragraph">
+          Last week I worked on trying to implement my dataset as a tfrecord. This is mostly a undocumented thing that is a hell of not enough documentation coupled with ambiguous error messages which is then topped with a file structure that is unreadable to nothing but TF. This makes it so the only way you can make sure your tfrecord is structured correctly is to feed it into a CNN and pray. The problem however occurs if you cannot get the tfrecord to be read by your CNN as this makes it so you have to change your structure, however after about a week of research I have found no way to get the structure of the tfrecord file if you don’t know it beforehand. And as none of the TF objects have a tostring function it you have to guess what the appropriate structure is.
+
+          <br /><br />This week I have been working on spoofing a object that is in the tensorflow.contrib.learn.python.learn.datasets.mnist.dataset which is what most the tutorials use. This is a object that would do the same thing as the tfrecord based one, but I have given up on the whole idea of trying to figure them out, as I am starting to feel that will be impossible. This data object is trying to structure the dataset in the same manner as the MNIST dataset as the documentation for this object is rather good as a lot of third party tutorials use MNIST with the TF MNIST object. I have found that quite a bit of the documentation on TF is just a “tensorflow.some_object” that says “this is an object for ‘what_the_name_of_the_object_implies’, more information is found on this link: ‘A collection of objects quite similar to tensorflow.some_object’” and on link 2 it just says “this is an object for ‘doing what the filename implies but worded just slightly differently than on the other page’, which is documented here: “some object”.
+          <br /><br />I have also found a object that was marked as deprecated on the TF GitHub repo that wasn’t actually deprecated, and I have found object references to objects that doesn’t exist in TF and if that’s not enough I also found a reference to a object that I have been using for a while documenting it in a different way to what I use it, and when I tried it, it gave me errors about things not being the way they told me. All this on the official TensorFlow documentation webpage. A total utter disgrace!
+          <br /><br />I also met with someone else who does a project quite similar to mine and he said that he had been having the same problems with TF documentation in general and I gave him what I had on tfrecords as most of the tfrecord stuff I have is somewhat usable however from what I can tell impossible to structure correctly.
+          <br /><br />
+        </div>
+        <b>Documentation</b>
+        <div class="paragraph">I did my poster but that’s not this subject but here’s a link: <a href='/poster.pdf'><img src="https://i.gyazo.com/7a7a554f7fecb40e94604c8b9f0d5fa2.png" alt="Poster" width="100%" height="auto"></a></div>
+        <br /><br /><h4>My plans for this coming week</h4>
+        <b>Programming</b>
+        <div class="paragraph">
+          Get the CNN working by editing my dataset object, so it works with the TensorFlow Functions. Hopefully, when I bring some of my code to the meeting on Friday the ninth of march I will be able to have one of my errors explained and maybe I will be able to get it working over the weekend. This will be my only goal for this week, however, if I do get it real fast I will start working on optimaizing it with different techniques such as TF settings, image processing and different sizes and colors of the
+          <br /><br />I have also given up on using scrum and might try to use XP instead, but I have not decided fully yet, as I have been too busy trying to fix the dataset object which is my main holdback at the moment. Scrum is just too team based and I don’t feel like I am getting anything out of using it. However, I’m starting to feel like there is no methodology that is fit for working on a project where you are delving into a undocumented beast and trying to figure out what curse the spell maker cast upon my program by aligning sticks towards north and throwing pebbles in the water. Because right now it feels like it’s more like I am hacking something together than programming. And the problem is, I can’t do anything else as programming requires you to understand what you are doing, and understanding requires someone to tell you how it is done, which usually comes from some documentation which in this case is complete and utter rubbish.
+          <br /><br />Oh yeah, and maybe getting some documentation done too would be nice, but the main goal is to fix my dataset object.
+        </div>
+      </h3>
+    </div>
   </div>
-</div>
+</section>
 
-            <div class="container">
-			<div class="col-lg-12 text-center">
-					<h1>Week 3</h1>
-					<h3 class="section-subheading text-muted">
-            <b>Problems, problems and more problems</b><br>
-						<div class="paragraph">After a few days of trying to install both python3.5 and python 2.7 with TensorFlow’s NVIDIA Cuda tools having been stuck with trying to get the NVIDIA-Cuda-tools installed in a way that is compatible with TensorFlow. I have found that Cuda on Ubuntu does not work as you might expect. If you have more than one GPU you can get into some serious problems getting the Cuda tools to work. As long as you have two GPUs from different brands, say a NVIDIA graphics driver, coupled with an integrated graphics card in the CPU from Intel, the Cuda will not work on your system. The Cuda is apparently unable to cope with any ubuntu based system that has such a setup even if you manually disable either the standalone or the integrated GPU. I have not looked into this on pc, but I am currently using Ubuntu, so I have decided to go for the CPU limited way, at least for now. It’s a huge relief to finally start working and not having to work on the hell that is trying to figure out why things aren’t working by some cryptic error message.
-						<br><br>I have also started to note down things needed to be in the installer as I go, and I am still not 100% sure if I will end up using python 3 or python 2.7 but as of now I am thinking that unless I find any good reason not to use python 3 I will continue to use it.
-						<br><br>I have also started to do some work on implementing some stuff into code and I have been writing a classifier for the MNIST dataset to learn a bit more about how to do the actual implementation of the work into code. This has been an ok process where I have followed tutorials and I have learned a lot from this. One problem I keep jumping into is redundant processes where someone has done something a year or two ago and when I implement their code it gives me error where it’s been made redundant but it has no pointers to what it has been replaced by so I have had to restart a few times, and that makes me a bit weary to how TensorFlow updates and makes your code redundant.
-						<br><br>I have also written two smaller scripts, one to resize a batch of images from one size to another and one that takes an image as input and prints it as an array. My aim with them, is to use those to resize the images in the datasets to a uniform size and then process them and then create a file that contains all the images as an array of images, but I haven’t gotten around to the point of making the script write the files yet as I haven’t decided on a file format.
-						<br><br>Anyways here’s a gif of the program running on windows, just because I had one:<br></div>
-						<br><video class="image-viewer vertical" poster="https://thumb.gyazo.com/thumb/542_w/_979036a647a35051dd788b26f89ba0d3-gif.jpg" autoplay="" playsinline="" loop="" style="max-width: 542px; max-height: 100%;"><source src="https://i.gyazo.com/018ecd69a5c66f1142820efbaea08dfd.mp4" type="video/mp4"></video>
-					</h3>
-                </div>
+    <section id="week4">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+    <h1>Week 4</h1>
+      <h3 class="section-subheading text-muted">
+
+          <h4>My plans for this coming week</h4>
+          <b>Blog/html</b>
+          <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. I also want to add a progress bar to keep up to date on a per week basis on the webpage. <br></a></div>
+          <b>Programming</b><br>
+          <div class="paragraph">This week I aim to finish the resize multiple images script, as I have realized that it crashes sometimes, so I have to look at that. I also have to look at the PNG to Array converter as it prints the array incorrectly. I also need to do some more commenting in all my python files that I have written so far, as they are a bit sparse. <br></div>
+          <div class="paragraph">I also aim to get the outline of a CNN to work that I can build my project on. I’ll probably take a tutorial one, and add and change to it, but first I need to get one of the tutorial CNNs to work. I have also started to look into what activation functions I will use and I have set as a goal to have a plan for what to use where. <br></div>
+          <b>Documentation</b><br>
+          <div class="paragraph">I want to fill inn the ethics form and fill in the schedule, and I also aim to read the Project Report and Technical Work document. On top of that I want to finish the chapter on backgrounds. <br></div>
+          <h4>What I have done this week</h4>
+          <b>Blog/html</b><br>
+          <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. Lastly I added a progress bar to keep up to date on a per week basis on the webpage.<br></div>
+          <b>Programming</b><br>
+          <div class="paragraph">I found out that the PNG converter didn’t have an error but one of the image files I fed it was corrupt and when I removed that I had no problems with it. The problem with the array converter was that it printed the arrays like this:<br></div>
+          <br><div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+          <div class="paragraphCentred">. <br></div>
+          <div class="paragraphCentred">. <br></div>
+          <div class="paragraphCentred">. <br></div>
+          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
+          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div><br>
+          <div class="paragraph">I’ve commented all the converter files and I have also added a few more options such as an option to give all output files the same name but with an increasing index numbers eg. img_0, img_1, img_2… and not only the previous inherit the filename. <br></div>
+          <div class="paragraph">On the subject of activation functions I have decided that on the hidden layers I will use ReLU as Sigmoid and Tanh both suffer from a problem where they cause the gradient to vanish and Sigmoid is also not zero centered. I have decided on ReLU as it has a big foothold in the CNN community as it is the most popular one at the moment because of its speed and accuracy. However it has a problem where some neurons can die in the training process. This could be fixed with a Leaky ReLU but that has a much higher time complexity and therefor I will not be using that one unless I experience lots of dead neurons during training.  In Krizhevsky, Sutskever and Hinton’s paper, ImageNet Classification with Deep Convolutional Neural Networks they found it had a 6x improvement in convergence over Tanh <a href=" https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf ">Link to paper</a> <br></div>
+          <div class="paragraph">For the activation layers I will use SoftMax for the output layer as SoftMax it gives probability for different classes and from that I can determine the best by choosing the highest one. I want the probabilities so I can see the outputs and use the data I get back to tune the CNN<br></div>
+          <div class="paragraph">I got one of the CNNs to work this week on the MNIST dataset and it classify numbers with a high accuracy. I have also found the reason I have been having so many problems getting the CNN tutorials to work is because when I used sudo pip3 install matplotlib something must have gone wrong without me noticing and I didn’t do anything to fix it. When I uninstalled and reinstalled matplotlib it worked and someone online said it might have to do with the fact that I didn’t install the matplotlib before the NumPy library which somehow could give troubles for matplotlib but it was rare. But that’s from some random forum so I don’t know how true it was, but it worked. So, now I just hope I don’t get any more weird errors such as a “WhateverExeption” and what not as I have been going crazy trying to figure out why nothing worked!<br></div>
+          <b>Documentation</b><br>
+          <div class="paragraph">Ethics I have finished the ethics and handed it in on the Turn It In site. I have also read the breakdown of grades and below are a filled in form for the schedule.<br></div>
+          <img class="gyazo_image" src="https://i.gyazo.com/b23cb8d0f100eab55f6ebb84f69b9f20.png" style="visibility: visible; max-width: 465px; max-height: 100%;" <br>
+          <div class="paragraph">I have decided not to do the chapter on background as I haven’t finished reading about Neural Style Transfer, and I have been a bit low on time this week, as I spent until Friday at 3:40AM to find out that the problems I have been having are due to a matplotlib issue and not a things are outdated issue. <br></div>
+          <h4>My plans for next week</h4>
+          <b>Programming</b><br>
+          <div class="paragraph"><br>I want to get the CNN to take my dataset and give me results that are of a acceptable grade! This means I need to figure out how to prepare the dataset so I can use it in TensorFlow. So far I have the ability to change the images from RGB to Greyscale and resizing them and for now I am thinking I’ll use 100pxl by 100pxl images that are greyscale. After I get that to work the first change I probably will do is to add the colors back in as colors have a lot to say in images and paintings, but for the testing phase I’ll use greyscale and most likely 100x100, though I might go lower than that for time concerns. <br></div>
+          <b>Documentation</b><br>
+          <div class="paragraph"><br>I want to finish the first chapter on background stuff regarding the CNNs and leave the Neural Style Transfer stuff for later. I want to do it like this so it is as fresh as possible in my mind<br></div>
+      </h3>
+    </div>
+  </div>
+</section>
+
+    <section id="week3">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+    <h1>Week 3</h1>
+      <h3 class="section-subheading text-muted">
+        <b>Problems, problems and more problems</b><br>
+        <div class="paragraph">After a few days of trying to install both python3.5 and python 2.7 with TensorFlow’s NVIDIA Cuda tools having been stuck with trying to get the NVIDIA-Cuda-tools installed in a way that is compatible with TensorFlow. I have found that Cuda on Ubuntu does not work as you might expect. If you have more than one GPU you can get into some serious problems getting the Cuda tools to work. As long as you have two GPUs from different brands, say a NVIDIA graphics driver, coupled with an integrated graphics card in the CPU from Intel, the Cuda will not work on your system. The Cuda is apparently unable to cope with any ubuntu based system that has such a setup even if you manually disable either the standalone or the integrated GPU. I have not looked into this on pc, but I am currently using Ubuntu, so I have decided to go for the CPU limited way, at least for now. It’s a huge relief to finally start working and not having to work on the hell that is trying to figure out why things aren’t working by some cryptic error message.
+        <br><br>I have also started to note down things needed to be in the installer as I go, and I am still not 100% sure if I will end up using python 3 or python 2.7 but as of now I am thinking that unless I find any good reason not to use python 3 I will continue to use it.
+        <br><br>I have also started to do some work on implementing some stuff into code and I have been writing a classifier for the MNIST dataset to learn a bit more about how to do the actual implementation of the work into code. This has been an ok process where I have followed tutorials and I have learned a lot from this. One problem I keep jumping into is redundant processes where someone has done something a year or two ago and when I implement their code it gives me error where it’s been made redundant but it has no pointers to what it has been replaced by so I have had to restart a few times, and that makes me a bit weary to how TensorFlow updates and makes your code redundant.
+        <br><br>I have also written two smaller scripts, one to resize a batch of images from one size to another and one that takes an image as input and prints it as an array. My aim with them, is to use those to resize the images in the datasets to a uniform size and then process them and then create a file that contains all the images as an array of images, but I haven’t gotten around to the point of making the script write the files yet as I haven’t decided on a file format.
+        <br><br>Anyways here’s a gif of the program running on windows, just because I had one:<br></div>
+        <br><video class="image-viewer vertical" poster="https://thumb.gyazo.com/thumb/542_w/_979036a647a35051dd788b26f89ba0d3-gif.jpg" autoplay="" playsinline="" loop="" style="max-width: 542px; max-height: 100%;"><source src="https://i.gyazo.com/018ecd69a5c66f1142820efbaea08dfd.mp4" type="video/mp4"></video>
+      </h3>
+    </div>
+  </div>
+<section>
+
+    <section id="week2">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+    <h1>Week 2</h1>
+      <h3 class="section-subheading text-muted">
+        <b>Setting up shop</b><br>
+        <div class="paragraph">
+        This week I have mostly looked at the TensorFlow library and numpy, matplotlib and pylab to get a better understanding of the libraries I will be using over the next few weeks. I have started working on a schedule of what I want to get done per week and I want to be able to follow a structured plan, so I have a goal for each week that I should be able to do. In my first post I set 7 steps of what I wanted to do, and I will aim to get to step 5 and then if I manage to work past my own schedule I will start working on 6 and 7 when I can. In the meeting today, I said I had contacted Bob Rosses copyright holders and asked for permission to use his painting in my work, you mentioned to contact the copyright holders for Hockney to see if they wanted to give me permissions to use his paintings too. Last week you also gave me the set of pictures for the same artist the student before me used to do his project.
+        <br><br>This week I have also worked a bit on getting the blog up and going as that has been giving me a bit of grief. However, the account on my site has finally been fixed and I can now start posting here, rather than using a word document locally on my pc.
         </div>
+      </h3>
+    </div>
+  </div>
+</section>
 
-            <div class="container">
-			<div class="col-lg-12 text-center">
-					<h1>Week 2</h1>
-					<h3 class="section-subheading text-muted">
-
-
-              <b>Setting up shop</b><br>
-            <div class="paragraph">
-              This week I have mostly looked at the TensorFlow library and numpy, matplotlib and pylab to get a better understanding of the libraries I will be using over the next few weeks. I have started working on a schedule of what I want to get done per week and I want to be able to follow a structured plan, so I have a goal for each week that I should be able to do. In my first post I set 7 steps of what I wanted to do, and I will aim to get to step 5 and then if I manage to work past my own schedule I will start working on 6 and 7 when I can. In the meeting today, I said I had contacted Bob Rosses copyright holders and asked for permission to use his painting in my work, you mentioned to contact the copyright holders for Hockney to see if they wanted to give me permissions to use his paintings too. Last week you also gave me the set of pictures for the same artist the student before me used to do his project.
-						<br><br>This week I have also worked a bit on getting the blog up and going as that has been giving me a bit of grief. However, the account on my site has finally been fixed and I can now start posting here, rather than using a word document locally on my pc.
-          </div>
-          </h3>
-                </div>
+    <section id="week1">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+      <h1>Week 1</h1>
+      <h3 class="section-subheading text-muted">
+        <b>What I plan to do for my project?</b>
+        <div class="paragraph">
+          <br>For my project I aim to make a program that can take an input image of a painting and use a CNN to determine weather or not it was made by a specific artist. I aim to use multiple artists and have a “Bob Ross classifier” and a “Picasso classifier” etc. At the later stages of the project, if time allows I then wish to be able to add two more functionalities: One is Neural Style Transfer so I can put an image of anything into the Bob Ross (or any of the others) classifier and then get a Bob Ross painting out of it that still is an image of the hand but in the style of Bob Ross. The second functionality I then wish to add is to make the CNN then be able to take one image as a input from one artist and then detect if a second image is by that same artist using a Boolean classifier. I aim for the project to have some dependencies, mainly TensorFlow, which means I will write it in Python and so I have to spend some time brushing up on python these first weeks, to learn everything Python and TensorFlow related. For the project I hope to be able to have an installer which installs the appropriate packages and an interface to run it without using command line. For my priorities I have
+          <br><br>1. Create the classifiers.
+          <br>2. Create the installer.
+          <br>3. Create the interface.
+          <br>4. Add the neural style transfer functionality.
+          <br>5. Add the neural style transfer to the interface.
+          <br>6. Add the any painting detector functionality.
+          <br>7. Add the any painting to the interface.<br>
+          <br>I don’t think I will be able to complete all these tasks but I want to aim as high as possible, so I can continue to work, even when I finish one part so I don’t get stuck the last weeks of the project trying to polish the classifiers to get 3-4% better classification out of them.
+          <br><br><i>This was written in the first week and edited later to give it more sense.</i>
         </div>
-
-            <div class="container">
-			<div class="col-lg-12 text-center">
-					<h1>Week 1</h1>
-					<h3 class="section-subheading text-muted">
-						<b>What I plan to do for my project?</b>
-            <div class="paragraph">
-						<br>For my project I aim to make a program that can take an input image of a painting and use a CNN to determine weather or not it was made by a specific artist. I aim to use multiple artists and have a “Bob Ross classifier” and a “Picasso classifier” etc. At the later stages of the project, if time allows I then wish to be able to add two more functionalities: One is Neural Style Transfer so I can put an image of anything into the Bob Ross (or any of the others) classifier and then get a Bob Ross painting out of it that still is an image of the hand but in the style of Bob Ross. The second functionality I then wish to add is to make the CNN then be able to take one image as a input from one artist and then detect if a second image is by that same artist using a Boolean classifier. I aim for the project to have some dependencies, mainly TensorFlow, which means I will write it in Python and so I have to spend some time brushing up on python these first weeks, to learn everything Python and TensorFlow related. For the project I hope to be able to have an installer which installs the appropriate packages and an interface to run it without using command line. For my priorities I have
-						<br><br>1. Create the classifiers.
-						<br>2. Create the installer.
-						<br>3. Create the interface.
-						<br>4. Add the neural style transfer functionality.
-						<br>5. Add the neural style transfer to the interface.
-						<br>6. Add the any painting detector functionality.
-						<br>7. Add the any painting to the interface.<br>
-						<br>I don’t think I will be able to complete all these tasks but I want to aim as high as possible, so I can continue to work, even when I finish one part so I don’t get stuck the last weeks of the project trying to polish the classifiers to get 3-4% better classification out of them.
-						<br><br><i>This was written in the first week and edited later to give it more sense.</i>
-          </div>
-					</h3>
-                </div>
-        </div>
+      </h3>
+    </div>
+  </div>
+</section>
 
 
     </section>
@@ -323,8 +369,31 @@
                     <h2 class="section-heading">About</h2>
                     <h3 class="section-subheading text-muted">
                       <div class="paragraph">
-                        This is a site set up for my bachelor that I will update on what
-                        I do, things I find interesting and generally what I think about the project.
+                        On this site I will post about work I do. Currently I am working on my dissertation which and most of my posts will be about TensorFlow. <br /><br />
+
+                        My project is about using a TensorFlow Convolutional Neural Network to detect if an input image A is of class X or Y. This is being done by taking
+                        a filter, also called a neuron, which you can imagine as a laser pointer that gets moved along the input image A. As it shines its laser on the image
+                        the image, much like a CD (if anyone still knows what those are), the image reflects some information back to the laser. This changes the way the laser
+                        shines in the future by adjusting its weights, for this example maybe color and brightness of the laser. It then by shinning on a lot of images that it
+                        already knows whether or not is of a specific type it can learn what patterns fits to what classifiers. You then take a bunch of these torches and you
+                        tape them in pairs and in serial which leaves you with something that in some cases, provided enough data and time to train, can give really good results. <br /><br />
+
+                        The bulk of my project so far has been on developing a data class which lets you load the images into TensorFlow without all the fuss that is related to creating,
+                        packaging and opening. tfrecord files as they are an absolute mess to work with. <br /><br />
+
+                        In the next iterations of my program I will focus on being able to save and load the neurons from my CNN, so I don’t have to train the Network every time I run it.
+                        At some point I aim to add Neural Style Transfer to it as well so I can input some image A and B and have the output be a mixture of the style of A but the general look
+                        of B. So say A is a Picasso painting and B is a picture of a dog, this will lead to an output image which is a picture of a dog in the style of Picasso.  <br /> <br /><br />
+
+                        <b>Dictionary</b> <br />
+                        CNN = Convolutional Neural Network <br />
+                        NST = Neural Style Transfer <br />
+                        np = NumPy <br />
+                        np_array = Numpy Array <br />
+                        TF = TensorFlow <br />
+                        TF.learn / TF.learn.dataset / TF dataset object = tensorflow.contrib.learn.python.learn.datasets.mnist.dataset <br />
+
+
                     <div>
                   </h3>
                 </div>

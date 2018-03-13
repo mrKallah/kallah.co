@@ -12,36 +12,55 @@
 
     <item>
       <title>Week 1</title>
-      <link>http://kallah.co/#posts</link>
-      <guid>http://kallah.co/#posts</guid>
+      <link>http://kallah.co/#week1</link>
+      <guid>http://kallah.co/#week1</guid>
       <pubDate>Wed, 07 Feb 2018 15:06:41 GMT</pubDate>
       <description>[CDATA[ Week 1: What I plan to do for my project? ]]</description>
     </item>
 
     <item>
       <title>Week 2</title>
-      <link>http://kallah.co/#posts</link>
-      <guid>http://kallah.co/#posts</guid>
+      <link>http://kallah.co/#week2</link>
+      <guid>http://kallah.co/#week2</guid>
       <pubDate>Wed, 07 Feb 2018 15:09:23 GMT</pubDate>
       <description>[CDATA[ Week 2: Setting up shop ]]</description>
     </item>
 
     <item>
       <title>Week 3</title>
-      <link>http://kallah.co/#posts</link>
-      <guid>http://kallah.co/#posts</guid>
+      <link>http://kallah.co/#week3</link>
+      <guid>http://kallah.co/#week3</guid>
       <pubDate>Wed, 19 Feb 2018 09:53:12 GMT</pubDate>
       <description>[CDATA[ Week 3: Problems, problems and more problems ]]</description>
     </item>
 
     <item>
       <title>Week 4</title>
-      <link>http://kallah.co/#posts</link>
-      <guid>http://kallah.co/#posts</guid>
+      <link>http://kallah.co/#week4</link>
+      <guid>http://kallah.co/#week4</guid>
       <pubDate>Wed, 25 Feb 2018 11:20:52 GMT</pubDate>
       <description>[CDATA[ Finaly getting some actuall work done! ]]</description>
     </item>
 
+    <item>
+      <title>Week 5</title>
+      <link>http://kallah.co/#week5</link>
+      <guid>http://kallah.co/#week5</guid>
+      <pubDate>Wed, 08 Mar 2018 14:17:08 GMT</pubDate>
+      <description>
+      [CDATA[ TensorFlow documentation is a bloody joke! ]]
+      </description>
+    </item>
+
+    <item>
+      <title>Week 6</title>
+      <link>http://kallah.co/#week6.1</link>
+      <guid>http://kallah.co/#week6.1</guid>
+      <pubDate>Wed, 13 Mar 2018 05:42:48 GMT</pubDate>
+      <description>
+      [CDATA[ I did it! Finally, something is working!! ]]
+      </description>
+    </item>
 
     </channel>
   </xml-stylesheet>
