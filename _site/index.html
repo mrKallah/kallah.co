@@ -107,32 +107,89 @@
 
     
 <style>
-#myBar_1 {
-  width: 35%;
-}
-#myBar_2 {
-  width: 90%;
+
+:root{
+  --gather: 100%;
+  --augment: 100%;
+  --cnn: 85%;
+  --nst: 10%;
+  --report: 15%;
+  --load_save: 85%;
 }
 
-#myBar_3 {
-  width: 40%;
+
+#progress_bar {
+  width: calc((var(--gather) + var(--load_save) + var(--augment) + (var(--cnn))*2 + (var(--nst))*2 + var(--report))/7);
+}
+#gather {
+  width: var(--gather);
 }
 
-#myBar_1 {
+#augment {
+  width: var(--augment);
+}
+
+#cnn {
+  width: var(--cnn);
+}
+
+#load_save {
+  width: var(--load_save);
+}
+
+#nst {
+  width: var(--nst);
+}
+
+#report {
+  width: var(--report);
+}
+
+
+
+#progress_bar {
   height: 30px;
-  background-color: #333;
+  background-color: #353;
   text-align: left;
   text-indent: 1em;
 
 }
-#myBar_2 {
+#gather {
   height: 30px;
   background-color: #fed136;
   text-align: left;
   text-indent: 1em;
 }
 
-#myBar_3 {
+#augment {
+  height: 30px;
+  background-color: #333;
+  text-align: left;
+  text-indent: 1em;
+}
+
+#cnn {
+  height: 30px;
+  background-color: #fed136;
+  text-align: left;
+  text-indent: 1em;
+}
+
+#load_save {
+  height: 30px;
+  background-color: #333;
+  text-align: left;
+  text-indent: 1em;
+}
+
+#nst {
+  height: 30px;
+  background-color: #fed136;
+  text-align: left;
+  text-indent: 1em;
+}
+
+#report {
   height: 30px;
   background-color: #333;
   text-align: left;
@@ -143,28 +200,139 @@
 
 </style>
 
-<div class="col-lg-12 text-center">Total project progress</div>
+<div class="col-lg-12 text-center">Overall project progress</div>
 <div id="myProgress">
-  <div id="myBar_1"></div>
+  <div id="progress_bar"></div>
 </div>
 <br>
 
-<div class="col-lg-12 text-center">This weeks progress</div>
+<div class="col-lg-12 text-center">Data Gathering</div>
 <div id="myProgress">
-  <div id="myBar_2"></div>
+  <div id="gather"></div>
 </div>
 <br>
 
-<div class="col-lg-12 text-center">Last weeks progress</div>
+<div class="col-lg-12 text-center">Data Augmentation</div>
 <div id="myProgress">
-  <div id="myBar_3"></div>
+  <div id="augment"></div>
 </div>
 <br>
+
+<div class="col-lg-12 text-center">CNN</div>
+<div id="myProgress">
+  <div id="cnn"></div>
+</div>
+<br>
+
+<div class="col-lg-12 text-center">Load / Save</div>
+<div id="myProgress">
+  <div id="load_save"></div>
+</div>
+<br>
+
+<div class="col-lg-12 text-center">NST</div>
+<div id="myProgress">
+  <div id="nst"></div>
+</div>
+<br>
+
+<div class="col-lg-12 text-center">Report</div>
+<div id="myProgress">
+  <div id="report"></div>
+</div>
+<br>
+
+
+
+
 
 
 <div class="section-subheading text-muted">
 
 
+    <section id="week10">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+    <h1>Week 10</h1>
+      <h3 class="section-subheading text-muted">
+        <h4>Let’s pretend I have a blog post for week 7, 8 and 9 as well</h4>
+        <b>Augmentations: I have become Photoshop</b>
+        <div class="paragraph">
+
+
+          This week I’ve been working on augmenting images so that I can have 1 image and make that image into maybe 40 images that look the much the same but are slightly different. This makes it so if I have 200 images to test, train and validate with, I can then have 8000 images to work with. This is one of the things that is used a lot within machine learning to make your dataset larger.
+          <br /><br />
+          I started out by making each of the image augmentations and testing it on one image. After that I made a function to take one image as output and have 39 slightly changed images. I then started to implement this into the CNN and when I finished that I quickly realized that I should have resized the images and then done the augmentations, rather than the other way around.
+          <br /><br />
+          I currently am making 40 images out of each input image, including the original image and I could easily double that by taking the mirrored image and pass that into the augmentation function. Right now, I am only getting one mirrored image, and that might change in the future.
+          <br /><br />
+          I also spent an hour or two trying to figure out why at seemingly random points my program would just up and crash. It seemed that it was due to an image that was corrupted, and thus it could not be read. When I finally figured that out I started to implement it into the loading system. This was a 3-step job.
+          <br /><br />
+          I thought had to redo the way I loaded the images, and spent quite a few hours working on implementing it. When I finally came to a point where it worked on the part of the CNN I ran the rest of the program and hit a wall. I had changed the structure of the way the images was loaded and for the life of me I couldn’t figure it out
+          <br /><br />
+          I reverted to before I changed the loading and started over, however this time, I kept the bulk of the loading function and did the augmentation and loading separate. I now am able to start by preparing the images by augmenting them into a subfolder, and then I load them separately from that folder. This means that the augmentation part now handles the resizing and color changes of the images and thus I am able to run the program using any .png, .jpeg or .jpg image. (though more can be added)
+          <br /> <br />
+
+
+
+
+
+          <center>Here we can see the program running:</center>
+
+        </div> <br />
+        <video class="image-viewer horizontal" poster="https://thumb.gyazo.com/thumb/422_w/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWciOiJmY2ZhZjNjMzA5MjhjY2RlNjFhMzY4MjkwZTNjNGFiOCJ9.PwaK2Ai8L64d5DacEvU5WKdrLqAXhiJL3qfDpDCLo38-gif.jpg" autoplay="" playsinline="" loop="" style="max-width: 422px; max-height: 100%;"><source src="https://i.gyazo.com/fcfaf3c30928ccde61a368290e3c4ab8.mp4" type="video/mp4"></video>
+        </video><br /><br /><br />
+        <div class="paragraph"> <center> Here is some examples of what image augmentations can look like</center></div> <br />
+        <img src="img/augment/kw8320.png">
+        <img src="img/augment/kw8321.png">
+        <img src="img/augment/kw8322.png">
+        <img src="img/augment/kw8323.png">
+        <img src="img/augment/kw8324.png"><br />
+        <img src="img/augment/kw8325.png">
+        <img src="img/augment/kw8326.png">
+        <img src="img/augment/kw8327.png">
+        <img src="img/augment/kw8328.png">
+        <img src="img/augment/kw8329.png"><br />
+        <img src="img/augment/kw8330.png">
+        <img src="img/augment/kw8331.png">
+        <img src="img/augment/kw8332.png">
+        <img src="img/augment/kw8333.png">
+        <img src="img/augment/kw8334.png"><br />
+        <img src="img/augment/kw8335.png">
+        <img src="img/augment/kw8336.png">
+        <img src="img/augment/kw8337.png">
+        <img src="img/augment/kw8338.png">
+        <img src="img/augment/kw8339.png"><br />
+        <img src="img/augment/kw8340.png">
+        <img src="img/augment/kw8341.png">
+        <img src="img/augment/kw8342.png">
+        <img src="img/augment/kw8343.png">
+        <img src="img/augment/kw8344.png"><br />
+        <img src="img/augment/kw8345.png">
+        <img src="img/augment/kw8346.png">
+        <img src="img/augment/kw8347.png">
+        <img src="img/augment/kw8348.png">
+        <img src="img/augment/kw8349.png"><br />
+        <img src="img/augment/kw8350.png">
+        <img src="img/augment/kw8351.png">
+        <img src="img/augment/kw8352.png">
+        <img src="img/augment/kw8353.png">
+        <img src="img/augment/kw8354.png"><br />
+        <img src="img/augment/kw8355.png">
+        <img src="img/augment/kw8356.png">
+        <img src="img/augment/kw8357.png">
+        <img src="img/augment/kw8358.png">
+        <img src="img/augment/kw8359.png">
+
+
+
+
+
+
+      </h3>
+    </div>
+  </div>
+</section>
 
 
     <section id="explain">
@@ -172,7 +340,7 @@
     <div class="col-lg-12 text-center">
 
 
-        <b><div class="paragraph"><center>This is kinda rushed, I still need to do some moderation and changes, but it's at least up now.</center></div></b>
+
 
 
     <h1>Everything Explained</h1>
@@ -184,7 +352,7 @@
         <br><img src="img/illustration/neuron.png" alt="Neuron" width="90%" height="auto">
         <div class="paragraph">
           The neuron is the most important cell we have in our body and the network of them is what makes our mind. Most of our neural cells are structured as the on in the image above, however there are other structures too, however for the sake of understanding this we only need to know about the most common one.  <br /> <br />
-          The neurons body is called the Soma and contains a liquid called the cytoplasm, within the cytoplasm recedes the mitochondria and the nucleus. The mitochondria is the powerhouse of the cell and the nucleus is where processing is done and where the DNA is replicated. The short root like structures on the cell is called dendrites and the longer one that looks a bit like a tail is called a axon. The dendrites are what connects the soma of the neuron to other cells and is where the cell receives its inputs from. The axon, contrary to the dendrites is what outputs the information and is what connects the neuron to other neurons dendrites. One neuron is usually connected to many neurons both in terms of output and input. <br /> <br />
+          The neurons body is called the Soma and contains a liquid called the cytoplasm, within the cytoplasm resides the mitochondria and the nucleus. The mitochondria is the powerhouse of the cell and the nucleus is where processing is done and where the DNA is replicated. The short root like structures on the cell is called dendrites and the longer one that looks a bit like a tail is called a axon. The dendrites are what connects the soma of the neuron to other cells and is where the cell receives its inputs from. The axon, contrary to the dendrites is what outputs the information and is what connects the neuron to other neurons dendrites. One neuron is usually connected to many neurons both in terms of output and input. <br /> <br />
           When the dendrites get input from the neurons or other sensory cells, the neuron processes that data in the nucleus through a process called action potential (More info on this in the next paragraph). If the data gets actuated it gets sent onwards down the axon as an electrical signal to a set of other neurons. Where the axon of one neuron and the dendrites of others interconnect, which is where the axon on one neuron and the dendrites of another nearly touch. The sender opens its cell walls and release some chemicals in the form of sodium and potassium ions which gets transmitted in the synaptic gap, and the receiver then opens its cell walls to then receive these ions.. <br /> <br />
           The gap in the synapse, or the synaptic cleft, is around 20-40 Nano-meters and it takes less than a milli-second for neuro transmitters to pass the synaptic divide. When the neuro transmitters have passed the synaptic divide, they deposit into the receptor sites on the dendrites of the receiving neuron where they either exits or inhibits the dendrites of the neuron. However, the neuro transmitters that pass the synaptic divide does not get absorbed by the receiving neuron, after they have been put into the receptor sites, they get reabsorbed by the transmitting neuron in a process called reuptake. . <br /> <br />
           The whole process from the start of action potential to end of reuptake takes less than 1ms and the neuron is then ready to transmit again leading to the ability to fire a neuron over 100 times a second. However, the time can vary as the axon on some neural cells have a insulative fatty sheath called the myelin sheath that helps send the signals faster.  <br /> <br />
@@ -345,12 +513,11 @@
       </h3>
     </div>
   </div>
-</section>
 
-    <section id="weekx">
+    
   <div class="container">
     <div class="col-lg-12 text-center">
-    <h1>Week X</h1>
+
       <h3 class="section-subheading text-muted">
         <h4>Sources</h4>
         <div class="paragraph">
