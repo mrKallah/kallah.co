@@ -54,19 +54,40 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                      <div class="post_dropdown">
                         <a class="page-scroll" href="#posts">Posts</a>
+                        <div class="post_dropdown_content">
+                          <a class="post_dropdown_text" href="#week10a"> Week 10</a><br>
+                          <a class="post_dropdown_text" href="#week10"> Week 10</a><br>
+                          <a class="post_dropdown_text" href="#explain">Explain</a><br>
+                          <a class="post_dropdown_text" href="#week6">Week 6</a><br>
+                          <a class="post_dropdown_text" href="#week5">Week 5</a><br>
+                          <a class="post_dropdown_text" href="#week4">Week 4</a><br>
+                          <a class="post_dropdown_text" href="#week3">Week 3</a><br>
+                          <a class="post_dropdown_text" href="#week2">Week 2</a><br>
+                          <a class="post_dropdown_text" href="#week1">Week 1</a><br>
+                        </div>
+                      </div>
                     </li>
 
                     <li>
+                      <div class="post_dropdown">
                         <a class="page-scroll" href="#code">Code</a>
+                      </div>
                     </li>
 
                     <li>
+                      <div class="post_dropdown">
                         <a class="page-scroll" href="#about">About</a>
+                      </div>
+
                     </li>
 
                     <li>
+                      <div class="post_dropdown">
                         <a class="page-scroll" href="#contact">Contact</a>
+                      </div>
+
                     </li>
 
                 </ul>
@@ -94,17 +115,6 @@
         
  -->
 
-    <!-- About Section -->
-    <section id="posts">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Posts</h2>
-
-                </div>
-            </div>
-        </div>
-
     
 <style>
 
@@ -113,14 +123,16 @@
   --augment: 100%;
   --cnn: 85%;
   --nst: 10%;
-  --report: 15%;
-  --load_save: 85%;
+  --report: 10%;
+  --load_save: 95%;
+  --tests: 60%;
 }
 
 
 #progress_bar {
-  width: calc((var(--gather) + var(--load_save) + var(--augment) + (var(--cnn))*2 + (var(--nst))*2 + var(--report))/7);
+  width: calc((var(--gather) + var(--tests) + var(--load_save) + var(--augment) + (var(--cnn))*5 + (var(--nst))*5 + (var(--report))*5 )/19 );
 }
+
 #gather {
   width: var(--gather);
 }
@@ -139,6 +151,10 @@
 
 #nst {
   width: var(--nst);
+}
+
+#tests {
+  width: var(--tests);
 }
 
 #report {
@@ -189,9 +205,16 @@
   text-indent: 1em;
 }
 
-#report {
+#tests {
   height: 30px;
   background-color: #333;
+  text-align: left;
+  text-indent: 1em;
+}
+
+#report {
+  height: 30px;
+  background-color: #fed136;
   text-align: left;
   text-indent: 1em;
 }
@@ -199,6 +222,12 @@
 
 
 </style>
+<div class="container">
+  <div class="col-lg-12 text-center">
+    <h1>Progress</h1>
+  </div>
+</div>
+
 
 <div class="col-lg-12 text-center">Overall project progress</div>
 <div id="myProgress">
@@ -236,6 +265,12 @@
 </div>
 <br>
 
+<div class="col-lg-12 text-center">Tests</div>
+<div id="myProgress">
+  <div id="tests"></div>
+</div>
+<br>
+
 <div class="col-lg-12 text-center">Report</div>
 <div id="myProgress">
   <div id="report"></div>
@@ -249,11 +284,53 @@
 
 <div class="section-subheading text-muted">
 
+    <!-- About Section -->
+    <section id="posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Posts</h2>
+
+                </div>
+            </div>
+        </div>
+
+
+    <section id="week10a">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+    <h1>Week 10: Testing</h1>
+      <h3 class="section-subheading text-muted">
+        <h4>Some general stuff</h4>
+        <div class="paragraph">
+
+        <b>Web stuff</b><br>
+        I’ve been working on doing some small changes to the webpage. It now has some more progress bars that have the current progresses of the things I need to do. I have weighted the NST, CNN and Report to be five times as important as the other ones, and that is reflected in the overall project progress<br /><br />
+        I have also added a dropdown bar on the posts on the nav-bar to make it easier to navigate the site. This makes it so that you can jump to any week you want with the top menu. This is something I wanted to add way in the start but I just never got around to it. <br /><br />
+        I have also updated the RSS, which I seem to forget to update all the time. I have also done some small changes here and there to make navigation a bit easier and generally reading the blog more intuitive. <br /><br />
+        <b>Automated testing</b><br>
+        The last day and a half I’ve been working on automated testing for certain parts of the program. As TensorFlow and neural networks has some inherent randomness to them, certain parts are not possible to test to a very fine degree and so I have elected to ignore them for now. The tests I currently have are on my image augmentation object and my loading object. <br /><br />
+        Certain parts of the testing went pretty well, as soon as I started to understand how to do it. I am used to java, and so I am used to everything being a pointer, however in OpenCV, which compiles to C++, I sometimes ends up with pointers to the address of the object and so when I sent an image to a function and saved it, it actually changed the original image. So I had to take a copy of the image before I did any changes to it in the function. <br /><br />
+        However now I have 13 tests and they are all successful. I will add some more in the future, regarding the NST and maybe some other ones too but for now I am done with testing. The 13 tests I have are: <br /><br />
+        Testing the bright blur, affine transform, darken, brighten, blur, sharpen, rotate, crop and mirror in the image augmentation library. These were the ones that took the longest as the changes to the images that I previously mentioned made it so that the images weren’t the same.  Also in the augmentation library I tested the iteration function. <br /><br />
+        Testing the one hot encoding, data loading and next batch functions in the data object, and though I had some trouble with how the data came out in the start, I quickly fixed it and this was a pretty easy task. <br /><br />
+
+        <b>What needs to be done </b><br>
+        I need to start working on the NST however, I wanted to finish the small stuff first, so I could concentrate on doing what needs to be done without any distractions. I’ve dedicated today and tomorrow to fix the small stuff, however I think I might be able to start working on the NST tomorrow. <br /><br />
+        When I am done with the NST, depending on how much time there is left I might need to directly start working on the report however, I still want to make the CNN work with color images and make the classification program more intuitive, where it can take more than one image at a time, and also have the resize and recolor stuff incorporated. <br /><br />
+        I also want to experiment with using multiple augmented versions of one image to classify if that image is of a specific type. Say you have an image of a cat, you put it into the system, it augments it 40 times and out of those 40 examples 33 might say random and 7 might say painting, which gives you an accuracy of 82.5% which you can then use to say that you are 82.5% sure that the image is of that type. <br /><br />
+        I still have a lot to do on my report, both in terms of data collection and writing, but I have to finish the bulk of the program before I can start collecting the data. This is why I am prioritizing the NST for now, and hopefully I’ll be able to finish it rapidly and thus have a good while to finish collecting data and writing the rapport. <br /><br />
+        The hand in date is getting close very fast now, so I got to get moving! <br /><br />
+        </div>
+      </h3>
+    </div>
+  </div>
+</section>
 
     <section id="week10">
   <div class="container">
     <div class="col-lg-12 text-center">
-    <h1>Week 10</h1>
+    <h1>Week 10: Augmentations</h1>
       <h3 class="section-subheading text-muted">
         <h4>Let’s pretend I have a blog post for week 7, 8 and 9 as well</h4>
         <b>Augmentations: I have become Photoshop</b>
@@ -580,7 +657,7 @@
 
 
 
-    <section id="week6.1">
+    <section id="week6">
   <div class="container">
     <div class="col-lg-12 text-center">
     <h1>Week 6</h1>

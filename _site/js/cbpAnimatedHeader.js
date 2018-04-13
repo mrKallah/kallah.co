@@ -4,33 +4,35 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
 var cbpAnimatedHeader = (function() {
 
 	var docElem = document.documentElement,
-		header = document.querySelector( '.navbar-fixed-top' ),
+		header = document.querySelector('.navbar-fixed-top'),
+		post1 = document.querySelector('.post_dropdown_text'),
+		post2 = document.querySelector('.post_dropdown_content'),
 		didScroll = false,
 		changeHeaderOn = 100;
 
 	function init() {
-		window.addEventListener( 'scroll', function( event ) {
-			if( !didScroll ) {
+		window.addEventListener('scroll', function(event) {
+			if (!didScroll) {
 				didScroll = true;
-				setTimeout( scrollPage, 250 );
+				setTimeout(scrollPage, 250);
 			}
-		}, false );
+		}, false);
 	}
 
 	function scrollPage() {
 		var sy = scrollY();
-		if ( sy >= changeHeaderOn ) {
-			classie.add( header, 'navbar-shrink' );
-		}
-		else {
-			classie.remove( header, 'navbar-shrink' );
+		if (sy >= changeHeaderOn) {
+			classie.add(header, 'navbar-shrink');
+
+		} else {
+			classie.remove(header, 'navbar-shrink');
 		}
 		didScroll = false;
 	}

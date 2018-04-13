@@ -54,8 +54,8 @@
 
     <item>
       <title>Week 6</title>
-      <link>http://kallah.co/#week6.1</link>
-      <guid>http://kallah.co/#week6.1</guid>
+      <link>http://kallah.co/#week6</link>
+      <guid>http://kallah.co/#week6</guid>
       <pubDate>Wed, 13 Mar 2018 05:42:48 GMT</pubDate>
       <description>
       [CDATA[ I did it! Finally, something is working!! ]]
@@ -64,11 +64,31 @@
 
     <item>
       <title>Explaining stuff</title>
-      <link>http://kallah.co/#week6.1</link>
-      <guid>http://kallah.co/#week6.1</guid>
+      <link>http://kallah.co/#explain</link>
+      <guid>http://kallah.co/#explain</guid>
       <pubDate>Fri, 06 Apr 2018 17:57:17 GMT</pubDate>
       <description>
       [CDATA[ A post trying to explain things in more detail ]]
+      </description>
+    </item>
+
+    <item>
+      <title>Week 10: Augmenting</title>
+      <link>http://kallah.co/#explain</link>
+      <guid>http://kallah.co/#explain</guid>
+      <pubDate>Thu, 12 Apr 2018 16:23:19 GMT</pubDate>
+      <description>
+      [CDATA[ Today I talk about augmentation ]]
+      </description>
+    </item>
+
+    <item>
+      <title>Week 10a: Testing</title>
+      <link>http://kallah.co/#explain</link>
+      <guid>http://kallah.co/#explain</guid>
+      <pubDate>Fri, 13 Apr 2018 17:56:50 GMT</pubDate>
+      <description>
+      [CDATA[ Today I talk about testing and my future plans ]]
       </description>
     </item>
 
