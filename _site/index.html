@@ -2,6 +2,7 @@
 <html>
 
   <head>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/kallah.ico"></link>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Kallah.co</title>
@@ -12,6 +13,7 @@
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/kallah.css">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
@@ -57,8 +59,8 @@
                       <div class="post_dropdown">
                         <a class="page-scroll" href="#posts">Posts</a>
                         <div class="post_dropdown_content">
-                          <a class="post_dropdown_text" href="#week10a"> Week 10</a><br>
-                          <a class="post_dropdown_text" href="#week10"> Week 10</a><br>
+                          <a class="post_dropdown_text" href="#week10a"> Week 10: Testing</a><br>
+                          <a class="post_dropdown_text" href="#week10"> Week 10: Augmenting</a><br>
                           <a class="post_dropdown_text" href="#explain">Explain</a><br>
                           <a class="post_dropdown_text" href="#week6">Week 6</a><br>
                           <a class="post_dropdown_text" href="#week5">Week 5</a><br>
@@ -121,16 +123,16 @@
 :root{
   --gather: 100%;
   --augment: 100%;
-  --cnn: 85%;
+  --cnn: 95%;
   --nst: 10%;
-  --report: 10%;
+  --report: 100%;
   --load_save: 95%;
-  --tests: 60%;
+  --tests: 95%;
 }
 
 
 #progress_bar {
-  width: calc((var(--gather) + var(--tests) + var(--load_save) + var(--augment) + (var(--cnn))*5 + (var(--nst))*5 + (var(--report))*5 )/19 );
+  width: calc((var(--gather) + var(--tests) + var(--load_save) + var(--augment) + (var(--cnn))*5 + var(--nst)*5 + var(--report)*5)/19 ) ;
 }
 
 #gather {
@@ -360,50 +362,34 @@
         <video class="image-viewer horizontal" poster="https://thumb.gyazo.com/thumb/422_w/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWciOiJmY2ZhZjNjMzA5MjhjY2RlNjFhMzY4MjkwZTNjNGFiOCJ9.PwaK2Ai8L64d5DacEvU5WKdrLqAXhiJL3qfDpDCLo38-gif.jpg" autoplay="" playsinline="" loop="" style="max-width: 422px; max-height: 100%;"><source src="https://i.gyazo.com/fcfaf3c30928ccde61a368290e3c4ab8.mp4" type="video/mp4"></video>
         </video><br /><br /><br />
         <div class="paragraph"> <center> Here is some examples of what image augmentations can look like</center></div> <br />
-        <img src="img/augment/kw8320.png">
-        <img src="img/augment/kw8321.png">
-        <img src="img/augment/kw8322.png">
-        <img src="img/augment/kw8323.png">
-        <img src="img/augment/kw8324.png"><br />
-        <img src="img/augment/kw8325.png">
-        <img src="img/augment/kw8326.png">
-        <img src="img/augment/kw8327.png">
-        <img src="img/augment/kw8328.png">
-        <img src="img/augment/kw8329.png"><br />
-        <img src="img/augment/kw8330.png">
-        <img src="img/augment/kw8331.png">
-        <img src="img/augment/kw8332.png">
-        <img src="img/augment/kw8333.png">
-        <img src="img/augment/kw8334.png"><br />
-        <img src="img/augment/kw8335.png">
-        <img src="img/augment/kw8336.png">
-        <img src="img/augment/kw8337.png">
-        <img src="img/augment/kw8338.png">
-        <img src="img/augment/kw8339.png"><br />
-        <img src="img/augment/kw8340.png">
-        <img src="img/augment/kw8341.png">
-        <img src="img/augment/kw8342.png">
-        <img src="img/augment/kw8343.png">
-        <img src="img/augment/kw8344.png"><br />
-        <img src="img/augment/kw8345.png">
-        <img src="img/augment/kw8346.png">
-        <img src="img/augment/kw8347.png">
-        <img src="img/augment/kw8348.png">
-        <img src="img/augment/kw8349.png"><br />
-        <img src="img/augment/kw8350.png">
-        <img src="img/augment/kw8351.png">
-        <img src="img/augment/kw8352.png">
-        <img src="img/augment/kw8353.png">
-        <img src="img/augment/kw8354.png"><br />
-        <img src="img/augment/kw8355.png">
-        <img src="img/augment/kw8356.png">
-        <img src="img/augment/kw8357.png">
-        <img src="img/augment/kw8358.png">
-        <img src="img/augment/kw8359.png">
 
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script>
+        $(document).ready(function(){
+          var folder = "img/augment/";
+          var iter = 0
+          $.ajax({
+              url : folder,
+              success: function (data) {
+                  $(data).find("a").attr("href", function (i, val) {
+                      if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                          if( iter % 5 === 0 & iter != 0){
+                            $("p").append( "<br />" );
+                          }
+                          $("p").append( "<img src='"+ folder + val +"'>" );
 
+                          iter = iter + 1
+                      }
+                  });
+              }
+          });
 
+        });
+        </script>
 
+        <p>
+
+        </p>
 
 
       </h3>
@@ -839,7 +825,7 @@
                     <h2 class="section-heading">Code</h2>
                     <h3 class="section-subheading text-muted">
                       <div class="paragraph">
-                            A python script for resizing images and printing them as arrays: <a href="/code/python/do_resize.html">link</a>
+                            <a href="/code/python/classify.html">Here is a link to a working version of the classifier link</a>
                       </div>
                     <div>
                   </h3>
