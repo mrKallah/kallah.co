@@ -465,7 +465,8 @@ def print_prediction(data, batch_size, x, y_true, session, y_pred_cls, class_one
 			msg = "Image is of type {}".format(class_zero)
 
 		print(msg)
-		plot_image(image, image_shape, plt_show, num_channels, name=msg)
+		if plt_show:
+			plot_image(image, image_shape, plt_show, num_channels, name=msg)
 		iteration = iteration + 1
 
 

@@ -48,7 +48,7 @@ data_directory = "resized/load/chosen"			# directory to load the train images
 load_dir = 'resized/load/checkpoints'           # for the TF graphs
 
 
-plt_show = True  								# To show the plotted values set to true, to never plot anything set to false
+plt_show = False  								# To show the plotted values set to true, to never plot anything set to false
 augment = False                                 # Whether or not to augment, if img_size or num_augment has change this must be true
 
 
