@@ -1,3 +1,12 @@
+button, html input[type="button"], input[type="reset"], input[type="submit"], input[type="file"]{
+    -webkit-appearance: button;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+
 .post_dropdown a{
    color: black !important;
    position: relative;

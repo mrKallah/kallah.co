@@ -13,7 +13,7 @@
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/kallah.css">
+
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
@@ -29,6 +29,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <link rel="stylesheet" href="/kallah.css">
 </head>
 
 
@@ -57,17 +59,13 @@
                     </li>
                     <li>
                       <div class="post_dropdown">
-                        <a class="page-scroll" href="#posts">Posts</a>
+                        <a class="page-scroll" href="#posts">Projects</a>
                         <div class="post_dropdown_content">
-                          <a class="post_dropdown_text" href="#week10a"> Week 10: Testing</a><br>
-                          <a class="post_dropdown_text" href="#week10"> Week 10: Augmenting</a><br>
-                          <a class="post_dropdown_text" href="#explain">Explain</a><br>
-                          <a class="post_dropdown_text" href="#week6">Week 6</a><br>
-                          <a class="post_dropdown_text" href="#week5">Week 5</a><br>
-                          <a class="post_dropdown_text" href="#week4">Week 4</a><br>
-                          <a class="post_dropdown_text" href="#week3">Week 3</a><br>
-                          <a class="post_dropdown_text" href="#week2">Week 2</a><br>
-                          <a class="post_dropdown_text" href="#week1">Week 1</a><br>
+
+                          <a class="post_dropdown_text" href="#sous_vide"> Sous Vide</a><br>
+                          <hr>
+                          <a class="post_dropdown_text" href="#final_project"> Digital Analysis of Paintings using TensorFlow</a><br>
+
                         </div>
                       </div>
                     </li>
@@ -88,6 +86,12 @@
                     <li>
                       <div class="post_dropdown">
                         <a class="page-scroll" href="#contact">Contact</a>
+                      </div>
+
+                    </li>
+                    <li>
+                      <div class="post_dropdown">
+                        <a class="page-scroll" href="archive.html">archive</a>
                       </div>
 
                     </li>
@@ -117,697 +121,95 @@
         
  -->
 
-    
-<style>
+    <style>
+  :root{
+    --gather: 100%;
+    --augment: 100%;
+    --cnn: 95%;
+    --nst: 10%;
+    --report: 100%;
+    --load_save: 95%;
+    --tests: 95%;
+  }
+  #progress_bar {
+    width: calc((var(--gather) + var(--tests) + var(--load_save) + var(--augment) + (var(--cnn))*5 + var(--nst)*5 + var(--report)*5)/19 ) ;
+  }
+  #progress_bar {
+    height: 30px;
+    background-color: #353;
+    text-align: left;
+    text-indent: 1em;
 
-:root{
-  --gather: 100%;
-  --augment: 100%;
-  --cnn: 95%;
-  --nst: 10%;
-  --report: 100%;
-  --load_save: 95%;
-  --tests: 95%;
-}
-
-
-#progress_bar {
-  width: calc((var(--gather) + var(--tests) + var(--load_save) + var(--augment) + (var(--cnn))*5 + var(--nst)*5 + var(--report)*5)/19 ) ;
-}
-
-#gather {
-  width: var(--gather);
-}
-
-#augment {
-  width: var(--augment);
-}
-
-#cnn {
-  width: var(--cnn);
-}
-
-#load_save {
-  width: var(--load_save);
-}
-
-#nst {
-  width: var(--nst);
-}
-
-#tests {
-  width: var(--tests);
-}
-
-#report {
-  width: var(--report);
-}
-
-
-
-#progress_bar {
-  height: 30px;
-  background-color: #353;
-  text-align: left;
-  text-indent: 1em;
-
-}
-#gather {
-  height: 30px;
-  background-color: #fed136;
-  text-align: left;
-  text-indent: 1em;
-}
-
-#augment {
-  height: 30px;
-  background-color: #333;
-  text-align: left;
-  text-indent: 1em;
-}
-
-#cnn {
-  height: 30px;
-  background-color: #fed136;
-  text-align: left;
-  text-indent: 1em;
-}
-
-#load_save {
-  height: 30px;
-  background-color: #333;
-  text-align: left;
-  text-indent: 1em;
-}
-
-#nst {
-  height: 30px;
-  background-color: #fed136;
-  text-align: left;
-  text-indent: 1em;
-}
-
-#tests {
-  height: 30px;
-  background-color: #333;
-  text-align: left;
-  text-indent: 1em;
-}
-
-#report {
-  height: 30px;
-  background-color: #fed136;
-  text-align: left;
-  text-indent: 1em;
-}
-
-
-
+  }
 </style>
+
 <div class="container">
   <div class="col-lg-12 text-center">
-    <h1>Progress</h1>
+    <h1>Project progress bars</h1>
   </div>
 </div>
 
-
-<div class="col-lg-12 text-center">Overall project progress</div>
+<div class="col-lg-12 text-center">Digital Analysis of Paintings using TensorFlow</div>
 <div id="myProgress">
   <div id="progress_bar"></div>
 </div>
 <br>
 
-<div class="col-lg-12 text-center">Data Gathering</div>
-<div id="myProgress">
-  <div id="gather"></div>
-</div>
-<br>
-
-<div class="col-lg-12 text-center">Data Augmentation</div>
-<div id="myProgress">
-  <div id="augment"></div>
-</div>
-<br>
-
-<div class="col-lg-12 text-center">CNN</div>
-<div id="myProgress">
-  <div id="cnn"></div>
-</div>
-<br>
-
-<div class="col-lg-12 text-center">Load / Save</div>
-<div id="myProgress">
-  <div id="load_save"></div>
-</div>
-<br>
-
-<div class="col-lg-12 text-center">NST</div>
-<div id="myProgress">
-  <div id="nst"></div>
-</div>
-<br>
-
-<div class="col-lg-12 text-center">Tests</div>
-<div id="myProgress">
-  <div id="tests"></div>
-</div>
-<br>
-
-<div class="col-lg-12 text-center">Report</div>
-<div id="myProgress">
-  <div id="report"></div>
-</div>
-<br>
-
-
-
-
-
-
 <div class="section-subheading text-muted">
 
-    <!-- About Section -->
-    <section id="posts">
+        <section id="posts">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Posts</h2>
+                    <h2 class="section-heading">Projects</h2>
 
                 </div>
             </div>
         </div>
 
 
-    <section id="week10a">
+    <section id="sous_vide">
   <div class="container">
     <div class="col-lg-12 text-center">
-    <h1>Week 10: Testing</h1>
+    <h1>Sous Vide</h1>
       <h3 class="section-subheading text-muted">
-        <h4>Some general stuff</h4>
         <div class="paragraph">
 
-        <b>Web stuff</b><br>
-        I’ve been working on doing some small changes to the webpage. It now has some more progress bars that have the current progresses of the things I need to do. I have weighted the NST, CNN and Report to be five times as important as the other ones, and that is reflected in the overall project progress<br /><br />
-        I have also added a dropdown bar on the posts on the nav-bar to make it easier to navigate the site. This makes it so that you can jump to any week you want with the top menu. This is something I wanted to add way in the start but I just never got around to it. <br /><br />
-        I have also updated the RSS, which I seem to forget to update all the time. I have also done some small changes here and there to make navigation a bit easier and generally reading the blog more intuitive. <br /><br />
-        <b>Automated testing</b><br>
-        The last day and a half I’ve been working on automated testing for certain parts of the program. As TensorFlow and neural networks has some inherent randomness to them, certain parts are not possible to test to a very fine degree and so I have elected to ignore them for now. The tests I currently have are on my image augmentation object and my loading object. <br /><br />
-        Certain parts of the testing went pretty well, as soon as I started to understand how to do it. I am used to java, and so I am used to everything being a pointer, however in OpenCV, which compiles to C++, I sometimes ends up with pointers to the address of the object and so when I sent an image to a function and saved it, it actually changed the original image. So I had to take a copy of the image before I did any changes to it in the function. <br /><br />
-        However now I have 13 tests and they are all successful. I will add some more in the future, regarding the NST and maybe some other ones too but for now I am done with testing. The 13 tests I have are: <br /><br />
-        Testing the bright blur, affine transform, darken, brighten, blur, sharpen, rotate, crop and mirror in the image augmentation library. These were the ones that took the longest as the changes to the images that I previously mentioned made it so that the images weren’t the same.  Also in the augmentation library I tested the iteration function. <br /><br />
-        Testing the one hot encoding, data loading and next batch functions in the data object, and though I had some trouble with how the data came out in the start, I quickly fixed it and this was a pretty easy task. <br /><br />
-
-        <b>What needs to be done </b><br>
-        I need to start working on the NST however, I wanted to finish the small stuff first, so I could concentrate on doing what needs to be done without any distractions. I’ve dedicated today and tomorrow to fix the small stuff, however I think I might be able to start working on the NST tomorrow. <br /><br />
-        When I am done with the NST, depending on how much time there is left I might need to directly start working on the report however, I still want to make the CNN work with color images and make the classification program more intuitive, where it can take more than one image at a time, and also have the resize and recolor stuff incorporated. <br /><br />
-        I also want to experiment with using multiple augmented versions of one image to classify if that image is of a specific type. Say you have an image of a cat, you put it into the system, it augments it 40 times and out of those 40 examples 33 might say random and 7 might say painting, which gives you an accuracy of 82.5% which you can then use to say that you are 82.5% sure that the image is of that type. <br /><br />
-        I still have a lot to do on my report, both in terms of data collection and writing, but I have to finish the bulk of the program before I can start collecting the data. This is why I am prioritizing the NST for now, and hopefully I’ll be able to finish it rapidly and thus have a good while to finish collecting data and writing the rapport. <br /><br />
-        The hand in date is getting close very fast now, so I got to get moving! <br /><br />
-        </div>
-      </h3>
-    </div>
-  </div>
-</section>
-
-    <section id="week10">
-  <div class="container">
-    <div class="col-lg-12 text-center">
-    <h1>Week 10: Augmentations</h1>
-      <h3 class="section-subheading text-muted">
-        <h4>Let’s pretend I have a blog post for week 7, 8 and 9 as well</h4>
-        <b>Augmentations: I have become Photoshop</b>
-        <div class="paragraph">
-
-
-          This week I’ve been working on augmenting images so that I can have 1 image and make that image into maybe 40 images that look the much the same but are slightly different. This makes it so if I have 200 images to test, train and validate with, I can then have 8000 images to work with. This is one of the things that is used a lot within machine learning to make your dataset larger.
+          First off, I think I need to explain exactly what Sous Vide is. Sous Vide is French and means “Under Vacuum” and it is a method for cooking food with extreme precision. Let’s say you want to make the perfect steak that is medium rare all the way through. You fire up your frying pan or in max temperature and blast if for 2-3 minutes and the middle is good, however, there is about 0.5 cm on each side of well done steak, where the steak touched the pan. So, to battle this you put a larger steak in the oven, on a lower temperature for a longer time, this too will leave a crust of well done with a middle of juiciness.
           <br /><br />
-          I started out by making each of the image augmentations and testing it on one image. After that I made a function to take one image as output and have 39 slightly changed images. I then started to implement this into the CNN and when I finished that I quickly realized that I should have resized the images and then done the augmentations, rather than the other way around.
+          That’s where Sous Vide comes in. Sous vide is all about controlled temperature slow cooking. You seal your food, for this example a steak, in a plastic bag with herbs and spices, but you make sure there are no air in the bag. You then put the steak in a water bath that is precisely 54.4ºC and you cook it for two hours. After the two hours you then take the steak out and sear it for 30s on each side, leaving you with a perfectly medium rare steak with maybe a mm of crust.
           <br /><br />
-          I currently am making 40 images out of each input image, including the original image and I could easily double that by taking the mirrored image and pass that into the augmentation function. Right now, I am only getting one mirrored image, and that might change in the future.
+          So, lately I’ve been working on making a Sous Vide machine, as I am a student and I don’t want to spend £100-200 on stuff to make food with, when I can try to make it for less than £10. So, I bought a temperature sensor, a relay, an Arduino and pulled out one of my old soldering irons, that still works but I have replaced with a new and better version. I then added all these together in the following setup:
           <br /><br />
-          I also spent an hour or two trying to figure out why at seemingly random points my program would just up and crash. It seemed that it was due to an image that was corrupted, and thus it could not be read. When I finally figured that out I started to implement it into the loading system. This was a 3-step job.
+          <img src="img/projects/sous_vide/sous_vide.png" style="width: 100%;"/>
           <br /><br />
-          I thought had to redo the way I loaded the images, and spent quite a few hours working on implementing it. When I finally came to a point where it worked on the part of the CNN I ran the rest of the program and hit a wall. I had changed the structure of the way the images was loaded and for the life of me I couldn’t figure it out
-          <br /><br />
-          I reverted to before I changed the loading and started over, however this time, I kept the bulk of the loading function and did the augmentation and loading separate. I now am able to start by preparing the images by augmenting them into a subfolder, and then I load them separately from that folder. This means that the augmentation part now handles the resizing and color changes of the images and thus I am able to run the program using any .png, .jpeg or .jpg image. (though more can be added)
-          <br /> <br />
-
-
-
-
-
-          <center>Here we can see the program running:</center>
-
-        </div> <br />
-        <video class="image-viewer horizontal" poster="https://thumb.gyazo.com/thumb/422_w/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWciOiJmY2ZhZjNjMzA5MjhjY2RlNjFhMzY4MjkwZTNjNGFiOCJ9.PwaK2Ai8L64d5DacEvU5WKdrLqAXhiJL3qfDpDCLo38-gif.jpg" autoplay="" playsinline="" loop="" style="max-width: 422px; max-height: 100%;"><source src="https://i.gyazo.com/fcfaf3c30928ccde61a368290e3c4ab8.mp4" type="video/mp4"></video>
-        </video><br /><br /><br />
-        <div class="paragraph"> <center> Here is some examples of what image augmentations can look like</center></div> <br />
-
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-        <script>
-        $(document).ready(function(){
-          var folder = "img/augment/";
-          var iter = 0
-          $.ajax({
-              url : folder,
-              success: function (data) {
-                  $(data).find("a").attr("href", function (i, val) {
-                      if( val.match(/\.(jpe?g|png|gif)$/) ) {
-                          if( iter % 5 === 0 & iter != 0){
-                            $("p").append( "<br />" );
-                          }
-                          $("p").append( "<img src='"+ folder + val +"'>" );
-
-                          iter = iter + 1
-                      }
-                  });
-              }
-          });
-
-        });
-        </script>
-
-        <p>
-
-        </p>
-
-
-      </h3>
-    </div>
-  </div>
-</section>
-
-
-    <section id="explain">
-  <div class="container">
-    <div class="col-lg-12 text-center">
-
-
-
-
-
-    <h1>Everything Explained</h1>
-      <h3 class="section-subheading text-muted">
-        <h4>How do our nogin work?</h4>
-        <div class="paragraph"> Disclaimer: In this section I’m going to try to explain how neurons work as best as I can, however, I am not a neural scientist not a doctor, so I might be wrong or misleading at parts. This might also be based on outdated knowledge.<br></a></div>
-
-        <b>Neuron</b>
-        <br><img src="img/illustration/neuron.png" alt="Neuron" width="90%" height="auto">
-        <div class="paragraph">
-          The neuron is the most important cell we have in our body and the network of them is what makes our mind. Most of our neural cells are structured as the on in the image above, however there are other structures too, however for the sake of understanding this we only need to know about the most common one.  <br /> <br />
-          The neurons body is called the Soma and contains a liquid called the cytoplasm, within the cytoplasm resides the mitochondria and the nucleus. The mitochondria is the powerhouse of the cell and the nucleus is where processing is done and where the DNA is replicated. The short root like structures on the cell is called dendrites and the longer one that looks a bit like a tail is called a axon. The dendrites are what connects the soma of the neuron to other cells and is where the cell receives its inputs from. The axon, contrary to the dendrites is what outputs the information and is what connects the neuron to other neurons dendrites. One neuron is usually connected to many neurons both in terms of output and input. <br /> <br />
-          When the dendrites get input from the neurons or other sensory cells, the neuron processes that data in the nucleus through a process called action potential (More info on this in the next paragraph). If the data gets actuated it gets sent onwards down the axon as an electrical signal to a set of other neurons. Where the axon of one neuron and the dendrites of others interconnect, which is where the axon on one neuron and the dendrites of another nearly touch. The sender opens its cell walls and release some chemicals in the form of sodium and potassium ions which gets transmitted in the synaptic gap, and the receiver then opens its cell walls to then receive these ions.. <br /> <br />
-          The gap in the synapse, or the synaptic cleft, is around 20-40 Nano-meters and it takes less than a milli-second for neuro transmitters to pass the synaptic divide. When the neuro transmitters have passed the synaptic divide, they deposit into the receptor sites on the dendrites of the receiving neuron where they either exits or inhibits the dendrites of the neuron. However, the neuro transmitters that pass the synaptic divide does not get absorbed by the receiving neuron, after they have been put into the receptor sites, they get reabsorbed by the transmitting neuron in a process called reuptake. . <br /> <br />
-          The whole process from the start of action potential to end of reuptake takes less than 1ms and the neuron is then ready to transmit again leading to the ability to fire a neuron over 100 times a second. However, the time can vary as the axon on some neural cells have a insulative fatty sheath called the myelin sheath that helps send the signals faster.  <br /> <br />
-          So, to sum up: When one of your neurons gets triggered, either by other neurons or sensory cells the signal enters the dendrites of the neuron. The dendrites send the signal into the nucleus where the information is processed via an action potential, which determines whether or not to send a signal onwards. If a signal is sent, it travels down the axon, which might or might not be insulated in a myelin sheath to help transfer data faster and enters the synaptic gap. In the synaptic gap the cell walls of the sending neuron releases some neuro transmitters that traverse the gap and gets deposited on the receptor sites of the receiving neuron. These neuro transmitters will then either excite or inhibits the dendrites of the receiving neuron. After this, the neuro transmitters get reabsorbed into the sending neuron and the process is ready to restart. <br /> <br />
-        </div>
-
-        <b>Action Potential</b>
-        <div class="paragraph">
-          The famous 1997 movie Men In Black, Kay, portrayed by Tommy Lee Jones’s, says “A person is smart. People are dumb ...”. For your neurons the opposite is true. One neuron can do very little, and even a string of neurons connected to another neuron won’t do you any good. The strength of the neurons come interconnected in numbers. The reason why a simple process can be so good, is that that process receives and sends inputs to many other of the same processes. It’s heavy parallel processing and it is greatly beneficial. <br /> <br />
-          One neuron in itself can only send a signal with one speed and strength, so how can we get complex thoughts and feelings from these binary actions? What can vary is how often, or the frequency of, the signals that gets transmitted. The network of neurons that is your brain can then organize the signals using location, sensation, magnitude and importance. And all that together with the fact that we have around 80 billion neurons in our body makes us able to make complex decisions like what to wear on your first date or to research how neurons and our brain works. So, with all that said, how does the neurons decision making process work and why can we get so complex data out of these ‘dumb’ neurons? <br /> <br />
-          Well the way the neuron makes its decisions works on electricity so before we continue I will explain a few things about electricity. A battery works by having a negative charge and a positive charge with a separative membrane or wall between the two charges, you have a potential difference, or a difference of electrical charge, between the two sides. Our neurons also have the same structure of a negative and a positive side with a separative membrane between the two. This causes our brain to work a bit like a massive collection of batteries. Each neuron has an interior voltage of around -70mV and the outside is around +70mV. <br /> <br />
-          The neuron uses something called ion channels to change this. An ion channel is a bit like a gate that, based on exterior factors, can open and close to let through electrical charge. This means that the voltage potential between inside and outside can be changed by opening these gates. There are also gates that only lets through the positively charged chemicals that are on the inside of the soma, so the neuron can re-balance its voltages. The ion gates are divided into three different types. Most are Voltage-gated channels however, there are also the Ligand-gated and Mechanically-gated channels. <br /> <br />
-          Voltage-gated channels open and close in response to changes in the potential difference in the membrane. Ligand-gated open and close in response to chemical stimuli such as hormones or serotonin. The last one is Mechanically-gated channels and they respond to stimuli from physical stretching of the membrane of the cell wall. <br /> <br />
-          When the ion channels get triggered by some event, the voltage will increase and at exactly -55mV on the inside of the neuron, the Voltage-Gated ion channels open. There are a lot of the Voltage-Gated channels which lets through massive amounts of positively charged sodium which then in turn makes the inside even more positive, as far as up to +40mV. This creates a massive spike in the electrical charge on the inside of the neuron which gets transferred along the axon of the neuron and triggers the neuro transmitters to travel across the synapse. However, this only happens if the threshold reaches -55mV or above. -56mV will not trigger this event and thus this is completely binary. <br /> <br />
-          So, as you can see on the graph in the blue zone, the voltage slowly rises to -55mV. In the green zone it opens the ion channels when it reaches -55mV and the rise in voltage is nearly instantiations. In the yellow zone the neuron starts to re-normalize and the voltages start to drop back towards the normal state of -77mV. <br /> <br />
-        </div>
-        <br /><img src="img/illustration/action_potential.png " alt="Neuron" width="50%" height="auto" ><br /> <br />
-        <div class="paragraph">
-          What makes the voltages increase in the first place is the triggers that it gets from the other neurons connected to its dendrites. I mentioned that neural transmitters get deposited in the receptor sites on the receiving neuron and they either excite or inhibit the dendrites. When they excite they lower the inside voltage of the neuron and if they inhibit they will increase it. If exited enough times, it will reach the action potential, and only when the action potential is triggered, will the neuron sends it’s signals on to the next one. <br /> <br />
-
-        </div>
-      </h3>
-    </div>
-  </div>
-
-    
-  <div class="container">
-    <div class="col-lg-12 text-center">
-
-      <h3 class="section-subheading text-muted">
-        <h4>Our Visual System</h4>
-
-        <br /><img src="img/illustration/eye.png " alt="Neuron" width="90%" height="auto" ><br /> <br />
-       <div class="paragraph">
-      Each human eye is monocular and as we have two of them we have binocular vision. Some animals such as the mantis shrimp have trinocular eyeballs and they have two of them making a hexnocular vision system. Eyes use a lot of energy which is most likely why we have not evolved to have hexnocular vision. However, the binocular vision we do have helps us with things like depth of field, field of view, and hiding errors in our eyes. Not to mention that you can lose one eye, and still have vision. <br /><br />
-      The eye is a complex structure that contains the main bulk of the bodies sensory neurons, around 70% of them and around half of our brain is devoted to vision. The outside layer of the eye is the sclera and is maintains the structure of the eye. Attached to the sclera is a set of muscles that control the eye movement. The choroid is the middle layer of the eye and contains the blood vessels to circulate and deliver blood. The pupil is the opening in the eye and is situated behind the cornea and in the middle of the iris. The cornea is a clear circular area which lets light enter the eye. The iris is a smooth muscle that surrounds the pupil. It adjusts the size of the opening, or the aperture, of the pupil, to let an appropriate amount of light in. Too much light will damage the eye and too little and you will have trouble detecting what is what. <br /><br />
-      The lens is a flexible structure that changes the focus of the light that comes trough the pupil and focuses it on the photoreceptor cells. The retina contains the photoreceptor cells and they are divided into rods and cones. Rods are sensitive to light but not to color, while cones are sensitive to color. Rods and cones convert light energy into nerve impulses that the brain can understand and sends the information to our brain via synapses. <br /><br />
-      The information that the rods and cones pick up gets sent down the optic nerve, but not before they get pre-processed in the retina. They pass through two layers of neural cells that help with detecting low level features such as edges and shadows. When the signals leave the retina they travel down the optic nerve and into the optic tract which crosses the signals such that the vision from the left side of the retina in both eyes gets sent to the right side, and vice versa. <br /><br />
-        </div>
-              <br /><img src="http://anatomyzone.com/wp-content/uploads/2014/12/Optic-Tract.png" width="90%" height="auto" ><br /> <br />
-       <div class="paragraph">
-
-      After that the next stop is the Lateral Geniculate Nucleus (LGN) which is divided into 6 layers and pre-processes the vision information even more. The first and second layer of the LGN is slightly different than the last 4. Layers 1 and 2 are responsive to movement and gets its input from the rods. Layers 3-6 gets its inputs from the cones and are responsive to color, fine patterns or details and stationary or slow-moving objects. From the LGN the signals then move onwards to the visual cortex. <br /><br />
-
-
-
-
-        </div>
-      </h3>
-    </div>
-  </div>
-
-    
-  <div class="container">
-    <div class="col-lg-12 text-center">
-
-      <h3 class="section-subheading text-muted">
-        <h4>Neural Networks</h4>
-
-        <div class="paragraph">
-
-          Neural networks have its beginnings in the forties when people started to realize the similarities between our brain and a computer. Most of the experiments back then, were not very successful due to too little power and it’s only in the last few recent years that they have truly taken off. <br /><br />
-            </div>
-                  <br /><img src="img/illustration/layers.png " alt="Neuron" width="80%" height="auto" ><br /> <br />
-                  <div class="paragraph">
-          A neural network is divided into layers, and each layer has a set of neurons or nodes. All the nodes in the network works by emulating a biological neuron, and the weights between them the axons and dendrites. The connection of them in a network with interconnected layers is what makes neural networks so good. <br /><br />
-          Here I will explain the most common version of neural networks called feedforward networks. In this type of network, and in this type of network the information goes from left to right. The network is divided into 3 layer types, input layer, hidden layer and output layer. The input layers take inputs from some source such as an image or text that has been converted to numbers. The input layer feeds into the hidden layers though weighted connections. It’s these weights that are responsible for the network being able to learn. When the signals have passed through all the layers in the hidden layers, they are then deposited in the output layer. The output layer is the last layer of the network and each node in the output layer is correlated to one of the classes you are trying to detect. <br /><br />
-          In the hidden layer, when the information flow from neuron through neuron they pass through the weights, all information are numbers and the weights are also numbers. Each time a node sends a signal through a weight, it gets multiplied by the value of the weight. As example, you can send 0.7 though a weight of 0.9 and get 0.63 or send it through a weight of 0.2 and get a weight of 0.14. The numbers that gets sent to one node then gets added up, and if the sum is greater than the action potential threshold, the neuron will then send its information onwards. This means that the weights of the neurons are important for weather or not a neuron will fire.  <br /><br />
-          Lastly in the output layer, you are trying to get a classification out of the network. So, if you are making a network to detect animals in a picture, each of the output nodes would then be one of those animals. The output layer will then calculate the chance of each of the classes. So if you have an output layer with cat, dog, fish, lion and whale and you input a cat you might get a feedback that looks something like this: <br /><br />
-          [cat,	dog,	fish,	lion,	whale] <br />
-          [0.781,	0.027.	0.001.	0.210	0.001] <br /><br />
-          This means that the network would, with a 78.1% certainty, think the image was a cat. It would also be 19% sure it was a lion and 2.7% sure it was a dog. For fish and whale, it would be 0.01% sure it was either one or 99.9% sure it wasn’t. <br /><br />
-          When you are working with neural networks there are thee faces. The training, validation and testing face. In the training face the network will give all the weights a random number and try to get a better classification by using data that has already been classified. This means an untrained network is no better than guessing and so training the network is key for performance. <br /><br />
-          The way that the network then learns is using something called backpropagation. Where it looks at the expected output, aka the pre-classified data and the actual output and using the difference between what the network should have output to what it did output, it updates the weights. It modifies the weights of the connections between the neurons by working from the output towards the input. This reduces the difference between the intended output and the actual output and the network will in that sense learn. <br /><br />
-
-
-        </div>
-      </h3>
-    </div>
-  </div>
-
-    
-  <div class="container">
-    <div class="col-lg-12 text-center">
-
-      <h3 class="section-subheading text-muted">
-        <h4>Convolutional Neural Networks</h4>
-
-        <div class="paragraph">
-
-          A convolutional neural network(CNN) is a type of neural network designed to mimic the way we handle vision data. But before I can get into the details of how CNNs work I need to get everyone on common ground, so I will explain a few simple things such as how pictures work in computers and what convolutions are. <br /><br />
-          A picture in a computer is just a bunch of number values and each number represent a gradient of a color. In a greyscale image the numbers are in a matrix and range from 0 to 255 where 0 is black and 255 is white. In a Red Green Blue (RGB) image the numbers are stored in three matrices, one for red, one for green and one for blue and again the values range from 0 to 255. So, a pixel in a RGB image will have 3 values, [X, Y, Z] and these represent the colors. A pixel with the value [255, 255, 255] would be white, a pixel with the value [0, 255, 0] would be green and a pixel with the value of [127, 127, 127] would be grey. <br /><br />
-          Convolutions is a part of computer vision and often used to detect edges and low-level features, sharpening and blurring. It is referred to as a convolution, filter, mask or kernel. The filter is quite similar to an image, in the terms that it too is a matrix, it is usually quite a bit smaller than the image itself. A normal use for filters are blur filters. An example of a blur filter is: <br /><br />
-          [1,	1,	1] <br />
-          [1,	1,	1] <br />
-          [1,	1,	1] <br /><br />
-          So, let’s say we have an image, that looks like this: <br /><br />
-          [100,	100,	200,	200] <br />
-          [100,	100,	200,	200] <br />
-          [100,	100,	200,	200] <br />
-          [100,	100,	200,	200] <br /><br />
-          You then take the filter and pass it over the image, and you time the values in the filter by the values in the image and then add them together, so if we start in the top left corner of the image we would take<br /><br />
-          (1*100) +(1*100) + (1*200) + <br />
-          (1*100) + (1*100) + (1*200) +<br />
-          (1*100) + (1*100) + (1*200) <br />
-          = 133<br /><br />
-          This means that the pixel in the middle of our filter will change to 0. <br /><br />
-          [100,	100,	200,	200] <br />
-          [100,	133,	200,	200] <br />
-          [100,	100,	200,	200] <br />
-          [100,	100,	200,	200] <br /><br />
-
-          And when you apply this to the entire image it will look like this (assuming that the values outside the image boundaries are the same as the one on the inside): <br /><br />
-          [100,	133,	167,	200] <br />
-          [100,	133,	167,	200] <br />
-          [100,	133,	167,	200] <br />
-          [100,	133,	167,	200] <br /><br />
-          By this you have blurred the sharp line that would be created by jumping from 100 to 200 by gradually going up by steps of 33. <br /><br />
-          It’s the use of these filters that the network differentiates itself from normal neural networks. This filters are often the first few layers of the network and will work to highlight low level features such as edges and shadows. <br /><br />
-          In the section where I talked about vision, I mentioned that in the retina the image data our eyes pick up gets pre-processed in two layers where they low level features. This is the same thing the CNNs does in the first layers by using convolutions. What is interesting is then by using these techniques the system arranges itself in such a way that in the deeper layers of the network the higher-level features gets visible. <br /><br />
-                  </div>
-                  <br /><img src="https://cdn-images-1.medium.com/max/800/1*EvBcni8o_O3v4RUl640TZQ@2x.png " alt="Neuron" width="90%" height="auto" ><br /> <br />
-                  <div class="paragraph">
-          In this image set, the furthest left one, is the data from the filters in the first few layers, the middle one is from a layer inside the network and the left one is one of the last layers. Here you can clearly see that the further into the network you get the more high-level features it detects. This is a testament to how accurate our understanding of the human brain is. <br /><br />
-
-
-        </div>
-      </h3>
-    </div>
-  </div>
-
-    
-  <div class="container">
-    <div class="col-lg-12 text-center">
-
-      <h3 class="section-subheading text-muted">
-        <h4>Neural Style Transfer</h4>
-
-        <div class="paragraph">
-
-          Neural Style transfer has two images. A style image and a content image. From these we need to extract the style from the style image and apply it to the content image. Usually you would use a pretrained network using a large dataset such as the VGG-16 (or 19) or googles deep dream dataset. <br /><br />
-          In the last section I talked about CNNs and how they develop a hierarchical representation of features which we will use to get the style out of the style image. When we then combine our style and our content we start with a blank image. Dependent on what network you are using you either start with a black, white, gray or randomly colored image. But more often than not it is gray. <br /><br />
-          Remember in the neural network how we changed the weights based while we were training our data? In neural style transfer you keep the weights constant but you change image instead. This leads to the image slowly getting more and more similar to the content image but with the style of the style image. <br /><br />
-          This is being done with something called a cost function. When you change the pixels in each iteration you are trying to satisfy a cost function by slightly changing the cost function. The cost function has two sub functions, a style loss function and a content loss function. Both the content loss and the style loss are mathematical functions. <br /><br />
-
-        </div>
-        <br /><img src="https://cdn-images-1.medium.com/max/800/1*EvBcni8o_O3v4RUl640TZQ@2x.png " alt="Neuron" width="90%" height="auto" ><br /> <br />
-        <div class="paragraph">
-
-          The content loss function in each layer is the Euclidean distance between the activations of the content image and the output image. In mathematics the Euclidean distance is the straight distance between two points. Remember the hierarchical representations of features? They are important for this. This is all based on the assumption that images with similar content will have the same higher layer representations in the network. <br /><br />
-          The style loss, much like the content loss, is also based on the hierarchical representations of the features but this time in the lower levels of the network. This function is is slightly more complicated than the content loss. And usually uses something called gram matrix, however other statistics such as mean can be used too. <br /><br />
-          The style loss is calculated by getting the correlation between the activations in the feature maps of the layers some statistical method such as a gram matrix and this turns out to be a rather good representation of the style features in the image. <br /><br />
-          When we have the losses calculated we use this to go over the image and minimize the loss by tweaking the pixels in the image to satisfy the loss functions. Doing this iteratively many times will result in an image that starts out grey but slowly works its way to a mix of the two images. <br /><br />
-
-
-        </div>
-
-      </h3>
-    </div>
-  </div>
-
-    
-  <div class="container">
-    <div class="col-lg-12 text-center">
-
-      <h3 class="section-subheading text-muted">
-        <h4>Sources</h4>
-        <div class="paragraph">
-
-          [1] Ryan Jones [14/12/12]. Brain Battery [Online]. Downloaded: [04/04/18]. Available: <a href="https://knowingneurons.com/2012/12/14/brain-battery/ "> Link </a> <br /> <br />
-                    [2] Students of Glenn Elert  [N/A]. Power Of A Human Brain [Online]. Downloaded: [04/04/18]. Available: <a href="https://hypertextbook.com/facts/2001/JacquelineLing.shtml"> Link </a> <br /> <br />
-                    [3] CrashCourse [02/03/15]. The Nervous System, Part 2 - Action! Potential!: Crash Course A&P #9 [Online]. Downloaded: [04/04/18]. Available: <a href="https://www.youtube.com/watch?v=OZG8M_ldA1M "> Link </a> <br /> <br />
-                    [4] CrashCourse [17/02/14]. The Chemical Mind - Crash Course Psychology #3 [Online]. Downloaded: [04/04/18]. Available: <a href="https://www.youtube.com/watch?v=W4N-7AlzK7s"> Link </a> <br /> <br />
-                    [5] N/A [N/A]. HOW BIG IS A SYNAPSE? [Online]. Downloaded: [04/04/18]. Available: <a href="http://book.bionumbers.org/how-big-is-a-synapse/"> Link </a> <br /> <br />
-                    [6] Eric H. Chudler [N/A]. Lights, Camera, Action Potential [Online]. Downloaded: [05/04/18]. Available: <a href="https://faculty.washington.edu/chudler/ap.html "> Link </a> <br /> <br />
-          		        [17] Karsten Rippe [29/09/11]. Genome Organization and Function in the Cell Nucleus [Online]. Downloaded: [06/04/18]. Available: <a href= "https://books.google.co.uk/books?id=z4BDRcLrekMC&printsec=frontcover&dq=cell+nucleus+function&hl=en&sa=X&ved=0ahUKEwjUkrCWs6XaAhWoJ8AKHeQRBWsQ6AEIJzAA#v=onepage&q=cell%20nucleus%20function&f=false href="https://books.google.co.uk/books?id=zA-IIVqNZcMC&printsec=frontcover&dq=cell+nucleus+function&hl=en&sa=X&ved=0ahUKEwjUkrCWs6XaAhWoJ8AKHeQRBWsQ6AEILDAB#v=onepage&q=cell%20nucleus%20function&f=false"> Link </a> <br /> <br />
-                    [18] Miguel Berrios [01/01/98]. Nuclear Structure and Function [Online]. Downloaded: [06/04/18]. Available: <a href="https://books.google.co.uk/books?id=2iGXg4klDVcC&printsec=frontcover&dq=cell+nucleus+function&hl=en&sa=X&ved=0ahUKEwjUkrCWs6XaAhWoJ8AKHeQRBWsQ6AEIPTAE#v=onepage&q=cell%20nucleus%20function&f=false "> Link </a> <br /> <br />
-                    [19]  Bruce Alberts [N/A]. Molecular Biology of the Cell [Online]. Downloaded: [06/04/18]. Available: <a href="https://books.google.co.uk/books?id=2iGXg4klDVcC&printsec=frontcover&dq=cell+nucleus+function&hl=en&sa=X&ved=0ahUKEwjUkrCWs6XaAhWoJ8AKHeQRBWsQ6AEIPTAE#v=onepage&q=cell%20nucleus%20function&f=false"> Link </a> <br /> <br />
-                    [24] N/A [N/A]. BioNumber Details Page [Online]. Downloaded: [05/04/18]. Available: <a href="http://bionumbers.hms.harvard.edu/bionumber.aspx?id=108451"> Link </a> <br /> <br />
-
-                  </div>
-                  <b>Visual System</b>
-                  <div class="paragraph">
-                    [13] Paul Merritt [28/03/17]. Vision : From Retina to LGN [Online]. Downloaded: [04/04/18]. Available: <a href="https://www.youtube.com/watch?v=zYa9TAePOi4"> Link </a> <br /> <br />
-                    [14] Handwritten Tutorials [13/08/11]. The Details (Vision 5 of 5) [Online]. Downloaded: [05/04/18]. Available: <a href="https://www.youtube.com/watch?v=nmaNXVEL7Pw"> Link </a> <br /> <br />
-                    [15] RobotSpaceBrain [12/06/14]. A Journey Through The Visual System [Online]. Downloaded: [05/04/18]. Available: <a href="https://www.youtube.com/watch?v=EskTnxBoPoI"> Link </a> <br /> <br />
-                    [16] Hanna Dee [03/09/17]. Human vision - how do we do it [Online]. Downloaded: [05/04/18]. Available: <a href="https://blackboard.aber.ac.uk/bbcswebdav/pid-1005479-dt-content-rid-1420931_1/courses/CS34110_AB0_2017-18/paradigms1%281%29.pdfNN"> Link </a> <br /> <br />
-                    [20] Michael Nielsen  [01/12/17]. Using neural nets to recognize handwritten digits [Online]. Downloaded: [06/04/18]. Available: <a href="http://neuralnetworksanddeeplearning.com/chap1.html"> Link </a> <br /> <br />
-                    [21] Michael Nielsen  [01/12/17]. How the backpropagation algorithm works [Online]. Downloaded: [06/04/18]. Available: <a href="http://neuralnetworksanddeeplearning.com/chap2.html"> Link </a> <br /> <br />
-                    [22] Chris Woodford [01/14/18]. Neural networks [Online]. Downloaded: [06/04/18]. Available: <a href="http://www.explainthatstuff.com/introduction-to-neural-networks.html"> Link </a> <br /> <br />
-                    [23] N/A [N/A]. NEURAL NETWORKS [Online]. Downloaded: [06/04/18]. Available: <a href="https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/cs11/report.html"> Link </a> <br /> <br />
-                    [24] N/A [N/A]. BioNumber Details Page [Online]. Downloaded: [05/04/18]. Available: <a href="http://bionumbers.hms.harvard.edu/bionumber.aspx?id=108451"> Link </a> <br /> <br />
-
-                  </div>
-                  <b>CNNs</b>
-                  <div class="paragraph">
-                    [8] Shubham Jha [28/07/17]. A brief introduction to Neural Style Transfer [Online]. Downloaded: [04/04/18]. Available: <a href="https://towardsdatascience.com/a-brief-introduction-to-neural-style-transfer-d05d0403901d"> Link </a> <br /> <br />
-                    [9] Gene Kogan [N/A]. Style Transfer [Online]. Downloaded: [05/04/18]. Available: <a href="https://ml4a.github.io/ml4a/style_transfer/"> Link </a> <br /> <br />
-                    [10] Computerphile [02/09/15]. How Blurs & Filters Work - Computerphile [Online]. Downloaded: [05/04/18]. Available: <a href="https://www.youtube.com/watch?v=C_zFhWdM4ic "> Link </a> <br /> <br />
-                    [11] Victor Powell [29/01/15]. Image Kernels explained visually [Online]. Downloaded: [04/04/18]. Available: <a href="http://setosa.io/ev/image-kernels/"> Link </a> <br /> <br />
-                    [12] ujjwalkarn [11/08/16]. An Intuitive Explanation of Convolutional Neural Networks [Online]. Downloaded: [05/04/18]. Available: <a href="https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/"> Link </a> <br /> <br />
-
-                  </div>
-                  <b>NST</b>
-                  <div class="paragraph">
-                    [7] Utagawa Kunisada [01/03/1853]. Two Women Carried Across a River by Porters, right sheet of the triptych Illustration of Two-Way Traffic on the Ōi River  [Online]. Downloaded: [04/04/18]. Available: <a href="https://www.vangoghmuseum.nl/en/search/collection?q=&artist=Utagawa%20Kunisada "> Link </a> <br /> <br />
-                    [8] Shubham Jha [28/07/17]. A brief introduction to Neural Style Transfer [Online]. Downloaded: [04/04/18]. Available: <a href="https://towardsdatascience.com/a-brief-introduction-to-neural-style-transfer-d05d0403901d"> Link </a> <br /> <br />
-                    [9] Gene Kogan [N/A]. Style Transfer [Online]. Downloaded: [05/04/18]. Available: <a href="https://ml4a.github.io/ml4a/style_transfer/"> Link </a> <br /> <br />
-
-                  </div>
-                  <b>Images</b>
-                  <div class="paragraph">
-                    [25] N/A [N/A]. Action Potential Graph [Online]. Downloaded: [04/04/18]. Available: <a href="https://i.stack.imgur.com/raKlO.jpg "> Link </a> <br /> <br />
-                    [26] N/A [N/A]. Optic Tract [Online]. Downloaded: [04/04/18]. Available: <a href="http://anatomyzone.com/anatomy-feed/optic-tract/"> Link </a> <br /> <br />
-
-                  </div>
-
-
-
-      </h3>
-    </div>
-  </div>
-</section>
-
-
-
-
-    <section id="week6">
-  <div class="container">
-    <div class="col-lg-12 text-center">
-    <h1>Week 6</h1>
-      <h3 class="section-subheading text-muted">
-
-        <h4>I did it! Finally, something is working! </h4>
-
-        <b>Blog/html</b> <br />
-        <div class="paragraph">I changed the about tab to have a bit more meat on what my project is all about and how it all works. I’ve also made it so that if you go to Kallah.co/#week3 you get moved to week3 and updated the feed.xml to also use this. I’ve also added last week’s post to the RSS feed as for some reason it was missing.  <br /><br />
-        </div>
-
-        <b>Programming</b> <br />
-        <div class="paragraph">I finally managed to get TensorFlow to accept my dataset object and thus run the entire program without any crashes. For the first time I ran the network with my own dataset of Kyffin Williams images vs my pictures. I had about 349 where 172 were Kyffin Williams and 175 were my random photographs. The images were divided into 70 test images, 208 training images and 71 validation images. The images were all 100x100 pixels and had no modifications to them. Some time, hopefully this week, I will input the same images again, however I will turn them 90, 180 and 270 degrees so I get all the images in different orientations. This should make the image set larger, and too the computer an image tilted 90 degrees is a vastly different image. <br /><br />
-        The first results gave me an accuracy of 72.9% on the Test-Set with 1000 iterations. I am not too happy about this accuracy, however that gives me some margin to improve! From the image bellow you can see that the accuracy spikes very quickly on the training set when I print each 100 iterations, and I will probably go more in detail on what happens within each optimization iteration later. However, for now, all I know is that I most likely, with 1000 iterations on only 350 images I am overtraining the network. This can be solved by adding more images to my dataset, which I’d love to, but I’ve been having some trouble getting the rights to publishing the images in my dataset. <br /><br />
-        <img src="https://i.gyazo.com/a1c31ece68d56c48b74c5575a41dd015.png" alt="https://i.gyazo.com/a1c31ece68d56c48b74c5575a41dd015.png" class="transparent"><br /><br />
-        The next image is a picture I took of my mum and dad in Macao last year, I have resized it to 100x100 and made it greyscale. The next two images will use this as a baseline. <br /><br />
-        <img src="https://i.gyazo.com/36c10f1c57f9ac1c6d821d4dbcdbd188.png" alt="https://i.gyazo.com/36c10f1c57f9ac1c6d821d4dbcdbd188.png" class="transparent"><br /><br />
-        On this image below, the filter, or neuron, from the first convolution layer of the CNN has been applied to the image. This makes for some pretty psychedelic effects but that’s not the point. What this highlight is what the different filters in this stage are doing too the image to make it more recognizable for the network. If you look at the bottom right image, you can see it’s a pretty good edge detector for humans, and two above that one there’s an all-around detector. What I am guessing is that the bottom right has ended up as a vertical line detector (if you don’t know what that is it’s pretty well explaned here: <a href=”https://homepages.inf.ed.ac.uk/rbf/HIPR2/linedet.htm”>link</a>) and that the one above is an any line detector. <br /><br />
-        <img src="https://i.gyazo.com/809c94e0ac2697def46ee0fc4ff56d73.png" alt="https://i.gyazo.com/809c94e0ac2697def46ee0fc4ff56d73.png" class="transparent"><br /><br />
-        On the next image, the neuron from the second convolutional layer has been applied to the images and you can see they are becoming less like the image that we recognize and more like a negative or something like that. <br /><br />
-        <img src="https://i.gyazo.com/1c70685069927494728458abf6b347ba.png" alt="https://i.gyazo.com/1c70685069927494728458abf6b347ba.png" class="transparent"><br /><br />
-        Unfortunately, I was unable to screengrab any of the images of the convolutional layers however they look pretty similar to the one below, but the one bellow is from Hvass-Labs (<a href=””>link</a>) where he has trained the network to detect numbers and this is the second convolutional layer from that. In that image the pixels have been assigned to being blue if they have a negative reaction to black pixels and red if they have a positive reaction to black pixels. <br /><br />
-        <img style="-webkit-user-select: none;background-position: 0px 0px, 10px 10px;background-size: 20px 20px;background-image:linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);" src="https://i.gyazo.com/c42b956a6bd8fdea368af92f83d2be36.png"><br /><br />
-        In that image we can see some things such as left side 3 down is pretty much a diagonal line detector and same with the bottom second to the left. This, however, doesn’t tell us anything about the data in my network however I will have a more in-depth post about this later. First, I have a demonstration this week to prepare and I also have to make a post about my data object so other people might use it as well<br /><br />
-        </div>
-
-        <b>Honorable mentions </b><br />
-        <div class="paragraph">I have also remade my github repo and deleted my old one as it was turning into a disorganized mess of conflicting copies and bad file names. I think starting from scratch might have saved me some headache in the future! <br /><br />
-        I have also moved my data class out of my main program and made it separate file with all the functions related to the data in said file. This has made my program quite a bit more readable and so I have had a lot easier time debugging and hacking away on the TensorFlow stuff<br /><br />
-        I have also been removing a lot of old print functions, comments and variables that aren’t in use anymore but have still been left in the code. Like a hundred variables called test_something which I’ve been using for testing purposes. <br /><br />
-        I’ve also been looking at a lot of the TensorFlow source code as I’ve come to the idea that there is no way to understand anything from the official documentation so reading the source code is the best way.
-        Lastly I think I’ve discontinued Windows 10 support as I am using the scikit-learn package which is apparently really hard to get working with Windows 10, and I’m not about to spend time figuring that out for no real good reason! <br /><br />
-        </div>
-
-      </h3>
-    </div>
-  </div>
-</section>
-
-    <section id="week5">
-  <div class="container">
-    <div class="col-lg-12 text-center">
-    <h1>Week 5</h1>
-      <h3 class="section-subheading text-muted">
-
-        <h4>What I have done this week (and a half)</h4>
-        <b>Programming</b>
-        <div class="paragraph">
-          Last week I worked on trying to implement my dataset as a tfrecord. This is mostly a undocumented thing that is a hell of not enough documentation coupled with ambiguous error messages which is then topped with a file structure that is unreadable to nothing but TF. This makes it so the only way you can make sure your tfrecord is structured correctly is to feed it into a CNN and pray. The problem however occurs if you cannot get the tfrecord to be read by your CNN as this makes it so you have to change your structure, however after about a week of research I have found no way to get the structure of the tfrecord file if you don’t know it beforehand. And as none of the TF objects have a tostring function it you have to guess what the appropriate structure is.
-
-          <br /><br />This week I have been working on spoofing a object that is in the tensorflow.contrib.learn.python.learn.datasets.mnist.dataset which is what most the tutorials use. This is a object that would do the same thing as the tfrecord based one, but I have given up on the whole idea of trying to figure them out, as I am starting to feel that will be impossible. This data object is trying to structure the dataset in the same manner as the MNIST dataset as the documentation for this object is rather good as a lot of third party tutorials use MNIST with the TF MNIST object. I have found that quite a bit of the documentation on TF is just a “tensorflow.some_object” that says “this is an object for ‘what_the_name_of_the_object_implies’, more information is found on this link: ‘A collection of objects quite similar to tensorflow.some_object’” and on link 2 it just says “this is an object for ‘doing what the filename implies but worded just slightly differently than on the other page’, which is documented here: “some object”.
-          <br /><br />I have also found a object that was marked as deprecated on the TF GitHub repo that wasn’t actually deprecated, and I have found object references to objects that doesn’t exist in TF and if that’s not enough I also found a reference to a object that I have been using for a while documenting it in a different way to what I use it, and when I tried it, it gave me errors about things not being the way they told me. All this on the official TensorFlow documentation webpage. A total utter disgrace!
-          <br /><br />I also met with someone else who does a project quite similar to mine and he said that he had been having the same problems with TF documentation in general and I gave him what I had on tfrecords as most of the tfrecord stuff I have is somewhat usable however from what I can tell impossible to structure correctly.
+          All of the components are marked with the part names, however, make sure to read the diagrams for your individual parts as certain misconfigurations can lead to broken components and even breaking the Arduino. When you wire everything up, I would advice to handle it with care, as the heating element is running on 230V AC, and therefor can be lethal. Don’t try to tackle this as your first project, if you don’t have any prior experience with higher voltages and be careful! The code for this project is available in the code section
           <br /><br />
         </div>
-        <b>Documentation</b>
-        <div class="paragraph">I did my poster but that’s not this subject but here’s a link: <a href='/poster.pdf'><img src="https://i.gyazo.com/7a7a554f7fecb40e94604c8b9f0d5fa2.png" alt="Poster" width="100%" height="auto"></a></div>
-        <br /><br /><h4>My plans for this coming week</h4>
-        <b>Programming</b>
-        <div class="paragraph">
-          Get the CNN working by editing my dataset object, so it works with the TensorFlow Functions. Hopefully, when I bring some of my code to the meeting on Friday the ninth of march I will be able to have one of my errors explained and maybe I will be able to get it working over the weekend. This will be my only goal for this week, however, if I do get it real fast I will start working on optimaizing it with different techniques such as TF settings, image processing and different sizes and colors of the
-          <br /><br />I have also given up on using scrum and might try to use XP instead, but I have not decided fully yet, as I have been too busy trying to fix the dataset object which is my main holdback at the moment. Scrum is just too team based and I don’t feel like I am getting anything out of using it. However, I’m starting to feel like there is no methodology that is fit for working on a project where you are delving into a undocumented beast and trying to figure out what curse the spell maker cast upon my program by aligning sticks towards north and throwing pebbles in the water. Because right now it feels like it’s more like I am hacking something together than programming. And the problem is, I can’t do anything else as programming requires you to understand what you are doing, and understanding requires someone to tell you how it is done, which usually comes from some documentation which in this case is complete and utter rubbish.
-          <br /><br />Oh yeah, and maybe getting some documentation done too would be nice, but the main goal is to fix my dataset object.
-        </div>
+
+
       </h3>
     </div>
   </div>
 </section>
+<hr>
 
-    <section id="week4">
+    <section id="final_project">
   <div class="container">
     <div class="col-lg-12 text-center">
-    <h1>Week 4</h1>
+    <h1>Digital Analysis of Paintings using TensorFlow</h1>
       <h3 class="section-subheading text-muted">
-
-          <h4>My plans for this coming week</h4>
-          <b>Blog/html</b>
-          <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. I also want to add a progress bar to keep up to date on a per week basis on the webpage. <br></a></div>
-          <b>Programming</b><br>
-          <div class="paragraph">This week I aim to finish the resize multiple images script, as I have realized that it crashes sometimes, so I have to look at that. I also have to look at the PNG to Array converter as it prints the array incorrectly. I also need to do some more commenting in all my python files that I have written so far, as they are a bit sparse. <br></div>
-          <div class="paragraph">I also aim to get the outline of a CNN to work that I can build my project on. I’ll probably take a tutorial one, and add and change to it, but first I need to get one of the tutorial CNNs to work. I have also started to look into what activation functions I will use and I have set as a goal to have a plan for what to use where. <br></div>
-          <b>Documentation</b><br>
-          <div class="paragraph">I want to fill inn the ethics form and fill in the schedule, and I also aim to read the Project Report and Technical Work document. On top of that I want to finish the chapter on backgrounds. <br></div>
-          <h4>What I have done this week</h4>
-          <b>Blog/html</b><br>
-          <div class="paragraph">Change the title from “Something” to “Digital Analysis of Paintings using Tensor Flow”. Fix a problem where the page looks a bit wonky on mobile. Css to change the top image to be centered bottom. Lastly I added a progress bar to keep up to date on a per week basis on the webpage.<br></div>
-          <b>Programming</b><br>
-          <div class="paragraph">I found out that the PNG converter didn’t have an error but one of the image files I fed it was corrupt and when I removed that I had no problems with it. The problem with the array converter was that it printed the arrays like this:<br></div>
-          <br><div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-          <div class="paragraphCentred">. <br></div>
-          <div class="paragraphCentred">. <br></div>
-          <div class="paragraphCentred">. <br></div>
-          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div>
-          <div class="paragraphCentred">[0,0,0 … 0,0,0] <br></div><br>
-          <div class="paragraph">I’ve commented all the converter files and I have also added a few more options such as an option to give all output files the same name but with an increasing index numbers eg. img_0, img_1, img_2… and not only the previous inherit the filename. <br></div>
-          <div class="paragraph">On the subject of activation functions I have decided that on the hidden layers I will use ReLU as Sigmoid and Tanh both suffer from a problem where they cause the gradient to vanish and Sigmoid is also not zero centered. I have decided on ReLU as it has a big foothold in the CNN community as it is the most popular one at the moment because of its speed and accuracy. However it has a problem where some neurons can die in the training process. This could be fixed with a Leaky ReLU but that has a much higher time complexity and therefor I will not be using that one unless I experience lots of dead neurons during training.  In Krizhevsky, Sutskever and Hinton’s paper, ImageNet Classification with Deep Convolutional Neural Networks they found it had a 6x improvement in convergence over Tanh <a href=" https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf ">Link to paper</a> <br></div>
-          <div class="paragraph">For the activation layers I will use SoftMax for the output layer as SoftMax it gives probability for different classes and from that I can determine the best by choosing the highest one. I want the probabilities so I can see the outputs and use the data I get back to tune the CNN<br></div>
-          <div class="paragraph">I got one of the CNNs to work this week on the MNIST dataset and it classify numbers with a high accuracy. I have also found the reason I have been having so many problems getting the CNN tutorials to work is because when I used sudo pip3 install matplotlib something must have gone wrong without me noticing and I didn’t do anything to fix it. When I uninstalled and reinstalled matplotlib it worked and someone online said it might have to do with the fact that I didn’t install the matplotlib before the NumPy library which somehow could give troubles for matplotlib but it was rare. But that’s from some random forum so I don’t know how true it was, but it worked. So, now I just hope I don’t get any more weird errors such as a “WhateverExeption” and what not as I have been going crazy trying to figure out why nothing worked!<br></div>
-          <b>Documentation</b><br>
-          <div class="paragraph">Ethics I have finished the ethics and handed it in on the Turn It In site. I have also read the breakdown of grades and below are a filled in form for the schedule.<br></div>
-          <img class="gyazo_image" src="https://i.gyazo.com/b23cb8d0f100eab55f6ebb84f69b9f20.png" style="visibility: visible; max-width: 465px; max-height: 100%;" <br>
-          <div class="paragraph">I have decided not to do the chapter on background as I haven’t finished reading about Neural Style Transfer, and I have been a bit low on time this week, as I spent until Friday at 3:40AM to find out that the problems I have been having are due to a matplotlib issue and not a things are outdated issue. <br></div>
-          <h4>My plans for next week</h4>
-          <b>Programming</b><br>
-          <div class="paragraph"><br>I want to get the CNN to take my dataset and give me results that are of a acceptable grade! This means I need to figure out how to prepare the dataset so I can use it in TensorFlow. So far I have the ability to change the images from RGB to Greyscale and resizing them and for now I am thinking I’ll use 100pxl by 100pxl images that are greyscale. After I get that to work the first change I probably will do is to add the colors back in as colors have a lot to say in images and paintings, but for the testing phase I’ll use greyscale and most likely 100x100, though I might go lower than that for time concerns. <br></div>
-          <b>Documentation</b><br>
-          <div class="paragraph"><br>I want to finish the first chapter on background stuff regarding the CNNs and leave the Neural Style Transfer stuff for later. I want to do it like this so it is as fresh as possible in my mind<br></div>
-      </h3>
-    </div>
-  </div>
-</section>
-
-    <section id="week3">
-  <div class="container">
-    <div class="col-lg-12 text-center">
-    <h1>Week 3</h1>
-      <h3 class="section-subheading text-muted">
-        <b>Problems, problems and more problems</b><br>
-        <div class="paragraph">After a few days of trying to install both python3.5 and python 2.7 with TensorFlow’s NVIDIA Cuda tools having been stuck with trying to get the NVIDIA-Cuda-tools installed in a way that is compatible with TensorFlow. I have found that Cuda on Ubuntu does not work as you might expect. If you have more than one GPU you can get into some serious problems getting the Cuda tools to work. As long as you have two GPUs from different brands, say a NVIDIA graphics driver, coupled with an integrated graphics card in the CPU from Intel, the Cuda will not work on your system. The Cuda is apparently unable to cope with any ubuntu based system that has such a setup even if you manually disable either the standalone or the integrated GPU. I have not looked into this on pc, but I am currently using Ubuntu, so I have decided to go for the CPU limited way, at least for now. It’s a huge relief to finally start working and not having to work on the hell that is trying to figure out why things aren’t working by some cryptic error message.
-        <br><br>I have also started to note down things needed to be in the installer as I go, and I am still not 100% sure if I will end up using python 3 or python 2.7 but as of now I am thinking that unless I find any good reason not to use python 3 I will continue to use it.
-        <br><br>I have also started to do some work on implementing some stuff into code and I have been writing a classifier for the MNIST dataset to learn a bit more about how to do the actual implementation of the work into code. This has been an ok process where I have followed tutorials and I have learned a lot from this. One problem I keep jumping into is redundant processes where someone has done something a year or two ago and when I implement their code it gives me error where it’s been made redundant but it has no pointers to what it has been replaced by so I have had to restart a few times, and that makes me a bit weary to how TensorFlow updates and makes your code redundant.
-        <br><br>I have also written two smaller scripts, one to resize a batch of images from one size to another and one that takes an image as input and prints it as an array. My aim with them, is to use those to resize the images in the datasets to a uniform size and then process them and then create a file that contains all the images as an array of images, but I haven’t gotten around to the point of making the script write the files yet as I haven’t decided on a file format.
-        <br><br>Anyways here’s a gif of the program running on windows, just because I had one:<br></div>
-        <br><video class="image-viewer vertical" poster="https://thumb.gyazo.com/thumb/542_w/_979036a647a35051dd788b26f89ba0d3-gif.jpg" autoplay="" playsinline="" loop="" style="max-width: 542px; max-height: 100%;"><source src="https://i.gyazo.com/018ecd69a5c66f1142820efbaea08dfd.mp4" type="video/mp4"></video>
-      </h3>
-    </div>
-  </div>
-<section>
-
-    <section id="week2">
-  <div class="container">
-    <div class="col-lg-12 text-center">
-    <h1>Week 2</h1>
-      <h3 class="section-subheading text-muted">
-        <b>Setting up shop</b><br>
         <div class="paragraph">
-        This week I have mostly looked at the TensorFlow library and numpy, matplotlib and pylab to get a better understanding of the libraries I will be using over the next few weeks. I have started working on a schedule of what I want to get done per week and I want to be able to follow a structured plan, so I have a goal for each week that I should be able to do. In my first post I set 7 steps of what I wanted to do, and I will aim to get to step 5 and then if I manage to work past my own schedule I will start working on 6 and 7 when I can. In the meeting today, I said I had contacted Bob Rosses copyright holders and asked for permission to use his painting in my work, you mentioned to contact the copyright holders for Hockney to see if they wanted to give me permissions to use his paintings too. Last week you also gave me the set of pictures for the same artist the student before me used to do his project.
-        <br><br>This week I have also worked a bit on getting the blog up and going as that has been giving me a bit of grief. However, the account on my site has finally been fixed and I can now start posting here, rather than using a word document locally on my pc.
-        </div>
-      </h3>
-    </div>
-  </div>
-</section>
 
-    <section id="week1">
-  <div class="container">
-    <div class="col-lg-12 text-center">
-      <h1>Week 1</h1>
-      <h3 class="section-subheading text-muted">
-        <b>What I plan to do for my project?</b>
-        <div class="paragraph">
-          <br>For my project I aim to make a program that can take an input image of a painting and use a CNN to determine weather or not it was made by a specific artist. I aim to use multiple artists and have a “Bob Ross classifier” and a “Picasso classifier” etc. At the later stages of the project, if time allows I then wish to be able to add two more functionalities: One is Neural Style Transfer so I can put an image of anything into the Bob Ross (or any of the others) classifier and then get a Bob Ross painting out of it that still is an image of the hand but in the style of Bob Ross. The second functionality I then wish to add is to make the CNN then be able to take one image as a input from one artist and then detect if a second image is by that same artist using a Boolean classifier. I aim for the project to have some dependencies, mainly TensorFlow, which means I will write it in Python and so I have to spend some time brushing up on python these first weeks, to learn everything Python and TensorFlow related. For the project I hope to be able to have an installer which installs the appropriate packages and an interface to run it without using command line. For my priorities I have
-          <br><br>1. Create the classifiers.
-          <br>2. Create the installer.
-          <br>3. Create the interface.
-          <br>4. Add the neural style transfer functionality.
-          <br>5. Add the neural style transfer to the interface.
-          <br>6. Add the any painting detector functionality.
-          <br>7. Add the any painting to the interface.<br>
-          <br>I don’t think I will be able to complete all these tasks but I want to aim as high as possible, so I can continue to work, even when I finish one part so I don’t get stuck the last weeks of the project trying to polish the classifiers to get 3-4% better classification out of them.
-          <br><br><i>This was written in the first week and edited later to give it more sense.</i>
+          In this project, I investigated the ability to use a Convolutional Neural Network (CNN) to classify the artist that made certain paintings. For this I needed to gather a dataset of paintings from different artists, and so I contacted the Van Gogh Museum and the Munch Museum, which gave me permission to use a large portion of their images. I also got access to a dataset from my Tutor, Dr. Hannah Dee, from Kyffin Williams. With this data, I could then train the network on what paintings from different artists looked like. When the network was trained, I could then save the model, and in a different program load that model. With this new software, I could then classify images, without re-training the network.
+          <br /><br />
+          Using the same model from the trained network I aimed to use Neural Style Transfer (NST) to extract style and content from two images and apply the content and style to a blank image, to make a new image that has the content of one image and the style of the other. This has been successful in making rather interesting looking images in other projects, however most projects use the models that have been trained on photos of things such as animals and plants. More information about this project can be found in the Archive. I made a blog while making the project, which is still available, however has been moved.
+          <br /><br />
+          In the diagram below, the process of the network is explained. It starts off by feeding the input image to the training network. The first step is to put the image though the convolutional layers, starting with layer one. The first layer applies its weights to the image and outputs the weighted images. These images are then fed into the second convolutional layer where their weights are also applied. It then outputs the processed images into the fully connected hidden layers. These layers have two outputs at the end which corresponds to the likelihood of the output being of a specific class. In this figure it is 70% certain that the image is by Gogh and 30% certain that the image is not by Gogh. It then picks the highest class and the image is then classified and the cycle repeats with a new image.
+          <br /><br />
+          <img src="img/projects/tensorflow/tf_weigts_2_layers.png" style="width: 100%;"/>
+          <br /><br />
+          The working version of the code is available on the code section, and a link to GitHub will be available when I get around to making my project files a bit easier to read, as they are a mess now. All the pictures uploaded to the classifier will be available to everyone and deleted when a new image is uploaded. This means that if you upload an image of yourself, anyone can see that image until the next time the webpage is used. I do not control what images people upload to the classifier, so use at your own risk.   
         </div>
       </h3>
     </div>
@@ -825,7 +227,18 @@
                     <h2 class="section-heading">Code</h2>
                     <h3 class="section-subheading text-muted">
                       <div class="paragraph">
-                            <a href="/code/python/classify.html">Here is a link to a working version of the classifier link</a>
+                            Here is a web version of the TensorFlow Classifier from my final year project. The model used here is quite inaccurate due to storage and processing on servers is expensive. <a href="/code/python/classify.php" style="font-weight:bold">Link to the web classifier</a>
+                            <br /><br />
+                            Here is the code for the Sous Vide machine I made, feel free to use it. <a href="code/cpp/sous_vide/relay.ino" style="font-weight:bold">Link to Sous Vide code</a>
+                            <br /><br />
+                            <!-- This is a link to my GitHub page, where you can find a lot of my work. <a href"https://github.com/mrKallah" style="font-weight:bold">test</a> -->
+
+
+
+
+
+
+
                       </div>
                     <div>
                   </h3>
@@ -844,30 +257,58 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">About</h2>
                     <h3 class="section-subheading text-muted">
-                      <div class="paragraph">
-                        On this site I will post about work I do. Currently I am working on my dissertation which and most of my posts will be about TensorFlow. <br /><br />
+                      <div class="paragraph" >
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td style="width:30%;"><img src="img/me.jpg" style="width:100%; height:auto; align:left;" /></td>
+                              <td style="text-align:top; padding-left:2%;" valign="center">
 
-                        My project is about using a TensorFlow Convolutional Neural Network to detect if an input image A is of class X or Y. This is being done by taking
-                        a filter, also called a neuron, which you can imagine as a laser pointer that gets moved along the input image A. As it shines its laser on the image
-                        the image, much like a CD (if anyone still knows what those are), the image reflects some information back to the laser. This changes the way the laser
-                        shines in the future by adjusting its weights, for this example maybe color and brightness of the laser. It then by shinning on a lot of images that it
-                        already knows whether or not is of a specific type it can learn what patterns fits to what classifiers. You then take a bunch of these torches and you
-                        tape them in pairs and in serial which leaves you with something that in some cases, provided enough data and time to train, can give really good results. <br /><br />
 
-                        The bulk of my project so far has been on developing a data class which lets you load the images into TensorFlow without all the fuss that is related to creating,
-                        packaging and opening. tfrecord files as they are an absolute mess to work with. <br /><br />
 
-                        In the next iterations of my program I will focus on being able to save and load the neurons from my CNN, so I don’t have to train the Network every time I run it.
-                        At some point I aim to add Neural Style Transfer to it as well so I can input some image A and B and have the output be a mixture of the style of A but the general look
-                        of B. So say A is a Picasso painting and B is a picture of a dog, this will lead to an output image which is a picture of a dog in the style of Picasso.  <br /> <br /><br />
+                                My name is Lasse Falch Sortland, but a lot of people know me as Kallah. I am a <a style="text-decoration: initial;" id="dob"></a>-year-old computer scientist. I am born and raised in Norway, but I have done my Bachelor of Computer Science and Artificial Intelligence at Aberystwyth University. This webpage is a place for me to talk about my projects, both university related projects and other projects that I do.
+                                <br / ><br />
+                                Under the code section, I have links to code I have written, some of which is open source and free for anyone to use. See in the description of each individual project for more information. There should also be a link under the code section to my GitHub page, which should have the most recent builds. I primarily work with C, C++, Java, Python and a few web-related languages.
+                                <br / ><br />
+                                I am interested in electronics, gaming, programming, cooking and photography. My projects will most likely revolve around these themes. Some of the ideas that I have, which I am considering working on, is a Sous Vide machine, weather station with a Neural Network based forecaster, a camera to classify paintings, a minesweeper solver and automated driving for one of the driving simulation games.
+                                <br / ><br />
+                                I mentioned that I like electronics, and for that reason, a lot of my projects will include Arduinos and components. I will try to include lists of parts and schematics, however if anything is missing, or you notice anything wrong, please feel free to send me an email in the contact me section.
+                                <br / ><br />
 
-                        <b>Dictionary</b> <br />
-                        CNN = Convolutional Neural Network <br />
-                        NST = Neural Style Transfer <br />
-                        np = NumPy <br />
-                        np_array = Numpy Array <br />
-                        TF = TensorFlow <br />
-                        TF.learn / TF.learn.dataset / TF dataset object = tensorflow.contrib.learn.python.learn.datasets.mnist.dataset <br />
+
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+
+
+
+
+                        <script>
+                          // The date you were born
+                          var birthDate = new Date(1994, 03, 16, 0, 0, 0, 0);
+
+                          // The current date
+                          var currentDate = new Date();
+
+                          // The age in years
+                          var age = currentDate.getFullYear() - birthDate.getFullYear();
+
+                          // Compare the months
+                          var month = currentDate.getMonth() - birthDate.getMonth();
+
+                          // Compare the days
+                          var day = currentDate.getDate() - birthDate.getDate();
+
+                          // If the date has already happened this year
+                          if ( month < 0 || month == 0 && day < 0 )
+                          {
+                              age--;
+                          }
+
+                          document.getElementById("dob").innerHTML += age;
+                        </script>
 
 
                     <div>
@@ -922,8 +363,8 @@
                         </li>
                     </ul>
                 </div>
-				
-				<p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+
+				<a class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></a>
             </div>
         </div>
     </footer>
