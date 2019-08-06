@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head> <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title> Classify! </title>
+  </head>
+  <body>
+
+	<form action="upload.php" method="post" enctype="multipart/form-data">
+	    Select image to upload:
+   	  <input type="file" name="fileToUpload" id="fileToUpload">
+   	  <input type="submit" value="Upload Image" name="submit">
+	</form>
+
+    <?php
+		shell_exec("chmod ")
+                echo $newline
+		$newline = "\n\r<br />";
+                $command = "python3 /var/www/kallah.co/public_html/code/python/classify.py 2>&1";
+                $output = shell_exec($command);
+                //echo $newline;
+                echo "<h1>".$output."</h1>";
+		//phpinfo();
+        ?>
+		<img src="resized/load/rand_18.png " alt="input" width="80%" height="auto" >
+		<img src="resized/load/rand_18.jpg " alt="input" width="80%" height="auto" >
+		<img src="resized/load/rand_18.jpeg " alt="input" width="80%" height="auto" >
+  </body>
+</html>
