@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="img/kallah.ico"></link>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kallah.co</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="This is a site set up for my bachelor that I will update on what I do, things I find interesting and generally what I think about the project.">
+    <link rel="canonical" href="/">
+
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+
+
+  <body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Kallah.co</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    <li>
+                      <div class="post_dropdown">
+                        <a class="page-scroll" href="#posts">Projects</a>
+                        <div class="post_dropdown_content">
+<a class='post_dropdown_text' href='#tts'> Autoencoder for Text to Speech</a><br><hr>
+<a class='post_dropdown_text' href='#torcs'> Reinforcement learning for Driving using A3C</a><br><hr>
+<a class='post_dropdown_text' href='#bachelor'> Digital Analysis of Paintings using TensorFlow</a><br><hr>
+
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="post_dropdown">
+                        <a class="page-scroll" href="code.html">Code</a>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="post_dropdown">
+                        <a class="page-scroll" href="#about">About</a>
+                      </div>
+
+                    </li>
+
+                    <li>
+                      <div class="post_dropdown">
+                        <a class="page-scroll" href="#contact">Contact</a>
+                      </div>
+
+                    </li>
+                    <li>
+                      <div class="post_dropdown">
+                        <a class="page-scroll" href="archive.html">archive</a>
+                      </div>
+
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Lasse Falch Sortland</div>
+                <div class="intro-heading">A site about CompSci and AI</div>
+
+            </div>
+        </div>
+    </header>
+<!--
+
+
+
+
+
+ -->
+
+    <style>
+  :root{
+    --gather: 100%;
+    --augment: 100%;
+    --cnn: 95%;
+    --nst: 10%;
+    --report: 100%;
+    --load_save: 95%;
+    --tests: 95%;
+  }
+  #tf {
+    width: calc((var(--gather) + var(--tests) + var(--load_save) + var(--augment) + (var(--cnn))*5 + var(--nst)*5 + var(--report)*5)/19 ) ;
+  }
+  #tf {
+    height: 30px;
+    background-color: #353;
+    text-align: left;
+    text-indent: 1em;
+
+  }
+
+  #sous_vide_bar {
+    width: 30%;
+  }
+  #sous_vide_bar {
+    height: 30px;
+    background-color: cyan;
+    text-align: left;
+    text-indent: 1em;
+  }
+</style>
+
+<div class="section-subheading text-muted">
+
+  <section id="posts">
+    <section id="tts">
+      <div class="container">
+        <div class="col-lg-12 text-center">
+        <h2 id="post_title">Autoencoder for Text to Speech</h2>
+          <h3 class="section-subheading text-muted">
+            <div class="paragraph">
+				
+				This was a small project testing the ability of using a Keras autoencoder for text to speech using my own voice as a dataset. The project did not yield good results; however, this was a weekend project. If more time and effort is put into the project, including a larger dataset, a more acceptable result may be achievable.  This project can be found here <a href="https://github.com/mrKallah/Autoencoder-for-tts " style="font-weight:bold">GitHub</a>
+            
+			</div>
+          </h3>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<hr />
+
+<div class="section-subheading text-muted">
+
+  <section id="posts">
+    <section id="torcs">
+      <div class="container"> 
+        <div class="col-lg-12 text-center">
+        <h2 id="post_title">Reinforcement learning for Driving using A3C</h2>
+          <h3 class="section-subheading text-muted">
+            <div class="paragraph">
+			
+				In this project the aim was to automate the driving for a remote-controlled vehicle with a front mounted camera. This was done using the A3C algorithm in PyTorch. The idea was to train the model in a simulated environment using TORCS and then apply the training from the TORCS to the real-world model. My contribution here was primarily in image pre-processing, helping out with the TORCS simulator and in tying the different parts of the project together. My main focus was on creating a pre-processing step that would consistently take any image from the simulator or the real world and make them as similar as possible. This was done by removing as much unimportant information as possible. An example video of the preprocessing steps is attached below and the source code and my co-authors can be found at  <a href="https://github.com/dmachlanski/ce903-tesla " style="font-weight:bold">GitHub</a>
+				<br>
+				<center><iframe width="560" height="315" src="https://www.youtube.com/embed/0oKWa0_V9-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+            </div>
+          </h3>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<hr />
+
+<div class="section-subheading text-muted">
+
+  <section id="posts">
+    <section id="bachelor">
+      <div class="container"> 
+        <div class="col-lg-12 text-center">
+        <h2 id="post_title">Digital Analysis of Paintings using TensorFlow</h2>
+          <h3 class="section-subheading text-muted">
+            <div class="paragraph">
+				
+				This project focused on investigating the ability to use a Convolutional Neural Network (CNN) to classify which artist created a painting using raw TensorFlow. The dataset used in this project was gathered by contacting various museums and asking for permission. With the data gathered, the network was trained using those paintings alongside some photos taken of random objects and people. When the network had finished training the model was saved and based on the parameters used, it could be light weight enough to run on a simple web server. (<a href="/code/python/classify.php" style="font-weight:bold">Link to the web classifier</a>) (please note the images uploaded are available to the public, and will be saved until the next image is uploaded) (If broken, this is likely due to php being outdated, feel free to contact me using my email below) The code for this project is also available on GitHub.
+				<br>
+				After the project was finished, the ability to do multi class predictions was implemented. This came at the cost of a slight decrease in accuracy. A large update to the pre-processing steps was also added, improving both usability and performance. Lastly, the save and load method was changed to automatically save and load the used parameters in order to avoid manually changing parameters when loading a model.
+
+            </div>
+          </h3>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<hr />
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+                    <h3 class="section-subheading text-muted">
+                      <div class="paragraph" >
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td style="width:30%;"><img src="img/me.jpg" style="width:100%; height:auto; align:left;" /></td>
+                              <td style="text-align:top; padding-left:2%;" valign="center">
+
+
+
+                                My name is Lasse Falch Sortland, but a lot of people know me as Kallah. I am a <a style="text-decoration: initial;" id="dob"></a>-year-old computer scientist. I am born and raised in Norway, but I have done my Bachelor of Computer Science and Artificial Intelligence at Aberystwyth University. This webpage is a place for me to talk about my projects, both university related projects and other projects that I do.
+                                <br / ><br />
+                                Under the code section, I have links to code I have written, some of which is open source and free for anyone to use. See in the description of each individual project for more information. There should also be a link under the code section to my GitHub page, which should have the most recent builds. I primarily work with C, C++, Java, Python and a few web-related languages.
+                                <br / ><br />
+                                I am interested in electronics, and for that reason, a lot of my projects will include Arduinos and components. I will try to include lists of parts and schematics, however if anything is missing, or you notice anything wrong, please feel free to send me an email in the contact me section. I am also interested in gaming, programming, cooking and photography. My projects will mostly revolve around these themes.
+                                <br / ><br />
+
+
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+
+
+
+
+                        <script>
+                          // The date you were born
+                          var birthDate = new Date(1994, 03, 16, 0, 0, 0, 0);
+
+                          // The current date
+                          var currentDate = new Date();
+
+                          // The age in years
+                          var age = currentDate.getFullYear() - birthDate.getFullYear();
+
+                          // Compare the months
+                          var month = currentDate.getMonth() - birthDate.getMonth();
+
+                          // Compare the days
+                          var day = currentDate.getDate() - birthDate.getDate();
+
+                          // If the date has already happened this year
+                          if ( month < 0 || month == 0 && day < 0 )
+                          {
+                              age--;
+                          }
+
+                          document.getElementById("dob").innerHTML += age;
+                        </script>
+
+
+                    <div>
+                  </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+<hr />
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact me</h2>
+					<div href="mailto:lasse_sortland@hotmail.com">
+						<center>
+							<a href="mailto:lasse_sortland@hotmail.com" class="btn btn-xl" style="color:black;">Mail</a>
+						</center>
+					</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+      <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Kallah.co <a" id="copyright"></a></span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+
+                        <li><a href="https://www.facebook.com/profile.php?id=100013672805877&ref=bookmarks"><i class="fa fa-facebook"></i></a>
+                        </li>
+
+                        <li><a href="https://github.com/mrKallah"><i class="fa fa-github"></i></a>
+                        </li>
+
+                        <li><a href="https://www.youtube.com/channel/UCL09EWdEO3rK4Iu5fE2FFdA?view_as=subscriber"><i class="fa fa-youtube"></i></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="privacy_policy">Privacy Policy</a>
+                        </li>
+                        <li><a href="terms_of_use">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+
+				<a class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></a>
+            </div>
+        </div>
+    </footer>
+
+	<script>
+	  // The current date
+	  var currentDate = new Date();
+	  var year = currentDate.getFullYear()
+
+	  document.getElementById("copyright").innerHTML += year;
+	</script>
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+
+  </body>
+</html>
