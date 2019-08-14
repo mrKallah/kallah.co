@@ -15,20 +15,25 @@
 			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
 					echo "Sorry, only JPG, JPEG and PNG files are allowed.";
 			} else {
-					$remove = "rm /var/www/kallah.co/public_html/code/python/resized/load/*.png";
+					$remove = "rm resized/load/*.png";
 					shell_exec($remove);
-					$remove = "rm /var/www/kallah.co/public_html/code/python/resized/load/*.jpg";
+					$remove = "rm resized/load/*.jpg";
 					shell_exec($remove);
-					$remove = "rm /var/www/kallah.co/public_html/code/python/resized/load/*.jpeg";
+					$remove = "rm resized/load/*.jpeg";
 					shell_exec($remove);
 					move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir);
-					shell_exec("chmod +rmx /var/www/kallah.co/public_html/code/python/resized/load/*.png");
-					shell_exec("chmod +rmx /var/www/kallah.co/public_html/code/python/resized/load/*.jpg");
-					shell_exec("chmod +rmx /var/www/kallah.co/public_html/code/python/resized/load/*.jpeg");
-					echo "<script>window.location.replace('classify.php');</script>";
+					shell_exec("chmod +rmx resized/load/*.png");
+					shell_exec("chmod +rmx resized/load/*.jpg");
+					shell_exec("chmod +rmx resized/load/*.jpeg");
+					$test = shell_exec('php classify.php');
+					echo "<script>window.location.replace('classified.php');</script>";
 			}
 		} else {
 			echo "This file is not an image or corrupt";
+			#header("Location: classify.php");
+			#die();
+			
+			
 			$uploadOk = 0;
 		}
 	} else {

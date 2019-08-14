@@ -1,6 +1,9 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
+
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import tensorflow as tf
 
 #local imports
@@ -26,45 +29,45 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 ####	General	#####
 ########################
 
-true = True    # I am used to Java
+true = True	# I am used to Java
 false = False  # I am used to Java
-none = None    # I am used to Java
+none = None	# I am used to Java
 
 
 ''' This is set when reading the checkpoint settings files'''
-image_size              = 0 	# size of the images
-num_channels            = 0 	# Number of color channels for the images: 1 channel for gray-scale, 3 for color
-num_augment             = 0 	# How many augmentations to make each image into
-filter_size1            = 0 	# Layer 1. Convolution filters are filter_size x filter_size pixels.
-num_filters1            = 0	# Layer 1. There are n of these filters.
-filter_size2            = 0	# Layer 2. Convolution filters are n x n pixels.
-num_filters2            = 0	# Layer 2. There are n of these filters.
-fc_size                 = 0	# Number of neurons in fully-connected layer.
+image_size			  = 0 	# size of the images
+num_channels			= 0 	# Number of color channels for the images: 1 channel for gray-scale, 3 for color
+num_augment			 = 0 	# How many augmentations to make each image into
+filter_size1			= 0 	# Layer 1. Convolution filters are filter_size x filter_size pixels.
+num_filters1			= 0	# Layer 1. There are n of these filters.
+filter_size2			= 0	# Layer 2. Convolution filters are n x n pixels.
+num_filters2			= 0	# Layer 2. There are n of these filters.
+fc_size				 = 0	# Number of neurons in fully-connected layer.
 optimization_iterations = 0	# The amount of iterations for the optimization
 num_classes = 7  				# Number of classes, one class for each of 10 digits.
 
 
 
-batch_size = 256				                # Split the test-set into smaller batches of this size. If crash due to low memory lower this one
-train_batch_size = 64			                # The size each training cycle gets split into. Split into smaller batches of this size. If crash due to low memory lower this one
-print_and_save_regularity = 1                   # How often the accuracy is printed during optimization. Saves happen in same loop
+batch_size = 256								# Split the test-set into smaller batches of this size. If crash due to low memory lower this one
+train_batch_size = 64							# The size each training cycle gets split into. Split into smaller batches of this size. If crash due to low memory lower this one
+print_and_save_regularity = 1				   # How often the accuracy is printed during optimization. Saves happen in same loop
 classes = ["random", "gogh", "bernard", "bonnard", "ibels", "kunisada", "kw"]  #an array of the classes, 0 must be random
 file_name_identifier = "kw"  					# something distinguishable to tell the two images apart.
 data_directory = "resized/load/chosen"			# directory to load the train images
-load_dir = 'resized/load/checkpoints'           # for the TF graphs
+load_dir = 'resized/load/checkpoints'		   # for the TF graphs
 
 
 plt_show = True  								# To show the plotted values set to true, to never plot anything set to false
-augment = False                                 # Whether or not to augment, if img_size or num_augment has change this must be true
+augment = False								 # Whether or not to augment, if img_size or num_augment has change this must be true
 
 
 
-image_size_flat = image_size * image_size  	    # Images are stored in one-dimensional arrays of this length.
+image_size_flat = image_size * image_size  		# Images are stored in one-dimensional arrays of this length.
 image_shape = (image_size, image_size)  		# Tuple with height and width of images used to reshape arrays.
-print_full_np_array = False                     # Make numpy not print full arrays rather than:
+print_full_np_array = False					 # Make numpy not print full arrays rather than:
 												# [0,1,2 ... 97,98,99]
 												# [0,1,2 ... 97,98,99]
-												# 	    [...]
+												# 		[...]
 												# [0,1,2 ... 97,98,99]
 												# [0,1,2 ... 97,98,99]
 
@@ -79,17 +82,17 @@ def initiate_classify():
 	Function to set all the variables for the classifier to run
 	:return: all the variables created.
 	"""
-	print("Loading data")
+	# print("Loading data")
 
 	data.test.images, data.test.labels = load_data(data_directory, image_size_flat, num_channels, augment=False)
-	print("Initiating data")
+	# print("Initiating data")
 	data.test = data.test.init(classes)
 	data.test._name = "test"
 
 	# The labels without one hot encoding
 	data.test.cls = np.argmax(data.test.labels, axis=1)
 
-	print("Creating TF placeholder objects, fully connected layers and convolutional layers")
+	# print("Creating TF placeholder objects, fully connected layers and convolutional layers")
 	# this creates the tf placeholder object for the images.
 	if num_channels == 3:
 		x = tf.placeholder(tf.float32, shape=[None, image_size_flat, num_channels], name='x')
@@ -145,13 +148,13 @@ def main():
 			optimization_iterations, num_classes, image_size_flat, image_shape = \
 					read_settings_from_file(file="resized/load/checkpoints/checkpoint.settings")
 
-	print(image_shape)
+	# print(image_shape)
 
 	# runs the rezise_to_chosen.py in resized/load/ to resize the images to classify
-	print("Resizing images")
+	# print("Resizing images")
 	os.system('python3 resized/load/resize_to_chosen.py')
 	resize.resize_many(image_size, num_channels)
-	print("Done")
+	# print("Done")
 
 	# starts the session and initiates the tf global variables
 	session = tf.Session()
@@ -166,7 +169,7 @@ def main():
 	# Restores the session in load_dir
 	saver.restore(sess=session, save_path=load_path)
 
-	print("Session at {} has been restored successfully".format(load_path))
+	# print("Session at {} has been restored successfully".format(load_path))
 
 	# prints accuracy after optimization
 	utils.print_prediction(data, 1, x, y_true, session, y_pred_cls, classes, image_shape, num_channels, plt_show)

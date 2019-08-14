@@ -1,0 +1,26 @@
+
+    
+<br /><h1>Image is of type gogh
+</h1>		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+		<script>
+        $(document).ready(function(){
+          var folder = "resized/load/";
+          var iter = 0
+          $.ajax({
+              url : folder,
+              success: function (data) {
+                  $(data).find("a").attr("href", function (i, val) {
+                      if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                          if( iter % 5 === 0 & iter != 0){
+                            $("p").append( "<br />" );
+                          }
+							$("p").append( "<img src='"+ folder + val +"' alt='input' width='30%' height='auto'>" );
+
+                          iter = iter + 1
+                      }
+                  });
+              }
+          });
+
+        });
+        </script>

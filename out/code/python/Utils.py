@@ -13,26 +13,27 @@ def plot_image(image, img_shape, plt_show, channels=3, name=""):
 	:param number of color channels, 1 for greyscale and 3 for color
 	:param name: title of image default: ""
 	'''
-	fig = plt.figure()
-	fig.canvas.set_window_title(name)
-	plt.suptitle(name)
-	if len(image.shape) == 2:
-		plt.imshow(image.reshape(img_shape), interpolation='nearest', cmap='gray')
-	elif image.shape[2] == 3:
-		cpy = image.reshape((img_shape[0], img_shape[1], 3))
-		cpy = cv2.cvtColor(cpy, cv2.COLOR_BGR2RGB)
-		cv2.imwrite("tmp_img/cpy.png", cpy)
-		cpy = cv2.imread("tmp_img/cpy.png")
-		plt.imshow(cpy, interpolation='nearest')
-	else:
-		cpy = image.reshape((img_shape[0], img_shape[1], 4))
-		# cpy = cv2.cvtColor(cpy, cv2.COLOR_RGBA2RGB)
-		cv2.imwrite("tmp_img/cpy.png", cpy)
-		cpy = cv2.imread("tmp_img/cpy.png")
-		cpy = cv2.cvtColor(cpy, cv2.COLOR_BGR2RGB)
-		plt.imshow(cpy, interpolation='nearest')
-	if plt_show == True:
-		plt.show()
+	# fig = plt.figure()
+	# fig.canvas.set_window_title(name)
+	# plt.suptitle(name)
+	# if len(image.shape) == 2:
+		# plt.imshow(image.reshape(img_shape), interpolation='nearest', cmap='gray')
+	# elif image.shape[2] == 3:
+		# cpy = image.reshape((img_shape[0], img_shape[1], 3))
+		# cpy = cv2.cvtColor(cpy, cv2.COLOR_BGR2RGB)
+		# cv2.imwrite("tmp_img/cpy.png", cpy)
+		# cpy = cv2.imread("tmp_img/cpy.png")
+		# plt.imshow(cpy, interpolation='nearest')
+	# else:
+		# cpy = image.reshape((img_shape[0], img_shape[1], 4))
+	#	cpy = cv2.cvtColor(cpy, cv2.COLOR_RGBA2RGB)
+		# cv2.imwrite("tmp_img/cpy.png", cpy)
+		# cpy = cv2.imread("tmp_img/cpy.png")
+		# cpy = cv2.cvtColor(cpy, cv2.COLOR_BGR2RGB)
+		# plt.imshow(cpy, interpolation='nearest')
+	# if plt_show == True:
+		# plt.show()
+	return
 
 
 def plot_nine_images(images, classes, cls_true, plt_show, img_shape, channels, cls_pred=None, name=""):
