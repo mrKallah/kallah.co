@@ -62,16 +62,16 @@
                       <div class="post_dropdown">
                         <a class="page-scroll" href="#posts">Projects</a>
                         <div class="post_dropdown_content">
+<a class='post_dropdown_text' href='#Bachelor'> Digital Analysis of Paintings using TensorFlow</a><br><hr>
 <a class='post_dropdown_text' href='#tts'> Autoencoder for Text to Speech</a><br><hr>
 <a class='post_dropdown_text' href='#torcs'> Reinforcement learning for Driving using A3C</a><br><hr>
-<a class='post_dropdown_text' href='#bachelor'> Digital Analysis of Paintings using TensorFlow</a><br><hr>
 
                         </div>
                       </div>
                     </li>
                     <li>
                       <div class="post_dropdown">
-                        <a class="page-scroll" href="code/python/classify.php">Painting Classifier</a>
+                        <a class="page-scroll" href="code/python/classified.php">Painting Classifier</a>
                       </div>
                     </li>
 
@@ -155,6 +155,29 @@
 <div class="section-subheading text-muted">
 
   <section id="posts">
+    <section id="bachelor">
+      <div class="container"> 
+        <div class="col-lg-12 text-center">
+        <h2 id="post_title">Digital Analysis of Paintings using TensorFlow</h2>
+          <h3 class="section-subheading text-muted">
+            <div class="paragraph">
+				
+				This project focused on investigating the ability to use a Convolutional Neural Network (CNN) to classify which artist created a painting using raw TensorFlow. The dataset used in this project was gathered by contacting various museums and asking for permission. With the data gathered, the network was trained using those paintings alongside some photos taken of random objects and people. When the network had finished training the model was saved and based on the parameters used, it could be light weight enough to run on a simple web server. (<a href="/code/python/classified.php" style="font-weight:bold">Link to the web classifier</a>) (please note the images uploaded are available to the public, and will be saved until the next image is uploaded) (If broken, this is likely due to php being outdated, feel free to contact me using my email below) The code for this project is also available on GitHub.
+				<br>
+				After the project was finished, the ability to do multi class predictions was implemented. This came at the cost of a slight decrease in accuracy. A large update to the pre-processing steps was also added, improving both usability and performance. Lastly, the save and load method was changed to automatically save and load the used parameters in order to avoid manually changing parameters when loading a model.
+
+            </div>
+          </h3>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<hr />
+
+<div class="section-subheading text-muted">
+
+  <section id="posts">
     <section id="tts">
       <div class="container">
         <div class="col-lg-12 text-center">
@@ -195,29 +218,6 @@
   </section>
 </div>
 <hr />
-
-<div class="section-subheading text-muted">
-
-  <section id="posts">
-    <section id="bachelor">
-      <div class="container"> 
-        <div class="col-lg-12 text-center">
-        <h2 id="post_title">Digital Analysis of Paintings using TensorFlow</h2>
-          <h3 class="section-subheading text-muted">
-            <div class="paragraph">
-				
-				This project focused on investigating the ability to use a Convolutional Neural Network (CNN) to classify which artist created a painting using raw TensorFlow. The dataset used in this project was gathered by contacting various museums and asking for permission. With the data gathered, the network was trained using those paintings alongside some photos taken of random objects and people. When the network had finished training the model was saved and based on the parameters used, it could be light weight enough to run on a simple web server. (<a href="/code/python/classify.php" style="font-weight:bold">Link to the web classifier</a>) (please note the images uploaded are available to the public, and will be saved until the next image is uploaded) (If broken, this is likely due to php being outdated, feel free to contact me using my email below) The code for this project is also available on GitHub.
-				<br>
-				After the project was finished, the ability to do multi class predictions was implemented. This came at the cost of a slight decrease in accuracy. A large update to the pre-processing steps was also added, improving both usability and performance. Lastly, the save and load method was changed to automatically save and load the used parameters in order to avoid manually changing parameters when loading a model.
-
-            </div>
-          </h3>
-        </div>
-      </div>
-    </section>
-  </section>
-</div>
-<hr />
     <!-- About Section -->
     <section id="about">
         <div class="container">
@@ -229,7 +229,7 @@
                         <table>
                           <tbody>
                             <tr>
-                              <td style="width:30%;"><img src="img/me.jpg" style="width:100%; height:auto; align:left;" /></td>
+                              <td style="width:30%;"><img src="img/Lasse.png" style="width:100%; height:auto; align:left;" /></td>
                               <td style="text-align:top; padding-left:2%;" valign="center">
 
 
