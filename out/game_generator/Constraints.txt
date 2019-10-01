@@ -1,0 +1,30 @@
+in black and white
+using no more than 8mb of RAM
+using a non-Euclidean world
+using only triangular/cone sprites/objects
+in 8-bit style
+using only 8 unique colors
+in 24 hours
+in 1 week
+with counter intuitive controls
+which is filled with bugs
+where gravity is inverted
+for blind people
+off which your grandma would approve
+with only one loop (for/while) for the game.
+using no more than 50 variables
+for children
+for teens
+without ever displaying text to the player
+where entrances and exits are randomized
+which can only be controlled using a mouse
+which can only be controlled using a keyboard
+which can only be controlled using voice commands
+which can only be controlled using your web camera
+with a Christmas theme
+with an Easter theme
+with a Halloween theme
+with a thanks giving theme
+which is meant to troll the player
+where only bright red, blue and green colors can be used
+using a language or engine you have never used before

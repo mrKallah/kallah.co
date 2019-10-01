@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Kallah.co</a>
+                <a class="navbar-brand page-scroll kallah_logo" href="#page-top">Kallah.co</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,9 +62,10 @@
                       <div class="post_dropdown">
                         <a class="page-scroll" href="#posts">Projects</a>
                         <div class="post_dropdown_content">
-<a class='post_dropdown_text' href='#Bachelor'> Digital Analysis of Paintings using TensorFlow</a><br><hr>
-<a class='post_dropdown_text' href='#tts'> Autoencoder for Text to Speech</a><br><hr>
 <a class='post_dropdown_text' href='#torcs'> Reinforcement learning for Driving using A3C</a><br><hr>
+<a class='post_dropdown_text' href='#Bachelor'> Digital Analysis of Paintings using TensorFlow</a><br><hr>
+<a class='post_dropdown_text' href='#gamegen'> Random Game Generator</a><br><hr>
+<a class='post_dropdown_text' href='#tts'> Autoencoder for Text to Speech</a><br><hr>
 
                         </div>
                       </div>
@@ -155,6 +156,31 @@
 <div class="section-subheading text-muted">
 
   <section id="posts">
+    <section id="torcs">
+      <div class="container"> 
+        <div class="col-lg-12 text-center">
+        <h2 id="post_title">Reinforcement learning for Driving using A3C</h2>
+          <h3 class="section-subheading text-muted">
+            <div class="paragraph">
+			
+				In this group project, the aim was to automate the driving for a remote-controlled vehicle with a front mounted camera. This was done using the A3C algorithm in PyTorch. The idea was to train the model in a simulated environment using TORCS and then apply the training from the TORCS to the real-world model. My contribution here was primarily in image pre-processing, helping out with the TORCS simulator and in tying the different parts of the project together. My main focus was on creating a pre-processing step that would consistently take any image from the simulator or the real world and make them as similar as possible. This was done by removing as much unimportant information as possible. An example video of the preprocessing steps is attached below and the source code and my co-authors can be found at  <a href="https://github.com/mrKallah/Torcs-Autonomous-Vehicle-using-A3C " style="font-weight:bold">GitHub</a>
+				 <br / ><br />
+				After the project’s completion, the ability to address some of the issues that were never successfully fixed during the group project arose. With the extra time available after delivering the thesis for the MSc degree, some time was allocated to this project. In this time, the main problems which caused the program to fail previously was addressed and  thus a working version is now available. The parameters have not been tuned and nor should it be considered a finished product, however, it does show some signs that it might work. 
+				 <br / ><br />
+				<center><iframe width="100%" height="315px" src="https://www.youtube.com/embed/0oKWa0_V9-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+				
+            </div>
+          </h3>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<hr />
+
+<div class="section-subheading text-muted">
+
+  <section id="posts">
     <section id="bachelor">
       <div class="container"> 
         <div class="col-lg-12 text-center">
@@ -163,10 +189,31 @@
             <div class="paragraph">
 				
 				This project focused on investigating the ability to use a Convolutional Neural Network (CNN) to classify which artist created a painting using raw TensorFlow. The dataset used in this project was gathered by contacting various museums and asking for permission. With the data gathered, the network was trained using those paintings alongside some photos taken of random objects and people. When the network had finished training the model was saved and based on the parameters used, it could be light weight enough to run on a simple web server. (<a href="/code/python/classified.php" style="font-weight:bold">Link to the web classifier</a>) (please note the images uploaded are available to the public, and will be saved until the next image is uploaded) (If broken, this is likely due to php being outdated, feel free to contact me using my email below) The code for this project is also available on GitHub.
-				<br>
+				<br / ><br />
 				After the project was finished, the ability to do multi class predictions was implemented. This came at the cost of a slight decrease in accuracy. A large update to the pre-processing steps was also added, improving both usability and performance. Lastly, the save and load method was changed to automatically save and load the used parameters in order to avoid manually changing parameters when loading a model.
 
             </div>
+          </h3>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<hr />
+
+<div class="section-subheading text-muted">
+
+  <section id="posts">
+    <section id="tts">
+      <div class="container">
+        <div class="col-lg-12 text-center">
+        <h2 id="post_title">Random Game Generator</h2>
+          <h3 class="section-subheading text-muted">
+            <div class="paragraph">
+				
+				I was on a discord channel the other day someone asked if anyone knew a game design challenge generator site. Noone knew of one so I decided to make one. Currently there are over 900 challenges, however, if I think of any I will add more. It is avaliable <a href="game_generator/generator.php" style="font-weight:bold">here</a>
+				
+			</div>
           </h3>
         </div>
       </div>
@@ -188,29 +235,6 @@
 				This was a small project testing the ability of using a Keras autoencoder for text to speech using my own voice as a dataset. The project did not yield good results; however, this was a weekend project. If more time and effort is put into the project, including a larger dataset, a more acceptable result may be achievable.  This project can be found here <a href="https://github.com/mrKallah/Autoencoder-for-tts " style="font-weight:bold">GitHub</a>
             
 			</div>
-          </h3>
-        </div>
-      </div>
-    </section>
-  </section>
-</div>
-<hr />
-
-<div class="section-subheading text-muted">
-
-  <section id="posts">
-    <section id="torcs">
-      <div class="container"> 
-        <div class="col-lg-12 text-center">
-        <h2 id="post_title">Reinforcement learning for Driving using A3C</h2>
-          <h3 class="section-subheading text-muted">
-            <div class="paragraph">
-			
-				In this project the aim was to automate the driving for a remote-controlled vehicle with a front mounted camera. This was done using the A3C algorithm in PyTorch. The idea was to train the model in a simulated environment using TORCS and then apply the training from the TORCS to the real-world model. My contribution here was primarily in image pre-processing, helping out with the TORCS simulator and in tying the different parts of the project together. My main focus was on creating a pre-processing step that would consistently take any image from the simulator or the real world and make them as similar as possible. This was done by removing as much unimportant information as possible. An example video of the preprocessing steps is attached below and the source code and my co-authors can be found at  <a href="https://github.com/dmachlanski/ce903-tesla " style="font-weight:bold">GitHub</a>
-				<br>
-				<center><iframe width="560" height="315" src="https://www.youtube.com/embed/0oKWa0_V9-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-
-            </div>
           </h3>
         </div>
       </div>
